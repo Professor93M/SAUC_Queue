@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Queue;
-use Illuminate\Http\Request;
 
 class QueueController extends Controller
 {
-    public function index(){
+    public function requestQ(){
         Queue::create();
         return redirect()->back();
     }
