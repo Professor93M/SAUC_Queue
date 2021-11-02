@@ -16,7 +16,7 @@ class CreateQueuesTable extends Migration
         Schema::create('queues', function (Blueprint $table) {
             $table->id();
             $table->integer('queue')->autoincrement();
-            $table->bigInteger('users_id')->unsigned();
+            $table->bigInteger('users_id')->unsigned()->nullable();
             $table->foreign('users_id')->references('id')->on('users');
             $table->timestamps();
         });
