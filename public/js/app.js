@@ -3910,6 +3910,52 @@ function Guest(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Layouts/Visitor.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Layouts/Visitor.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Visitor": () => (/* binding */ Visitor)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var Visitor = function Visitor(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "flex items-center py-2 bg-gray-200 justify-around  m-auto",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "Logo w-40 h-40",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: "./logo.png",
+          alt: "logo"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "flex flex-col text-lg items-center justify-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          children: "\u062C\u0645\u0647\u0648\u0631\u064A\u0629 \u0627\u0644\u0639\u0631\u0627\u0642"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          children: "\u0648\u0632\u0627\u0631\u0629 \u0627\u0644\u062A\u0639\u0644\u064A\u0645 \u0627\u0644\u0639\u0627\u0644\u064A \u0648\u0627\u0644\u0628\u062D\u062B \u0627\u0644\u0639\u0644\u0645\u064A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          children: "\u0643\u0644\u064A\u0629 \u0634\u0637 \u0627\u0644\u0639\u0631\u0628 \u0627\u0644\u062C\u0627\u0645\u0639\u0629"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("main", {
+      children: [" ", children, " "]
+    })]
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Auth/ConfirmPassword.js":
 /*!****************************************************!*\
   !*** ./resources/js/Pages/Auth/ConfirmPassword.js ***!
@@ -4579,6 +4625,29 @@ function Dashboard(props) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Employee.js":
+/*!****************************************!*\
+  !*** ./resources/js/Pages/Employee.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var Employee = function Employee(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      children: " \u0627\u0644\u062A\u0627\u0644\u064A "
+    })
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Index.js":
 /*!*************************************!*\
   !*** ./resources/js/Pages/Index.js ***!
@@ -4593,7 +4662,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/Visitor */ "./resources/js/Layouts/Visitor.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -4611,6 +4681,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Welcome(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(props.nextqueue),
       _useState2 = _slicedToArray(_useState, 2),
@@ -4622,43 +4693,30 @@ function Welcome(props) {
     setCounter(props.nextqueue);
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: " h-screen w-full bg-indigo-300",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "flex items-center py-2 bg-gray-200 justify-around  m-auto",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "Logo w-40 h-40",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-          src: "./logo.png",
-          alt: "logo"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "flex flex-col text-lg items-center justify-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-          children: "\u062C\u0645\u0647\u0648\u0631\u064A\u0629 \u0627\u0644\u0639\u0631\u0627\u0642"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-          children: "\u0648\u0632\u0627\u0631\u0629 \u0627\u0644\u062A\u0639\u0644\u064A\u0645 \u0627\u0644\u0639\u0627\u0644\u064A \u0648\u0627\u0644\u0628\u062D\u062B \u0627\u0644\u0639\u0644\u0645\u064A"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-          children: "\u0643\u0644\u064A\u0629 \u0634\u0637 \u0627\u0644\u0639\u0631\u0628 \u0627\u0644\u062C\u0627\u0645\u0639\u0629"
-        })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__.Visitor, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       style: {
-        height: "50vh"
+        height: "78vh"
       },
-      className: "text-center flex pt-20 flex-col items-center text-4xl justify-around",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
-        children: "\u0627\u0647\u0644\u0627 \u0628\u0643\u0645 \u0641\u064A \u0643\u0644\u064A\u0629 \u0634\u0637 \u0627\u0644\u0639\u0631\u0628"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-        children: "\u064A\u0631\u062C\u0649 \u0627\u0644\u0636\u063A\u0637 \u0639\u0644\u0649 \u0627\u0644\u0632\u0631 \u0644\u0644\u062D\u0635\u0648\u0644 \u0639\u0644\u0649 \u062A\u0633\u0644\u0633\u0644"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h2", {
-        children: [" ", counter, " "]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-        onClick: handelClick,
-        className: "py-2 px-4 bg-yellow-200 rounded-md border",
-        children: "\u0627\u0636\u063A\u0637 \u0647\u0646\u0627"
-      })]
-    })]
+      className: " w-full bg-indigo-300",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        style: {
+          height: "50vh"
+        },
+        className: "text-center flex pt-20 flex-col items-center text-4xl justify-around",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+          children: "\u0627\u0647\u0644\u0627 \u0628\u0643\u0645 \u0641\u064A \u0643\u0644\u064A\u0629 \u0634\u0637 \u0627\u0644\u0639\u0631\u0628"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+          children: "\u064A\u0631\u062C\u0649 \u0627\u0644\u0636\u063A\u0637 \u0639\u0644\u0649 \u0627\u0644\u0632\u0631 \u0644\u0644\u062D\u0635\u0648\u0644 \u0639\u0644\u0649 \u062A\u0633\u0644\u0633\u0644"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h2", {
+          children: [" ", counter, " "]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+          onClick: handelClick,
+          className: "py-2 px-4 bg-yellow-200 rounded-md border",
+          children: "\u0627\u0636\u063A\u0637 \u0647\u0646\u0627"
+        })]
+      })
+    })
   });
 }
 
@@ -57844,6 +57902,8 @@ var map = {
 	"./Auth/VerifyEmail.js": "./resources/js/Pages/Auth/VerifyEmail.js",
 	"./Dashboard": "./resources/js/Pages/Dashboard.js",
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
+	"./Employee": "./resources/js/Pages/Employee.js",
+	"./Employee.js": "./resources/js/Pages/Employee.js",
 	"./Index": "./resources/js/Pages/Index.js",
 	"./Index.js": "./resources/js/Pages/Index.js"
 };
