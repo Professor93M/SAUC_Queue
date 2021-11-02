@@ -28,12 +28,13 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Professor
-Route::get('/submit', [Queue::class, 'index'])->name('submitQueue');
+// Route::get('/submit', [Queue::class, 'index'])->name('submitQueue');
+Route::post('/', [Queue::class, 'requestQ'])->name('requestQ');
 
 
 require __DIR__.'/auth.php';
