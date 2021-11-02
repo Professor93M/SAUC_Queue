@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\QueueController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\DB;
@@ -28,13 +29,9 @@ Route::get('/', function () {
     ]);
 });
 
-// Route::get('/dashboard', function () {
-//     return Inertia::render('Dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 // Professor
-// Route::get('/submit', [Queue::class, 'index'])->name('submitQueue');
 Route::post('/', [QueueController::class, 'requestQ'])->name('requestQ');
+Route::post('/employee', [Controller::class, 'submit'])->name('submit');
 
 
 require __DIR__.'/auth.php';
