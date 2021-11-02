@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Queue;
+use App\Http\Controllers\QueueController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -34,7 +34,7 @@ Route::get('/', function () {
 
 // Professor
 // Route::get('/submit', [Queue::class, 'index'])->name('submitQueue');
-Route::post('/', [Queue::class, 'requestQ'])->name('requestQ');
+Route::post('/', [QueueController::class, 'requestQ'])->name('requestQ');
 
 
 require __DIR__.'/auth.php';

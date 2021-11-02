@@ -29,6 +29,6 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
 
-Route::get('/emplyee/{id}', [Controller::class, 'emplyee'])
+Route::get('/emplyee', [Controller::class, 'emplyee'])
                 ->middleware('auth')
                 ->name('emplyee');

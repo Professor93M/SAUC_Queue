@@ -9,11 +9,11 @@ class Queue extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['users_id'];
+    protected $fillable = ['users_id', 'queue'];
 
-    const UPDATED_AT = 'SERVED_AT';
+    // const UPDATED_AT = 'SERVED_AT';
 
-    const SERVED_AT = NULL;
+    const UPDATED_AT = NULL;
 
     public function user(){
         return $this->belongsTo(User::class);
