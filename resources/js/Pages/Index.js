@@ -8,6 +8,7 @@ export default function Welcome({ nextqueue }) {
 
     const handelClick = () => {
         Inertia.post("/", { nextqueue });
+        window.print();
         setCounter(nextqueue);
     };
 
