@@ -3933,13 +3933,13 @@ var Visitor = function Visitor(_ref) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "flex items-center py-2 bg-gray-200 justify-around  m-auto",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "Logo w-40 h-40",
+        className: "Logo print:w-20 print:h-20 w-40 h-40",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           src: "./logo.png",
           alt: "logo"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "flex flex-col text-lg items-center justify-center",
+        className: "flex flex-col print:text-sm print:items-end text-xl space-y-1 items-center justify-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
           children: "\u062C\u0645\u0647\u0648\u0631\u064A\u0629 \u0627\u0644\u0639\u0631\u0627\u0642"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
@@ -4682,15 +4682,19 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function Welcome(props) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(props.nextqueue),
+function Welcome(_ref) {
+  var nextqueue = _ref.nextqueue;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(nextqueue),
       _useState2 = _slicedToArray(_useState, 2),
       counter = _useState2[0],
       setCounter = _useState2[1];
 
   var handelClick = function handelClick() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/", {});
-    setCounter(props.nextqueue);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/", {
+      nextqueue: nextqueue
+    });
+    setCounter(nextqueue);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__.Visitor, {
@@ -4703,16 +4707,18 @@ function Welcome(props) {
         style: {
           height: "50vh"
         },
-        className: "text-center flex pt-20 flex-col items-center text-4xl justify-around",
+        className: "text-center   flex pt-20 flex-col items-center text-4xl justify-around",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
           children: "\u0627\u0647\u0644\u0627 \u0628\u0643\u0645 \u0641\u064A \u0643\u0644\u064A\u0629 \u0634\u0637 \u0627\u0644\u0639\u0631\u0628"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+          className: " print:hidden ",
           children: "\u064A\u0631\u062C\u0649 \u0627\u0644\u0636\u063A\u0637 \u0639\u0644\u0649 \u0627\u0644\u0632\u0631 \u0644\u0644\u062D\u0635\u0648\u0644 \u0639\u0644\u0649 \u062A\u0633\u0644\u0633\u0644"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h2", {
-          children: [" ", counter, " "]
+          className: "text-6xl",
+          children: [" \u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u0627\u062C\u0639 : ", counter, " "]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
           onClick: handelClick,
-          className: "py-2 px-4 bg-yellow-200 rounded-md border",
+          className: "py-2 print:hidden px-4 bg-yellow-200 rounded-md border",
           children: "\u0627\u0636\u063A\u0637 \u0647\u0646\u0627"
         })]
       })
