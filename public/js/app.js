@@ -4579,10 +4579,10 @@ function Dashboard(props) {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Welcome.js":
-/*!***************************************!*\
-  !*** ./resources/js/Pages/Welcome.js ***!
-  \***************************************/
+/***/ "./resources/js/Pages/Index.js":
+/*!*************************************!*\
+  !*** ./resources/js/Pages/Index.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4662,7 +4662,7 @@ function Welcome(props) {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
                     href: "https://laravel.com/docs",
                     className: "underline text-gray-900 dark:text-white",
-                    children: "Documentation"
+                    children: "Mohammed"
                   })
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -58032,8 +58032,8 @@ var map = {
 	"./Auth/VerifyEmail.js": "./resources/js/Pages/Auth/VerifyEmail.js",
 	"./Dashboard": "./resources/js/Pages/Dashboard.js",
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
-	"./Welcome": "./resources/js/Pages/Welcome.js",
-	"./Welcome.js": "./resources/js/Pages/Welcome.js"
+	"./Index": "./resources/js/Pages/Index.js",
+	"./Index.js": "./resources/js/Pages/Index.js"
 };
 
 
