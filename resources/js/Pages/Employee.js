@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, Head } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
+import { Visitor } from "@/Layouts/Visitor";
 
-const Employee = (props) => {
+const Employee = ({ auth }) => {
+    const handelClick = () => {
+        Inertia.post("/", { id: auth.user.id });
+    };
+
     return (
         <div>
-            <button> التالي </button>
+            <button onClick={handelClick}> التالي </button>
         </div>
     );
 };
