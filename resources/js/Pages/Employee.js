@@ -10,7 +10,7 @@ const Employee = ({ auth }) => {
 
     return (
         <div>
-            <button onClick={handelClick}> التالي </button>
+            <button onClick={handelClick}> المراجع التالي </button>
         </div>
     );
 };

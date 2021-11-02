@@ -4656,7 +4656,7 @@ var Employee = function Employee(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
       onClick: handelClick,
-      children: " \u0627\u0644\u062A\u0627\u0644\u064A "
+      children: " \u0627\u0644\u0645\u0631\u0627\u062C\u0639 \u0627\u0644\u062A\u0627\u0644\u064A "
     })
   });
 };
