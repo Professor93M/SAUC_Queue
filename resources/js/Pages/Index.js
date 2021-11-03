@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, Head } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import { Visitor } from "@/Layouts/Visitor";
+import Button from "@/Components/Button";
 
 export default function Welcome({ nextqueue }) {
     let [counter, setCounter] = useState(nextqueue);
@@ -24,12 +25,13 @@ export default function Welcome({ nextqueue }) {
                         يرجى الضغط على الزر للحصول على تسلسل
                     </h2>
                     <h2 className="text-6xl"> رقم المراجع : {counter} </h2>
-                    <button
+                    <Button
                         onClick={handelClick}
-                        className="py-2 print:hidden px-4 bg-yellow-200 rounded-md border"
+                        type="button"
+                        // className="py-2 print:hidden px-4 bg-yellow-200 rounded-md border"
                     >
                         اضغط هنا
-                    </button>
+                    </Button>
                 </div>
             </div>
         </Visitor>

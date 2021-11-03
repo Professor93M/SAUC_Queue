@@ -13,7 +13,7 @@ export const Visitor = ({ children }) => {
                     <h2>كلية شط العرب الجامعة</h2>
                 </div>
             </div>
-            <main> {children} </main>
+            <main className="bg-indigo-300"> {children} </main>
         </>
     );
 };
