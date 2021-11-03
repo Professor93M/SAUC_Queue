@@ -18,7 +18,7 @@ class Controller extends BaseController
 
     public function employee(){
         return Inertia::render('Employee', [
-            'queue' => Queue::select('queue')->where('updated_at', null)->first(),
+            'queue' => Queue::where('updated_at', null)->first(),
             // 'name'  => Auth::user()->name,
             // 'PC'    => Auth::user()->id,
         ]);

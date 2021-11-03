@@ -31,7 +31,6 @@ Route::get('/', function () {
 
 // Professor
 Route::post('/', [QueueController::class, 'requestQ'])->name('requestQ');
-Route::post('/employee', [Controller::class, 'submit'])->name('submit');
 
 
 require __DIR__.'/auth.php';

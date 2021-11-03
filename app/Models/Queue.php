@@ -13,10 +13,14 @@ class Queue extends Model
 
     // const UPDATED_AT = 'SERVED_AT';
 
-    const UPDATED_AT = NULL;
+    // const UPDATED_AT = NULL;
 
     public function user(){
         return $this->belongsTo(User::class);
     }
 
+    public function setUpdatedAt($value)
+    {
+      return NULL;
+    }
 }
