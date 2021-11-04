@@ -6,12 +6,16 @@ import Button from "@/Components/Button";
 
 export default function Welcome({ nextqueue }) {
     const handelClick = () => {
-        Inertia.post("/", { nextqueue });
-        window.print();
+        new Audio("./ring.mp3").play().then(() => {
+            setTimeout(() => {
+                Inertia.post("/", { nextqueue });
+            }, 3000);
+        });
+        // window.print();
     };
 
     return (
-        <Visitor>
+        <Visitor classes="print:w-20 print:h-20 w-40 h-40">
             <div style={{ height: "78vh" }} className=" w-full bg-indigo-300">
                 <div
                     style={{ height: "50vh" }}
@@ -21,7 +25,12 @@ export default function Welcome({ nextqueue }) {
                     <h2 className=" print:hidden ">
                         يرجى الضغط على الزر للحصول على تسلسل
                     </h2>
-                    <h2 className="text-6xl"> رقم المراجع : {nextqueue} </h2>
+                    <h2 className="text-6xl mb-2">
+                        <span class="bg-gray-400 rounded-lg p-3">
+                            {" "}
+                            رقم المراجع : {nextqueue}{" "}
+                        </span>
+                    </h2>
                     <Button
                         handelClick={handelClick}
                         type="button"

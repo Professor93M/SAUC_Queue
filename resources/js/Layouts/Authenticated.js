@@ -10,15 +10,13 @@ export default function Authenticated({ auth, header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100">
-            <nav className="bg-white border-b border-gray-100">
+        <div className="min-h-screen bg-gradient-to-b from-gray-200 to-blue-400">
+            <nav className=" bg-gray-600 border-b ">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between h-16">
+                    <div className="flex justify-between h-40 py-2">
                         <div className="flex">
                             <div className="flex-shrink-0 flex items-center">
-                                <Link href="/">
-                                    <ApplicationLogo className="block h-9 w-auto text-gray-500" />
-                                </Link>
+                                <ApplicationLogo classes="print:w-20 print:h-20 w-40 h-40" />
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -32,15 +30,15 @@ export default function Authenticated({ auth, header, children }) {
                             <div className="ml-3 relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>
-                                        <span className="inline-flex rounded-md">
+                                        <span className="inline-flex rounded-md border-2 border-gray-200">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                className="inline-flex items-center bg-gray-600 px-3 py-2 border border-transparent text-xl leading-4 font-medium rounded-md text-white hover:text-gray-200 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 {auth.user.name}
 
                                                 <svg
-                                                    className="ml-2 -mr-0.5 h-4 w-4"
+                                                    className="ml-2 -mr-0.5 h-6 w-6"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"

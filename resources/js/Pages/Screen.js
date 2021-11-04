@@ -8,7 +8,7 @@ export default function Screen({ auth, queue }) {
     }, 10000);
 
     return (
-        <Visitor>
+        <Visitor classes="print:w-20 print:h-20 w-40 h-40">
             <div
                 className=" flex items-center justify-center text-4xl flex-col space-y-4  "
                 style={{ height: "78vh" }}

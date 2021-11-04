@@ -14,7 +14,7 @@ class QueueController extends Controller
         Queue::create([
             'queue' => request('nextqueue'),
         ]);
-        return Inertia::location('/');
+        return redirect()->back();
     }
 
     public function submit(Request $request){
