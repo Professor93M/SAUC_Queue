@@ -31,6 +31,7 @@ Route::get('/', function () {
 
 // Professor
 Route::post('/', [QueueController::class, 'requestQ'])->name('requestQ');
+Route::get('/screen', [QueueController::class, 'screen'])->name('screen');
 
 
 require __DIR__.'/auth.php';

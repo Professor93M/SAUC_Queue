@@ -26,4 +26,10 @@ class QueueController extends Controller
         ]);
         return Inertia::location('/employee');
     }
+
+    public function screen(){
+        return Inertia::render('Screen', [
+            'queue' => Queue::orderBy('udated_at', 'desc')->first()
+        ]);
+    }
 }
