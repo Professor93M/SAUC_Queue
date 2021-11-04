@@ -4,8 +4,8 @@ import { Visitor } from "@/Layouts/Visitor";
 
 export default function Screen({ auth, queue }) {
     setTimeout(() => {
-        location.reload();
-    }, 3000);
+        Inertia.reload();
+    }, 10000);
 
     return (
         <Visitor>

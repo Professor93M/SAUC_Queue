@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Head } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import { Visitor } from "@/Layouts/Visitor";
 import Button from "@/Components/Button";
 
 export default function Welcome({ nextqueue }) {
-    let [counter, setCounter] = useState(nextqueue);
-
     const handelClick = () => {
         Inertia.post("/", { nextqueue });
         window.print();
-        setCounter(nextqueue);
-
     };
 
     return (
@@ -25,7 +21,7 @@ export default function Welcome({ nextqueue }) {
                     <h2 className=" print:hidden ">
                         يرجى الضغط على الزر للحصول على تسلسل
                     </h2>
-                    <h2 className="text-6xl"> رقم المراجع : {counter} </h2>
+                    <h2 className="text-6xl"> رقم المراجع : {nextqueue} </h2>
                     <Button
                         handelClick={handelClick}
                         type="button"
