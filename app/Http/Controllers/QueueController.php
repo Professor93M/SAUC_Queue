@@ -12,7 +12,7 @@ class QueueController extends Controller
 {
     public function requestQ(){
         Queue::create([
-            'queue' => request('nextqueue')
+            'queue' => request('nextqueue'),
         ]);
         return Inertia::location('/');
     }
@@ -22,7 +22,7 @@ class QueueController extends Controller
         $queue = Queue::firstWhere('updated_at', null);
         $queue->update([
             'users_id' => $request->user_id,
-            'UPDATED_AT' => Carbon::now()
+            'UPDATED_AT' => Carbon::now(),
         ]);
         return Inertia::location('/employee');
     }

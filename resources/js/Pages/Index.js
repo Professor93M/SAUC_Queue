@@ -11,6 +11,7 @@ export default function Welcome({ nextqueue }) {
         Inertia.post("/", { nextqueue });
         window.print();
         setCounter(nextqueue);
+
     };
 
     return (
@@ -26,7 +27,7 @@ export default function Welcome({ nextqueue }) {
                     </h2>
                     <h2 className="text-6xl"> رقم المراجع : {counter} </h2>
                     <Button
-                        onClick={handelClick}
+                        handelClick={handelClick}
                         type="button"
                         // className="py-2 print:hidden px-4 bg-yellow-200 rounded-md border"
                     >

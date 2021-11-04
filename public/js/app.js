@@ -3303,11 +3303,13 @@ function Button(_ref) {
       _ref$className = _ref.className,
       className = _ref$className === void 0 ? "" : _ref$className,
       processing = _ref.processing,
+      handelClick = _ref.handelClick,
       children = _ref.children;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     type: type,
     className: "inline-flex items-center px-4 py-2 text-gray-900 border border-transparent rounded-md font-semibold text-xs  bg-yellow-200  uppercase tracking-widest active:bg-gray-900 transition ease-in-out duration-150 ".concat(processing && "opacity-25", " ") + className,
     disabled: processing,
+    onClick: handelClick,
     children: children
   });
 }
@@ -4643,6 +4645,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/Visitor */ "./resources/js/Layouts/Visitor.js");
 /* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -4650,16 +4663,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Employee(_ref, props) {
-  var auth = _ref.auth;
-  console.log(auth);
+
+function Employee(_ref) {
+  var auth = _ref.auth,
+      queue = _ref.queue;
 
   var handelClick = function handelClick() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/", {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/employee", {
       id: auth.user.id
     });
   };
 
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(queue.queue),
+      _useState2 = _slicedToArray(_useState, 2),
+      counter = _useState2[0],
+      setCounter = _useState2[1];
+
+  console.log(queue.queue);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    console.log('ffff');
+    setCounter(queue.queue);
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__.Visitor, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       style: {
@@ -4671,8 +4695,10 @@ function Employee(_ref, props) {
         children: ["\u0631\u0642\u0645 \u0627\u0644\u062D\u0627\u0633\u0648\u0628 : ", auth.user.id]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h1", {
         children: ["\u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641 : ", auth.user.name]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h1", {
+        children: [" ", counter, " "]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        onClick: handelClick,
+        handelClick: handelClick,
         type: "button",
         children: "\u0627\u0644\u0645\u0631\u0627\u062C\u0639 \u0627\u0644\u062A\u0627\u0644\u064A"
       })]
@@ -4754,12 +4780,44 @@ function Welcome(_ref) {
           className: "text-6xl",
           children: [" \u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u0627\u062C\u0639 : ", counter, " "]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          onClick: handelClick,
+          handelClick: handelClick,
           type: "button" // className="py-2 print:hidden px-4 bg-yellow-200 rounded-md border"
           ,
           children: "\u0627\u0636\u063A\u0637 \u0647\u0646\u0627"
         })]
       })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Screen.js":
+/*!**************************************!*\
+  !*** ./resources/js/Pages/Screen.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Screen)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Layouts_Visitor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/Visitor */ "./resources/js/Layouts/Visitor.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+function Screen(_ref) {
+  var auth = _ref.auth,
+      queue = _ref.queue;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_2__.Visitor, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+      children: [" ", queue.queue, " "]
     })
   });
 }
@@ -57949,7 +58007,9 @@ var map = {
 	"./Employee": "./resources/js/Pages/Employee.js",
 	"./Employee.js": "./resources/js/Pages/Employee.js",
 	"./Index": "./resources/js/Pages/Index.js",
-	"./Index.js": "./resources/js/Pages/Index.js"
+	"./Index.js": "./resources/js/Pages/Index.js",
+	"./Screen": "./resources/js/Pages/Screen.js",
+	"./Screen.js": "./resources/js/Pages/Screen.js"
 };
 
 

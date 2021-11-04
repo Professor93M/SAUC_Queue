@@ -4,6 +4,7 @@ export default function Button({
     type = "submit",
     className = "",
     processing,
+handelClick,
     children,
 }) {
     return (
@@ -15,6 +16,7 @@ export default function Button({
                 } ` + className
             }
             disabled={processing}
+            onClick={handelClick}
         >
             {children}
         </button>
