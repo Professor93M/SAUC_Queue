@@ -10,6 +10,8 @@ export default function Screen({ auth, queue }) {
     return (
         <Visitor>
             <h1> {queue.queue} </h1>
+            <h1> {auth.user.id} </h1>
+            <h1> {auth.user.name} </h1>
         </Visitor>
     );
 }

@@ -4758,17 +4758,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function Screen(_ref) {
   var auth = _ref.auth,
       queue = _ref.queue;
   setTimeout(function () {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.reload();
   }, 10000);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_2__.Visitor, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_2__.Visitor, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
       children: [" ", queue.queue, " "]
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+      children: [" ", auth.user.id, " "]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+      children: [" ", auth.user.name, " "]
+    })]
   });
 }
 
