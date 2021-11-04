@@ -154,7 +154,7 @@ export default function Authenticated({ auth, header, children }) {
                 </header>
             )}
 
-            <main>{children}</main>
+            <main dir="rtl">{children}</main>
         </div>
     );
 }

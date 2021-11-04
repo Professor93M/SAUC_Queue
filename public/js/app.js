@@ -3855,6 +3855,7 @@ function Authenticated(_ref) {
         children: header
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("main", {
+      dir: "rtl",
       children: children
     })]
   });
@@ -3941,6 +3942,7 @@ var Visitor = function Visitor(_ref) {
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("main", {
+      dir: "rtl",
       className: "bg-indigo-300",
       children: [" ", children, " "]
     })]
@@ -4658,7 +4660,6 @@ function Employee(_ref) {
       style: {
         height: "78vh"
       },
-      dir: "rtl",
       className: " flex items-center justify-center text-4xl flex-col space-y-4  ",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h1", {
         children: [" \u0639\u062F\u062F \u0627\u0644\u0645\u0631\u0627\u062C\u0639\u064A\u0646 \u0641\u064A \u0627\u0644\u0627\u0646\u062A\u0638\u0627\u0631 : ", queueCount, " "]
@@ -4758,20 +4759,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Screen(_ref) {
   var auth = _ref.auth,
       queue = _ref.queue;
   setTimeout(function () {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.reload();
   }, 10000);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_2__.Visitor, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
-      children: [" ", queue.queue, " "]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
-      children: [" ", auth.user.id, " "]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
-      children: [" ", auth.user.name, " "]
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_2__.Visitor, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: " flex items-center justify-center text-4xl flex-col space-y-4  ",
+      style: {
+        height: "78vh"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+        children: [" \u0639\u062F\u062F \u0627\u0644\u0645\u0631\u0627\u062C\u0639\u064A\u0646 : ", queue.queue, " "]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+        children: [" \u0631\u0642\u0645 \u0627\u0644\u062D\u0627\u0633\u0628\u0647 : ", auth.user.id, " "]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+        children: [" \u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641 : ", auth.user.name, " "]
+      })]
+    })
   });
 }
 

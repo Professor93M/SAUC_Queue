@@ -9,9 +9,14 @@ export default function Screen({ auth, queue }) {
 
     return (
         <Visitor>
-            <h1> {queue.queue} </h1>
-            <h1> {auth.user.id} </h1>
-            <h1> {auth.user.name} </h1>
+            <div
+                className=" flex items-center justify-center text-4xl flex-col space-y-4  "
+                style={{ height: "78vh" }}
+            >
+                <h1> عدد المراجعين : {queue.queue} </h1>
+                <h1> رقم الحاسبه : {auth.user.id} </h1>
+                <h1> اسم الموظف : {auth.user.name} </h1>
+            </div>
         </Visitor>
     );
 }

@@ -17,7 +17,6 @@ export default function Employee({ auth, queueCount }) {
         <Authenticated auth={auth}>
             <div
                 style={{ height: "78vh" }}
-                dir="rtl"
                 className=" flex items-center justify-center text-4xl flex-col space-y-4  "
             >
                 <h1> عدد المراجعين في الانتظار : {queueCount} </h1>
