@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Queue;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,8 +29,10 @@ class QueueController extends Controller
     }
 
     public function screen(){
+        $queue = Queue::whereNotNull('updated_at')->orderBy('updated_at', 'desc')->first();
         return Inertia::render('Screen', [
-            'queue' => Queue::orderBy('updated_at', 'desc')->first()
+            'queue' => $queue,
+            'emp'   => User::findOrFail($queue->users_id)
         ]);
     }
 }
