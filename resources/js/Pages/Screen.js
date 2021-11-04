@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Inertia } from "@inertiajs/inertia";
 import { Visitor } from "@/Layouts/Visitor";
 
-export default function Screen({ auth , queue}) {
+export default function Screen({ auth, queue }) {
+    setTimeout(() => {
+        location.reload();
+    }, 3000);
 
     return (
         <Visitor>
