@@ -22,14 +22,15 @@ class QueueController extends Controller
         // $queue = Queue::find($request->id);
         $queue = Queue::firstWhere('updated_at', null);
         $queue->update([
-            'users_id' => $request->user_id,
+            'users_id' => $request->id,
             'UPDATED_AT' => Carbon::now(),
         ]);
+
         return Inertia::location('/employee');
     }
 
     public function screen(){
-        $queue = Queue::whereNotNull('updated_at')->orderBy('updated_at', 'desc')->first();
+        $queue = Queue::whereNotNull('updated_at')->orderBy('updated_at', 'asc')->first();
         return Inertia::render('Screen', [
             'queue' => $queue,
             'emp'   => User::findOrFail($queue->users_id)

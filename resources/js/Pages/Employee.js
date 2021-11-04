@@ -6,7 +6,7 @@ import Button from "@/Components/Button";
 
 export default function Employee({ auth, queueCount }) {
     const handelClick = () => {
-        Inertia.post("/", { id: auth.user.id });
+        Inertia.post("/employee", { id: auth.user.id });
     };
 
     setTimeout(() => {
