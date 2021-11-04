@@ -118,7 +118,14 @@ export default function Authenticated({ auth, header, children }) {
                     }
                 >
                     <div className="pt-2 pb-3 space-y-1">
+<<<<<<< HEAD
                         {/* <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
+=======
+                        {/* <ResponsiveNavLink
+                            href={route("dashboard")}
+                            active={route().current("dashboard")}
+                        >
+>>>>>>> 7a5a8fafaaad37d89247d7ea78fa85b6861c6acb
                             Dashboard
                         </ResponsiveNavLink> */}
                     </div>

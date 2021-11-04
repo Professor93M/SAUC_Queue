@@ -17,18 +17,17 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function employee(){
+        // dd(Queue::where('updated_at', null)->count());
         return Inertia::render('Employee', [
-            'queue' => Queue::where('updated_at', null)->first(),
-
-            // 'name'  => Auth::user()->name,
-            // 'PC'    => Auth::user()->id,
+            // 'queue' => Queue::where('updated_at', null)->first(),
+            'queueCount' => Queue::where('updated_at', null)->count(),
         ]);
     }
 
-    public function submit(Request $request){
-        $user = User::findOrFail($request->id);
-        $user->update([
+    // public function submit(Request $request){
+    //     $user = User::findOrFail($request->id);
+    //     $user->update([
 
-        ]);
-    }
+    //     ]);
+    // }
 }
