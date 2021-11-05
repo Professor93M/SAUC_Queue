@@ -13,7 +13,14 @@ export default function Dashboard({ users, auth }) {
             <div className="py-12 ">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">
+                        <div className="p-6 bg-white space-y-6 border-b flex flex-col text-3xl justify-between text-gray-600 border-gray-200">
+                            <div className="flex ">
+                                <label htmlFor="dateInput">
+                                    {" "}
+                                    بحث حسب التاريخ :{" "}
+                                </label>
+                                <input type="date" name="dateInput" />
+                            </div>
                             <table className="w-full">
                                 <thead className="text-4xl border-b-2 text-gray-800">
                                     <tr>
