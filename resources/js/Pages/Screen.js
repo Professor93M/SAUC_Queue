@@ -13,7 +13,7 @@ export default function Screen({ emp, queue }) {
                 className=" flex items-center justify-evenly text-4xl flex-col space-y-4"
                 style={{ height: "78vh" }}
             >
-                <h3 class="text-4xl align-middle mt-5">
+                <h3 className="text-4xl align-middle mt-5">
                     {" "}
                     تسلسل المراجع التالي هو :{" "}
                     <span class="text-red-500 font-bold bg-gray-200 border-2 rounded-lg px-2 text-6xl">

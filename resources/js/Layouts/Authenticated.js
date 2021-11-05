@@ -10,7 +10,7 @@ export default function Authenticated({ auth, header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-200 to-blue-400">
+        <div className="min-h-screen text-gray-100 bg-gradient-to-b from-gray-200 to-blue-400">
             <nav className=" bg-gray-600 border-b py-2">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-40 py-2">
@@ -18,15 +18,16 @@ export default function Authenticated({ auth, header, children }) {
                             <div className="flex-shrink-0 flex items-center">
                                 <ApplicationLogo classes="print:w-20 print:h-20 w-40 h-40" />
                             </div>
-
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                {/* <NavLink href={route('dashboard')} active={route().current('dashboard')}>
-                                    Dashboard
-                                </NavLink> */}
-                            </div>
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
+                            {auth.user.isAdmin === 1 ? (
+                                <div className=" space-x-8  sm:-my-px sm:mr-10 sm:flex">
+                                    <Link href={"/dashboard"}>Dashboard</Link>
+                                </div>
+                            ) : (
+                                ""
+                            )}
                             <div className="ml-3 relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>

@@ -16,8 +16,8 @@ export default function Employee({ auth, queueCount }) {
     return (
         <Authenticated auth={auth}>
             <div
-                style={{ height: "78vh" }}
-                className=" flex items-center justify-center text-4xl flex-col space-y-4  "
+                style={{ height: "77vh" }}
+                className=" flex items-center justify-center text-4xl flex-col text-gray-700 space-y-4  "
             >
                 <h1> عدد المراجعين في الانتظار : {queueCount} </h1>
                 <Button handelClick={handelClick} type="button">
