@@ -1,11 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
+import Input from "@/Components/Input";
+import Button from "@/Components/Button";
+import { Inertia } from "@inertiajs/inertia";
 
 export default function Dashboard({ users, auth }) {
-    console.log(users);
+    let initialState = {
+        empName: "",
+        serveDate: "",
+    };
+    let [search, setSearch] = useState(initialState);
 
+    const handleOnFocus = (e) => {
+        e.target.type = "date";
+    };
+    const handleOnBlur = (e) => {
+        e.target.type = "text";
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setSearch({ ...search, [name]: value });
+        console.log(e.target.value);
+    };
+
+    const handleClick = () => {
+        Inertia.post(`/dashboard?filter=${search}`, {
+            id: auth.user.id,
+        });
+    };
+
+    const { empName, serveDate } = search;
     return (
         <Authenticated auth={auth}>
             <Head title="Dashboard" />
@@ -14,12 +41,34 @@ export default function Dashboard({ users, auth }) {
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 bg-white space-y-6 border-b flex flex-col text-3xl justify-between text-gray-600 border-gray-200">
-                            <div className="flex ">
-                                <label htmlFor="dateInput">
-                                    {" "}
-                                    بحث حسب التاريخ :{" "}
-                                </label>
-                                <input type="date" name="dateInput" />
+                            <div className="flex w-full justify-between h-32 ">
+                                <Input
+                                    placeholder="ادخل اسم الموظف"
+                                    className="border-2 px-2 py-1"
+                                    type="text"
+                                    // autoComplete="true"
+                                    name="empName"
+                                    value={empName}
+                                    handleChange={handleChange}
+                                />
+
+                                <Button
+                                    handelClick={handleClick}
+                                    className="h-12 w-20 text-center"
+                                >
+                                    ابحث
+                                </Button>
+
+                                <Input
+                                    placeholder="ادخل تاريخ المعالجة"
+                                    className="border-2 w-96 px-2 py-1"
+                                    type="text"
+                                    name="serveDate"
+                                    handleFocus={handleOnFocus}
+                                    handleBlur={handleOnBlur}
+                                    value={serveDate}
+                                    handleChange={handleChange}
+                                />
                             </div>
                             <table className="w-full">
                                 <thead className="text-4xl border-b-2 text-gray-800">
