@@ -6,13 +6,13 @@ import Button from "@/Components/Button";
 
 export default function Welcome({ nextqueue }) {
     useEffect(() => {
-        new Audio("./welcome.m4a").play();
+        // new Audio("./welcome.m4a").play();
         // setInterval(new Audio("./welcome.m4a").play(), 20000);
     });
 
     const handelClick = () => {
         window.print();
-        new Audio("./success.m4a").play().then(() => {
+        new Audio("./success.mp3").play().then(() => {
             setTimeout(() => {
                 Inertia.post("/", { nextqueue });
             }, 7000);

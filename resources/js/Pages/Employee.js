@@ -6,7 +6,10 @@ import Button from "@/Components/Button";
 
 export default function Employee({ auth, queueCount }) {
     const handelClick = () => {
-        Inertia.post("/employee", { id: auth.user.id });
+        new Audio("./" + auth.user.id + ".mp3").play();
+        setTimeout(() => {
+            Inertia.post("/employee", { id: auth.user.id })
+        }, 6000)
     };
 
     setTimeout(() => {

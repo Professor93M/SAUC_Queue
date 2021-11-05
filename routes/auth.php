@@ -23,6 +23,10 @@ Route::get('/dashboard', [Controller::class, 'dashboard'])
                 ->middleware('admin')
                 ->name('dashbaord');
 
+Route::get('/dashboard/{id}', [Controller::class, 'dashboardID'])
+                ->middleware('auth')
+                ->name('dashbaordID');
+
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
                 ->middleware('guest')
                 ->name('login');

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import moment from "moment";
 import Authenticated from "@/Layouts/Authenticated";
-import { Head } from "@inertiajs/inertia-react";
+import { Head, Link } from "@inertiajs/inertia-react";
 import Input from "@/Components/Input";
 import Button from "@/Components/Button";
 import { Inertia } from "@inertiajs/inertia";
 
-export default function Dashboard({ users, auth }) {
+export default function Dashboard({ users, auth, count }) {
     let initialState = {
         empName: "",
         serveDate: "",
@@ -40,28 +40,29 @@ export default function Dashboard({ users, auth }) {
             <div className="py-12 ">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white space-y-6 border-b flex flex-col text-3xl justify-between text-gray-600 border-gray-200">
-                            <div className="flex w-full justify-between h-32 ">
-                                <Input
-                                    placeholder="ادخل اسم الموظف"
-                                    className="border-2 px-2 py-1"
-                                    type="text"
-                                    // autoComplete="true"
-                                    name="empName"
-                                    value={empName}
-                                    handleChange={handleChange}
-                                />
+                        <div className="p-6 bg-white space-y-6 border-b flex flex-col text-2xl justify-between text-gray-600 border-gray-200">
+                            <div className="flex items-center w-full justify-between text-lg mb-4">
+                                <div className="flex  items-center">
+                                    <Input
+                                        placeholder="ادخل اسم الموظف"
+                                        className="border-2 px-2 py-1"
+                                        type="text"
+                                        // autoComplete="true"
+                                        name="empName"
+                                        value={empName}
+                                        handleChange={handleChange}
+                                    />
 
-                                <Button
-                                    handelClick={handleClick}
-                                    className="h-12 w-20 text-center"
-                                >
-                                    ابحث
-                                </Button>
-
+                                    <Button
+                                        handelClick={handleClick}
+                                        className="mx-2 text-center"
+                                    >
+                                        ابحث
+                                    </Button>
+                                </div>
                                 <Input
                                     placeholder="ادخل تاريخ المعالجة"
-                                    className="border-2 w-96 px-2 py-1"
+                                    className="border-2 px-2 py-1"
                                     type="text"
                                     name="serveDate"
                                     handleFocus={handleOnFocus}
@@ -69,9 +70,12 @@ export default function Dashboard({ users, auth }) {
                                     value={serveDate}
                                     handleChange={handleChange}
                                 />
+                                <div className="flex items-center">
+                                    <p>عدد المراجعات : &nbsp;</p><span className="text-white font-black bg-gray-700 rounded-lg px-2 select-none cursor-default"> {count} </span>
+                                </div>
                             </div>
                             <table className="w-full">
-                                <thead className="text-4xl border-b-2 text-gray-800">
+                                <thead className="text-2xl border-b-2 text-gray-800">
                                     <tr>
                                         <th className="pb-4">رقم الجهاز</th>
                                         <th className="pb-4">اسم الموظف</th>
@@ -80,7 +84,7 @@ export default function Dashboard({ users, auth }) {
                                         <th className="pb-4"> وقت المعالجة </th>
                                     </tr>
                                 </thead>
-                                <tbody className="text-center text-3xl font-medium text-gray-600">
+                                <tbody className="text-center text-2xl font-medium text-gray-600">
                                     {users.map((user, key) => {
                                         return (
                                             <tr key={key}>
@@ -88,7 +92,7 @@ export default function Dashboard({ users, auth }) {
                                                     {user.users.id}
                                                 </td>
                                                 <td className="pb-4">
-                                                    {user.users.name}
+                                                    <Link className="hover:text-red-500 transition duration-500 ease-in-out" href={`/dashboard/${user.users.id}`}>{user.users.name}</Link>
                                                 </td>
                                                 <td className="pb-4">
                                                     {user.queue}
