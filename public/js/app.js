@@ -3307,7 +3307,7 @@ function Button(_ref) {
       children = _ref.children;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     type: type,
-    className: "inline-flex items-center px-4 py-2 text-gray-900 border border-transparent rounded-md font-semibold text-lg  bg-yellow-200  uppercase tracking-widest active:bg-gray-900 transition ease-in-out duration-150 ".concat(processing && "opacity-25", " ") + className,
+    className: "inline-flex items-center px-4 py-1 text-gray-900 border border-transparent rounded-md font-semibold text-lg  bg-yellow-200  uppercase tracking-widest hover:bg-gray-400 active:bg-gray-900 transition ease-in-out duration-150 ".concat(processing && "opacity-25", " ") + className,
     disabled: processing,
     onClick: handelClick,
     children: children
@@ -4601,12 +4601,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -4630,7 +4624,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Dashboard(_ref) {
   var users = _ref.users,
-      auth = _ref.auth;
+      auth = _ref.auth,
+      count = _ref.count;
   var initialState = {
     empName: "",
     serveDate: ""
@@ -4650,17 +4645,19 @@ function Dashboard(_ref) {
   };
 
   var handleChange = function handleChange(e) {
-    var _e$target = e.target,
-        name = _e$target.name,
-        value = _e$target.value;
-    setSearch(_objectSpread(_objectSpread({}, search), {}, _defineProperty({}, name, value)));
-    console.log(e.target.value);
+    // const { name, value } = e.target;
+    // setSearch({ ...search, [name]: value });
+    // console.log(e.target.value);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.get("/dashboard", {
+      date: e.target.value
+    }, {
+      replaces: true,
+      preserveState: true
+    });
   };
 
   var handleClick = function handleClick() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.post("/dashboard?filter=".concat(search), {
-      id: auth.user.id
-    });
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.get("/dashboard?filter=".concat(search));
   };
 
   var empName = search.empName,
@@ -4676,35 +4673,51 @@ function Dashboard(_ref) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "bg-white overflow-hidden shadow-sm sm:rounded-lg",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "p-6 bg-white space-y-6 border-b flex flex-col text-3xl justify-between text-gray-600 border-gray-200",
+            className: "p-6 bg-white space-y-6 border-b flex flex-col text-2xl justify-between text-gray-600 border-gray-200",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-              className: "flex w-full justify-between h-32 ",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                placeholder: "\u0627\u062F\u062E\u0644 \u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641",
-                className: "border-2 px-2 py-1",
-                type: "text" // autoComplete="true"
-                ,
-                name: "empName",
-                value: empName,
-                handleChange: handleChange
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                handelClick: handleClick,
-                className: "h-12 w-20 text-center",
-                children: "\u0627\u0628\u062D\u062B"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                placeholder: "\u0627\u062F\u062E\u0644 \u062A\u0627\u0631\u064A\u062E \u0627\u0644\u0645\u0639\u0627\u0644\u062C\u0629",
-                className: "border-2 w-96 px-2 py-1",
-                type: "text",
-                name: "serveDate",
-                handleFocus: handleOnFocus,
-                handleBlur: handleOnBlur,
-                value: serveDate,
-                handleChange: handleChange
+              className: "flex items-center w-full justify-between text-lg mb-4",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "flex items-center",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                  placeholder: "\u0627\u062F\u062E\u0644 \u062A\u0627\u0631\u064A\u062E \u0627\u0644\u0645\u0639\u0627\u0644\u062C\u0629",
+                  className: "border-2  px-5 py-1",
+                  type: "text",
+                  name: "serveDate",
+                  handleFocus: handleOnFocus,
+                  handleBlur: handleOnBlur,
+                  value: serveDate,
+                  handleChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+                  href: "/dashboard",
+                  className: "bg-gray-300 text-black rounded-lg p-2 mx-2 hover:bg-blue-300 transition duration-500 ease-in-out",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("svg", {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    width: "16",
+                    height: "16",
+                    fill: "currentColor",
+                    "class": "bi bi-arrow-clockwise",
+                    viewBox: "0 0 16 16",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("path", {
+                      "fill-rule": "evenodd",
+                      d: "M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("path", {
+                      d: "M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+                    })]
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "flex items-center",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+                  children: "\u0639\u062F\u062F \u0627\u0644\u0645\u0631\u0627\u062C\u0639\u0627\u062A : \xA0"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("span", {
+                  className: "text-white font-black bg-gray-700 rounded-lg px-2 select-none cursor-default",
+                  children: [" ", count, " "]
+                })]
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("table", {
               className: "w-full",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("thead", {
-                className: "text-4xl border-b-2 text-gray-800",
+                className: "text-2xl border-b-2 text-gray-800",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                     className: "pb-4",
@@ -4724,7 +4737,7 @@ function Dashboard(_ref) {
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tbody", {
-                className: "text-center text-3xl font-medium text-gray-600",
+                className: "text-center text-2xl font-medium text-gray-600",
                 children: users.map(function (user, key) {
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
@@ -4732,7 +4745,11 @@ function Dashboard(_ref) {
                       children: user.users.id
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                       className: "pb-4",
-                      children: user.users.name
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+                        className: "hover:text-red-500 transition duration-500 ease-in-out",
+                        href: "/dashboard/".concat(user.users.id),
+                        children: user.users.name
+                      })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                       className: "pb-4",
                       children: user.queue
@@ -4787,9 +4804,12 @@ function Employee(_ref) {
       queueCount = _ref.queueCount;
 
   var handelClick = function handelClick() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/employee", {
-      id: auth.user.id
-    });
+    new Audio("./" + auth.user.id + ".mp3").play();
+    setTimeout(function () {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/employee", {
+        id: auth.user.id
+      });
+    }, 6000);
   };
 
   setTimeout(function () {
@@ -4841,13 +4861,13 @@ __webpack_require__.r(__webpack_exports__);
 
 function Welcome(_ref) {
   var nextqueue = _ref.nextqueue;
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    new Audio("./welcome.m4a").play(); // setInterval(new Audio("./welcome.m4a").play(), 20000);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {// new Audio("./welcome.m4a").play();
+    // setInterval(new Audio("./welcome.m4a").play(), 20000);
   });
 
   var handelClick = function handelClick() {
     window.print();
-    new Audio("./success.m4a").play().then(function () {
+    new Audio("./success.mp3").play().then(function () {
       setTimeout(function () {
         _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/", {
           nextqueue: nextqueue

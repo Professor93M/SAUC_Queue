@@ -23,7 +23,12 @@ class Controller extends BaseController
     }
 
     public function dashboard(){
-        $users = Queue::whereNotNull('updated_at')->with('users')->orderBy('updated_at', 'desc')->get();
+        $query = Queue::query();
+        if(request('date')){
+            $users = $query->whereNotNull('updated_at')->whereDate('updated_at', '=', request('date'))->with('users')->orderBy('updated_at', 'desc')->get();
+        }else{
+            $users = $query->whereNotNull('updated_at')->with('users')->orderBy('updated_at', 'desc')->get();
+        }
         return Inertia::render('Dashboard', [
             'users' => $users,
             'count' => $users->count(),

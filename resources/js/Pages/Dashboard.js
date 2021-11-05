@@ -21,15 +21,15 @@ export default function Dashboard({ users, auth, count }) {
     };
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setSearch({ ...search, [name]: value });
-        console.log(e.target.value);
+        // const { name, value } = e.target;
+        // setSearch({ ...search, [name]: value });
+        // console.log(e.target.value);
+        Inertia.get(`/dashboard`, { date: e.target.value }, {replaces: true, preserveState: true});
+
     };
 
     const handleClick = () => {
-        Inertia.post(`/dashboard?filter=${search}`, {
-            id: auth.user.id,
-        });
+        Inertia.get(`/dashboard?filter=${search}`);
     };
 
     const { empName, serveDate } = search;
@@ -42,7 +42,7 @@ export default function Dashboard({ users, auth, count }) {
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 bg-white space-y-6 border-b flex flex-col text-2xl justify-between text-gray-600 border-gray-200">
                             <div className="flex items-center w-full justify-between text-lg mb-4">
-                                <div className="flex  items-center">
+                                {/* <div className="flex  items-center">
                                     <Input
                                         placeholder="ادخل اسم الموظف"
                                         className="border-2 px-2 py-1"
@@ -59,17 +59,25 @@ export default function Dashboard({ users, auth, count }) {
                                     >
                                         ابحث
                                     </Button>
+                                </div> */}
+                                <div className="flex items-center">
+                                    <Input
+                                        placeholder="ادخل تاريخ المعالجة"
+                                        className="border-2  px-5 py-1"
+                                        type="text"
+                                        name="serveDate"
+                                        handleFocus={handleOnFocus}
+                                        handleBlur={handleOnBlur}
+                                        value={serveDate}
+                                        handleChange={handleChange}
+                                    />
+                                    <Link href="/dashboard" className="bg-gray-300 text-black rounded-lg p-2 mx-2 hover:bg-blue-300 transition duration-500 ease-in-out">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                                        </svg>
+                                    </Link>
                                 </div>
-                                <Input
-                                    placeholder="ادخل تاريخ المعالجة"
-                                    className="border-2 px-2 py-1"
-                                    type="text"
-                                    name="serveDate"
-                                    handleFocus={handleOnFocus}
-                                    handleBlur={handleOnBlur}
-                                    value={serveDate}
-                                    handleChange={handleChange}
-                                />
                                 <div className="flex items-center">
                                     <p>عدد المراجعات : &nbsp;</p><span className="text-white font-black bg-gray-700 rounded-lg px-2 select-none cursor-default"> {count} </span>
                                 </div>
