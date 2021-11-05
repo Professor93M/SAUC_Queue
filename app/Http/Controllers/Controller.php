@@ -26,7 +26,7 @@ class Controller extends BaseController
 
     public function dashboard(){
         $users = Queue::whereNotNull('updated_at')->with('users')->get();
-        dd($users);
+        // dd($users);
         return Inertia::render('Dashboard', [
             'users' => $users,
         ]);
