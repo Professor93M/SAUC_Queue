@@ -5,13 +5,18 @@ import { Visitor } from "@/Layouts/Visitor";
 import Button from "@/Components/Button";
 
 export default function Welcome({ nextqueue }) {
+    useEffect(() => {
+        new Audio("./welcome.m4a").play();
+        // setInterval(new Audio("./welcome.m4a").play(), 20000);
+    });
+
     const handelClick = () => {
-        new Audio("./ring.mp3").play().then(() => {
+        window.print();
+        new Audio("./success.m4a").play().then(() => {
             setTimeout(() => {
                 Inertia.post("/", { nextqueue });
-            }, 3000);
+            }, 7000);
         });
-        // window.print();
     };
 
     return (
@@ -19,23 +24,18 @@ export default function Welcome({ nextqueue }) {
             <div style={{ height: "78vh" }} className=" w-full bg-indigo-300">
                 <div
                     style={{ height: "50vh" }}
-                    className="text-center   flex pt-20 flex-col items-center text-4xl justify-around"
+                    className="text-center  space-y-2  flex pt-20 flex-col items-center text-4xl justify-around"
                 >
                     <h1>اهلا بكم في كلية شط العرب</h1>
                     <h2 className=" print:hidden ">
                         يرجى الضغط على الزر للحصول على تسلسل
                     </h2>
-                    <h2 className="text-6xl mb-2">
-                        <span class="bg-gray-400 rounded-lg p-3">
-                            {" "}
-                            رقم المراجع : {nextqueue}{" "}
+                    <h2 className="text-6xl mb-2 pb-2">
+                        <span className="bg-gray-400 rounded-lg p-3">
+                            رقم المراجع : {nextqueue}
                         </span>
                     </h2>
-                    <Button
-                        handelClick={handelClick}
-                        type="button"
-                        // className="py-2 print:hidden px-4 bg-yellow-200 rounded-md border"
-                    >
+                    <Button handelClick={handelClick} type="button">
                         اضغط هنا
                     </Button>
                 </div>
