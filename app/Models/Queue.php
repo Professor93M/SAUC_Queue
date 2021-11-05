@@ -15,7 +15,7 @@ class Queue extends Model
 
     // const UPDATED_AT = NULL;
 
-    public function user(){
+    public function users(){
         return $this->belongsTo(User::class);
     }
 
