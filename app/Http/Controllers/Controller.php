@@ -24,6 +24,12 @@ class Controller extends BaseController
         ]);
     }
 
+    public function dashboard(){
+        return Inertia::render('Dashboard', [
+
+        ]);
+    }
+
     // public function submit(Request $request){
     //     $user = User::findOrFail($request->id);
     //     $user->update([
