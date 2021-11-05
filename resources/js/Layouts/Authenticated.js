@@ -11,7 +11,7 @@ export default function Authenticated({ auth, header, children }) {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-200 to-blue-400">
-            <nav className=" bg-gray-600 border-b ">
+            <nav className=" bg-gray-600 border-b py-2">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-40 py-2">
                         <div className="flex">
