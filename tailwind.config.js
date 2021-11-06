@@ -20,6 +20,7 @@ module.exports = {
                 background: "#f5f5f5",
                 nav: "#157575",
                 btn: "#112758",
+                qnum: "#ead7c7",
             },
         },
 

@@ -26,19 +26,23 @@ export default function Welcome({ nextqueue }) {
                     style={{ height: "60vh" }}
                     className=" space-y-2  flex pt-20 print:pt-4 flex-col print:justify-start print:space-y-6 items-center text-4xl justify-between"
                 >
-                    <h1 className="print:text-xl">اهلا بكم في كلية شط العرب</h1>
-                    <h2 className=" print:hidden ">
-                        يرجى الضغط على الزر للحصول على تسلسل
-                    </h2>
+                    <div className="flex flex-col items-center space-y-3">
+                        <h1 className="print:text-xl">
+                            اهلا بكم في كلية شط العرب
+                        </h1>
+                        <h2 className=" print:hidden ">
+                            يرجى الضغط على الزر للحصول على تسلسل
+                        </h2>
+                    </div>
                     <h2 className="text-6xl print:text-5xl">
-                        <span className="bg-nav  print:text-black text-background rounded-lg p-3">
+                        <span className="bg-qnum  text-black  rounded-lg p-3">
                             رقم المراجع : {nextqueue}
                         </span>
                     </h2>
                     <Button
                         handelClick={handelClick}
                         type="button"
-                        className="bg-btn print:hidden text-background text-5xl"
+                        className=" bg-green-500 print:hidden text-background text-5xl"
                     >
                         اضغط هنا
                     </Button>

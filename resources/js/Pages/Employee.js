@@ -26,7 +26,7 @@ export default function Employee({ auth, queueCount }) {
                 <Button
                     handelClick={handelClick}
                     type="button"
-                    className="bg-btn text-background text-3xl"
+                    className="bg-green-500 text-background text-3xl"
                 >
                     التالي
                 </Button>
