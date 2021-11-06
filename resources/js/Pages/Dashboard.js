@@ -40,10 +40,10 @@ export default function Dashboard({ users, auth, count }) {
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 bg-white space-y-6 border-b flex flex-col text-2xl justify-between text-gray-600 border-gray-200">
                             <div className="flex items-center w-full justify-between text-lg mb-4">
-                                <div className="flex items-center">
+                                <div className="flex items-center h-10">
                                     <Input
                                         placeholder="ادخل تاريخ المعالجة"
-                                        className="border-2  px-5 py-1"
+                                        className="border-4 focus:outline-none focus:border-0 w-96 px-5 py-2"
                                         type="text"
                                         name="serveDate"
                                         handleFocus={handleOnFocus}
@@ -53,12 +53,12 @@ export default function Dashboard({ users, auth, count }) {
                                     />
                                     <Link
                                         href="/dashboard"
-                                        className="bg-green-500 text-black rounded-lg p-2 mx-2 hover:bg-green-300 transition duration-500 ease-in-out"
+                                        className="bg-green-500 text-black rounded-lg p-3 mx-2 hover:bg-green-300 transition duration-500 ease-in-out"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
+                                            width="20"
+                                            height="20"
                                             fill="currentColor"
                                             className="bi bi-arrow-clockwise"
                                             viewBox="0 0 16 16"

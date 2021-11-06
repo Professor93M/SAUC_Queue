@@ -3544,7 +3544,7 @@ function Input(_ref) {
       type: type,
       name: name,
       value: value,
-      className: "border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm " + className,
+      className: "border-gray-300 rounded-md shadow-sm " + className,
       ref: input,
       placeholder: placeholder,
       autoComplete: autoComplete,
@@ -4688,10 +4688,10 @@ function Dashboard(_ref) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
               className: "flex items-center w-full justify-between text-lg mb-4",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-                className: "flex items-center",
+                className: "flex items-center h-10",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
                   placeholder: "\u0627\u062F\u062E\u0644 \u062A\u0627\u0631\u064A\u062E \u0627\u0644\u0645\u0639\u0627\u0644\u062C\u0629",
-                  className: "border-2  px-5 py-1",
+                  className: "border-4 focus:outline-none focus:border-0 w-96 px-5 py-2",
                   type: "text",
                   name: "serveDate",
                   handleFocus: handleOnFocus,
@@ -4700,11 +4700,11 @@ function Dashboard(_ref) {
                   handleChange: handleChange
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
                   href: "/dashboard",
-                  className: "bg-green-500 text-black rounded-lg p-2 mx-2 hover:bg-green-300 transition duration-500 ease-in-out",
+                  className: "bg-green-500 text-black rounded-lg p-3 mx-2 hover:bg-green-300 transition duration-500 ease-in-out",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("svg", {
                     xmlns: "http://www.w3.org/2000/svg",
-                    width: "16",
-                    height: "16",
+                    width: "20",
+                    height: "20",
                     fill: "currentColor",
                     className: "bi bi-arrow-clockwise",
                     viewBox: "0 0 16 16",
