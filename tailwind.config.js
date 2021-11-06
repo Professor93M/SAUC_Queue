@@ -16,6 +16,11 @@ module.exports = {
             screens: {
                 print: { raw: "print" },
             },
+            colors: {
+                background: "#f5f5f5",
+                nav: "#157575",
+                btn: "#112758",
+            },
         },
 
         variants: {

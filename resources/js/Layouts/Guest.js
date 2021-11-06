@@ -7,7 +7,7 @@ export default function Guest({ children, classes }) {
         <div className="min-h-screen flex flex-col sm:justify-center items-center py-2 sm:pt-0 text-gray-100 bg-gray-600">
             <div>
                 <Link href="/">
-                    <ApplicationLogo classes={classes} />
+                    <ApplicationLogo />
                 </Link>
             </div>
 

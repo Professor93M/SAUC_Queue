@@ -8,8 +8,8 @@ export default function Employee({ auth, queueCount }) {
     const handelClick = () => {
         new Audio("./" + auth.user.id + ".mp3").play();
         setTimeout(() => {
-            Inertia.post("/employee", { id: auth.user.id })
-        }, 6000)
+            Inertia.post("/employee", { id: auth.user.id });
+        }, 6000);
     };
 
     setTimeout(() => {
@@ -23,8 +23,12 @@ export default function Employee({ auth, queueCount }) {
                 className=" flex items-center justify-center text-4xl flex-col text-gray-700 space-y-4  "
             >
                 <h1> عدد المراجعين في الانتظار : {queueCount} </h1>
-                <Button handelClick={handelClick} type="button">
-                    المراجع التالي
+                <Button
+                    handelClick={handelClick}
+                    type="button"
+                    className="bg-btn text-background text-3xl"
+                >
+                    التالي
                 </Button>
             </div>
         </Authenticated>

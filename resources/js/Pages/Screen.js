@@ -13,17 +13,17 @@ export default function Screen({ emp, queue }) {
                 className=" flex items-center justify-evenly text-4xl flex-col space-y-4"
                 style={{ height: "78vh" }}
             >
-                <h3 className="text-4xl align-middle mt-5">
+                <h3 className="text-6xl align-middle mt-5">
                     {" "}
                     تسلسل المراجع التالي هو :{" "}
-                    <span class="text-red-500 font-bold bg-gray-200 border-2 rounded-lg px-2 text-6xl">
+                    <span class="text-red-500 font-bold bg-gray-200 border-2 rounded-lg px-2 text-7xl">
                         {" "}
                         {queue.queue}{" "}
                     </span>{" "}
                 </h3>
 
                 <div class="grid grid-cols-2">
-                    <div class="m-4 rounded-lg shadow-lg bg-purple-600">
+                    <div class="m-4 rounded-lg shadow-lg bg-nav">
                         <div class="text-center m-2 p-3 rounded-lg text-black">
                             <div class="text-white font-black text-5xl pb-3">
                                 {emp.name}
@@ -32,7 +32,7 @@ export default function Screen({ emp, queue }) {
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="200"
                                 height="200"
-                                fill="currentColor"
+                                fill="#fff"
                                 class="bi bi-person-square my-3 mx-auto opacity-40"
                                 viewBox="0 0 16 16"
                             >
@@ -41,7 +41,7 @@ export default function Screen({ emp, queue }) {
                             </svg>
                         </div>
                     </div>
-                    <div class="m-4 rounded-lg shadow-lg bg-purple-600">
+                    <div class="m-4 rounded-lg shadow-lg bg-nav">
                         <div class="text-center m-2 p-3 rounded-lg text-black">
                             <div class="text-white font-black text-5xl pb-3">
                                 {emp.id}
@@ -50,7 +50,7 @@ export default function Screen({ emp, queue }) {
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="200"
                                 height="200"
-                                fill="currentColor"
+                                fill="#fff"
                                 class="bi bi-pc-display-horizontal my-3 mx-auto opacity-40"
                                 viewBox="0 0 16 16"
                             >

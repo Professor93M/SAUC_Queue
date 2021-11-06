@@ -32,7 +32,7 @@
             outline: 1px solid slategrey;
         }
     </style>
-    <body class="antialiased font-sans">
+    <body class="antialiased font-sans bg-background  text-gray-700">
         @inertia
 
         @env ('local')

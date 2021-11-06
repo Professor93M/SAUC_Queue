@@ -10,8 +10,8 @@ export default function Authenticated({ auth, header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen text-gray-100 bg-gradient-to-b from-gray-200 to-blue-400">
-            <nav className=" bg-gray-600 border-b py-2">
+        <div className="min-h-screen text-gray-100  ">
+            <nav className=" bg-nav border-b py-2">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-40 py-2">
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
@@ -21,7 +21,7 @@ export default function Authenticated({ auth, header, children }) {
                                         <span className="inline-flex rounded-md border-2 border-gray-200">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center bg-gray-600 px-3 py-2 border border-transparent text-xl leading-4 font-medium rounded-md text-white hover:text-gray-200 focus:outline-none transition ease-in-out duration-150"
+                                                className="inline-flex items-center bg-nav px-3 py-2 border border-transparent text-xl leading-4 font-medium rounded-md text-white hover:text-gray-200 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 {auth.user.name}
 
@@ -66,7 +66,7 @@ export default function Authenticated({ auth, header, children }) {
                         </div>
                         <div className="flex">
                             <div className="flex-shrink-0 flex items-center">
-                                <ApplicationLogo classes="print:w-20 print:h-20 w-40 h-40" />
+                                <ApplicationLogo />
                             </div>
                         </div>
                         <div className="-mr-2 flex items-center sm:hidden">

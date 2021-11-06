@@ -3274,7 +3274,7 @@ function ApplicationLogo(_ref) {
     className: classes,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
       src: "./logo.png",
-      className: "object-fill",
+      className: "object-fill w-20 h-20 print:w-9 print:h-10",
       alt: "logo"
     })
   });
@@ -3307,7 +3307,7 @@ function Button(_ref) {
       children = _ref.children;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     type: type,
-    className: "inline-flex items-center px-4 py-1 text-gray-900 border border-transparent rounded-md font-semibold text-lg  bg-yellow-200  uppercase tracking-widest hover:bg-gray-400 active:bg-gray-900 transition ease-in-out duration-150 ".concat(processing && "opacity-25", " ") + className,
+    className: "px-8 py-4 rounded-md ".concat(className),
     disabled: processing,
     onClick: handelClick,
     children: children
@@ -3743,9 +3743,9 @@ function Authenticated(_ref) {
       setShowingNavigationDropdown = _useState2[1];
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    className: "min-h-screen text-gray-100 bg-gradient-to-b from-gray-200 to-blue-400",
+    className: "min-h-screen text-gray-100  ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("nav", {
-      className: " bg-gray-600 border-b py-2",
+      className: " bg-nav border-b py-2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
@@ -3760,7 +3760,7 @@ function Authenticated(_ref) {
                     className: "inline-flex rounded-md border-2 border-gray-200",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("button", {
                       type: "button",
-                      className: "inline-flex items-center bg-gray-600 px-3 py-2 border border-transparent text-xl leading-4 font-medium rounded-md text-white hover:text-gray-200 focus:outline-none transition ease-in-out duration-150",
+                      className: "inline-flex items-center bg-nav px-3 py-2 border border-transparent text-xl leading-4 font-medium rounded-md text-white hover:text-gray-200 focus:outline-none transition ease-in-out duration-150",
                       children: [auth.user.name, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("svg", {
                         className: "ml-2 -mr-0.5 h-6 w-6",
                         xmlns: "http://www.w3.org/2000/svg",
@@ -3793,9 +3793,7 @@ function Authenticated(_ref) {
             className: "flex",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
               className: "flex-shrink-0 flex items-center",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                classes: "print:w-20 print:h-20 w-40 h-40"
-              })
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_1__["default"], {})
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "-mr-2 flex items-center sm:hidden",
@@ -3897,9 +3895,7 @@ function Guest(_ref) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
         href: "/",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          classes: classes
-        })
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_1__["default"], {})
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "w-full sm:max-w-md mt-6 px-6 py-4 text-gray-700 bg-white shadow-md overflow-hidden sm:rounded-lg",
@@ -3934,27 +3930,31 @@ var Visitor = function Visitor(_ref) {
       classes = _ref.classes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "flex text-3xl items-center py-2 text-gray-100 bg-gray-600 justify-around  m-auto",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h2", {
-        className: "text-right",
-        children: ["\u0646\u0638\u0627\u0645 \u0627\u0644\u0637\u0627\u0628\u0648\u0631 \u0627\u0644\u0627\u0644\u0643\u062A\u0631\u0648\u0646\u064A ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), " \u0644\u0643\u0644\u064A\u0629 \u0634\u0637 \u0627\u0644\u0639\u0631\u0628"]
+      className: "flex h-28 items-center py-2  text-gray-100 print:text-black bg-nav justify-around m-auto",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "flex text-xl print:text-xs flex-col items-center justify-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "\u0646\u0638\u0627\u0645 \u0627\u0644\u0637\u0627\u0628\u0648\u0631 \u0627\u0644\u0627\u0644\u0643\u062A\u0631\u0648\u0646\u064A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "\u0643\u0644\u064A\u0629 \u0634\u0637 \u0627\u0644\u0639\u0631\u0628"
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "flex print:text-sm print:items-end text-3xl space-y-1 items-center justify-center",
+        className: "flex print:text-xs text-right  print:space-x-0 print:space-y-0  text-lg space-y-1 items-center justify-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          dir: "rtl",
-          className: "flex justify-around flex-col h-28",
+          // dir="rtl"
+          className: "flex justify-around print:justify-start flex-col ",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
             children: "\u0648\u0632\u0627\u0631\u0629 \u0627\u0644\u062A\u0639\u0644\u064A\u0645 \u0627\u0644\u0639\u0627\u0644\u064A \u0648\u0627\u0644\u0628\u062D\u062B \u0627\u0644\u0639\u0644\u0645\u064A"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
             children: "\u0643\u0644\u064A\u0629 \u0634\u0637 \u0627\u0644\u0639\u0631\u0628 \u0627\u0644\u062C\u0627\u0645\u0639\u0629"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          classes: classes
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_1__["default"], {})
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("main", {
       dir: "rtl",
-      className: "bg-indigo-300",
       children: [" ", children, " "]
     })]
   });
@@ -4833,7 +4833,8 @@ function Employee(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
         handelClick: handelClick,
         type: "button",
-        children: "\u0627\u0644\u0645\u0631\u0627\u062C\u0639 \u0627\u0644\u062A\u0627\u0644\u064A"
+        className: "bg-btn text-background text-3xl",
+        children: "\u0627\u0644\u062A\u0627\u0644\u064A"
       })]
     })
   });
@@ -4888,27 +4889,28 @@ function Welcome(_ref) {
       style: {
         height: "78vh"
       },
-      className: " w-full bg-indigo-300",
+      className: " w-full ",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         style: {
-          height: "50vh"
+          height: "60vh"
         },
-        className: "text-center  space-y-2  flex pt-20 flex-col items-center text-4xl justify-around",
+        className: " space-y-2  flex pt-20 print:pt-4 flex-col print:justify-start print:space-y-6 items-center text-4xl justify-between",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+          className: "print:text-xl",
           children: "\u0627\u0647\u0644\u0627 \u0628\u0643\u0645 \u0641\u064A \u0643\u0644\u064A\u0629 \u0634\u0637 \u0627\u0644\u0639\u0631\u0628"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
           className: " print:hidden ",
           children: "\u064A\u0631\u062C\u0649 \u0627\u0644\u0636\u063A\u0637 \u0639\u0644\u0649 \u0627\u0644\u0632\u0631 \u0644\u0644\u062D\u0635\u0648\u0644 \u0639\u0644\u0649 \u062A\u0633\u0644\u0633\u0644"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
-          className: "text-6xl mb-2 pb-2",
+          className: "text-6xl print:text-5xl",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
-            className: "bg-gray-400 rounded-lg p-3",
+            className: "bg-nav  print:text-black text-background rounded-lg p-3",
             children: ["\u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u0627\u062C\u0639 : ", nextqueue]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
           handelClick: handelClick,
           type: "button",
-          className: "",
+          className: "bg-btn print:hidden text-background text-5xl",
           children: "\u0627\u0636\u063A\u0637 \u0647\u0646\u0627"
         })]
       })
@@ -4952,15 +4954,15 @@ function Screen(_ref) {
         height: "78vh"
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h3", {
-        className: "text-4xl align-middle mt-5",
+        className: "text-6xl align-middle mt-5",
         children: [" ", "\u062A\u0633\u0644\u0633\u0644 \u0627\u0644\u0645\u0631\u0627\u062C\u0639 \u0627\u0644\u062A\u0627\u0644\u064A \u0647\u0648 :", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
-          "class": "text-red-500 font-bold bg-gray-200 border-2 rounded-lg px-2 text-6xl",
+          "class": "text-red-500 font-bold bg-gray-200 border-2 rounded-lg px-2 text-7xl",
           children: [" ", queue.queue, " "]
         }), " "]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         "class": "grid grid-cols-2",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          "class": "m-4 rounded-lg shadow-lg bg-purple-600",
+          "class": "m-4 rounded-lg shadow-lg bg-nav",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             "class": "text-center m-2 p-3 rounded-lg text-black",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -4970,7 +4972,7 @@ function Screen(_ref) {
               xmlns: "http://www.w3.org/2000/svg",
               width: "200",
               height: "200",
-              fill: "currentColor",
+              fill: "#fff",
               "class": "bi bi-person-square my-3 mx-auto opacity-40",
               viewBox: "0 0 16 16",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
@@ -4981,7 +4983,7 @@ function Screen(_ref) {
             })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          "class": "m-4 rounded-lg shadow-lg bg-purple-600",
+          "class": "m-4 rounded-lg shadow-lg bg-nav",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             "class": "text-center m-2 p-3 rounded-lg text-black",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -4991,7 +4993,7 @@ function Screen(_ref) {
               xmlns: "http://www.w3.org/2000/svg",
               width: "200",
               height: "200",
-              fill: "currentColor",
+              fill: "#fff",
               "class": "bi bi-pc-display-horizontal my-3 mx-auto opacity-40",
               viewBox: "0 0 16 16",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {

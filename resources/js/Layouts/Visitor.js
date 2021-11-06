@@ -4,25 +4,25 @@ import ApplicationLogo from "@/Components/ApplicationLogo";
 export const Visitor = ({ children, classes }) => {
     return (
         <>
-            <div className="flex text-3xl items-center py-2 text-gray-100 bg-gray-600 justify-around  m-auto">
-                <h2 className="text-right">
-                    نظام الطابور الالكتروني <br /> لكلية شط العرب
-                </h2>
-                <div className="flex print:text-sm print:items-end text-3xl space-y-1 items-center justify-center">
+            <div className="flex h-28 items-center py-2  text-gray-100 print:text-black bg-nav justify-around m-auto">
+                <div className="flex text-xl print:text-xs flex-col items-center justify-center">
+                    <h2>نظام الطابور الالكتروني</h2>
+                    <h2>كلية شط العرب</h2>
+                </div>
+                <div className="flex print:text-xs text-right  print:space-x-0 print:space-y-0  text-lg space-y-1 items-center justify-center">
                     <div
-                        dir="rtl"
-                        className="flex justify-around flex-col h-28"
+                        // dir="rtl"
+                        className="flex justify-around print:justify-start flex-col "
                     >
                         <h2>وزارة التعليم العالي والبحث العلمي</h2>
                         <h2>كلية شط العرب الجامعة</h2>
                     </div>
-                    <ApplicationLogo classes={classes} />
+                    <div className="">
+                        <ApplicationLogo />
+                    </div>
                 </div>
             </div>
-            <main dir="rtl" className="bg-indigo-300">
-                {" "}
-                {children}{" "}
-            </main>
+            <main dir="rtl"> {children} </main>
         </>
     );
 };
