@@ -12,7 +12,7 @@ export default function Button({
             type={type}
             className={
                 processing
-                    ? `pointer-events-none px-8 py-2  rounded-md bg-gray-400 ${className}`
+                    ? `pointer-events-none   rounded-md bg-gray-400 p-4 text-background`
                     : `  rounded-md  text-background ${className}`
             }
             disabled={processing}

@@ -39,9 +39,9 @@ export default function Employee({ auth, queueCount }) {
                     handelClick={handelClick}
                     type="button"
                     processing={disabled}
-                    className=" py-4 bg-green-500 text-background text-3xl"
+                    className=" py-4 px-6 bg-green-500  text-background text-4xl"
                 >
-                    التالي
+                    {disabled ? "انتظر قليلاً" : "التالي "}
                 </Button>
             </div>
         </Authenticated>

@@ -3307,7 +3307,7 @@ function Button(_ref) {
       children = _ref.children;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     type: type,
-    className: processing ? "pointer-events-none px-8 py-2  rounded-md bg-gray-400 ".concat(className) : "  rounded-md  text-background ".concat(className),
+    className: processing ? "pointer-events-none   rounded-md bg-gray-400 p-4 text-background" : "  rounded-md  text-background ".concat(className),
     disabled: processing,
     onClick: handelClick,
     children: children
@@ -4306,7 +4306,7 @@ function Login(_ref) {
           className: "underline text-sm text-gray-600 hover:text-gray-900",
           children: "Forgot your password?"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          className: "ml-4 bg-green-500",
+          className: "ml-4 py-1 px-6 bg-green-500",
           processing: processing,
           children: "Log in"
         })]
@@ -4444,7 +4444,7 @@ function Register() {
           className: "underline text-sm text-gray-600 hover:text-gray-900",
           children: "Already registered?"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          className: "ml-4 bg-green-500",
+          className: "ml-4 py-1 px-6 bg-green-500",
           processing: processing,
           children: "Register"
         })]
@@ -4922,8 +4922,8 @@ function Employee(_ref) {
         handelClick: handelClick,
         type: "button",
         processing: disabled,
-        className: " py-4 bg-green-500 text-background text-3xl",
-        children: "\u0627\u0644\u062A\u0627\u0644\u064A"
+        className: " py-4 px-6 bg-green-500  text-background text-4xl",
+        children: disabled ? "انتظر قليلاً" : "التالي "
       })]
     })]
   });
@@ -5026,8 +5026,8 @@ function Welcome(_ref) {
           handelClick: handelClick,
           type: "button",
           processing: disabled,
-          className: " bg-green-500 print:hidden py-4 text-background text-5xl",
-          children: "\u0627\u0636\u063A\u0637 \u0647\u0646\u0627"
+          className: "  print:hidden p-4 bg-green-500 text-background text-5xl",
+          children: disabled ? "انتظر قليلاً" : "اضغط هنا"
         })]
       })
     })]

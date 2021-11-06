@@ -100,7 +100,7 @@ export default function Login({ status, canResetPassword }) {
                     )}
 
                     <Button
-                        className="ml-4 bg-green-500"
+                        className="ml-4 py-1 px-6 bg-green-500"
                         processing={processing}
                     >
                         Log in
