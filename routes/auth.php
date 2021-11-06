@@ -50,7 +50,7 @@ Route::get('/employee/show', [Controller::class, 'show'])
                 ->middleware('auth')
                 ->name('show');
 
-Route::post('/employee/{id}/edit', [Controller::class, 'edit'])
+Route::get('/employee/{id}/edit', [Controller::class, 'edit'])
                 ->middleware('admin')
                 ->name('edit');
 
