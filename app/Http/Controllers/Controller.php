@@ -28,9 +28,9 @@ class Controller extends BaseController
     public function dashboard(){
         $query = Queue::query();
         if(request('date')){
-            $users = $query->whereNotNull('updated_at')->whereDate('updated_at', '=', request('date'))->with('users')->orderBy('updated_at', 'desc')->simplePaginate(50);
+            $users = $query->whereNotNull('updated_at')->whereDate('updated_at', '=', request('date'))->with('users')->orderBy('updated_at', 'desc')->simplePaginate(5);
         }else{
-            $users = $query->whereNotNull('updated_at')->with('users')->orderBy('updated_at', 'desc')->simplePaginate(50);
+            $users = $query->whereNotNull('updated_at')->with('users')->orderBy('updated_at', 'desc')->simplePaginate(5);
         }
         return Inertia::render('Dashboard', [
             'users' => $users,
@@ -40,10 +40,10 @@ class Controller extends BaseController
 
     public function dashboardID($id){
         if(intval($id) === Auth::user()->id){
-            $queue = Queue::where('users_id', Auth::user()->id)->with('users')->orderBy('updated_at')->simplePaginate(50);
+            $queue = Queue::where('users_id', Auth::user()->id)->with('users')->orderBy('updated_at')->simplePaginate(5);
         }elseif(Auth::user()->isAdmin){
             User::findOrFail($id);
-            $queue = Queue::where('users_id', $id)->with('users')->orderBy('updated_at', 'desc')->simplePaginate(50);
+            $queue = Queue::where('users_id', $id)->with('users')->orderBy('updated_at', 'desc')->simplePaginate(5);
         }else{
             return abort(404);
         }
