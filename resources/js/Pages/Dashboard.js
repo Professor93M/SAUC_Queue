@@ -8,6 +8,7 @@ import { Inertia } from "@inertiajs/inertia";
 import Pagination from "@/Components/Pagination";
 
 export default function Dashboard({ users, auth, count }) {
+    console.log(users);
     let initialState = {
         serveDate: "",
     };
@@ -126,7 +127,10 @@ export default function Dashboard({ users, auth, count }) {
                                     })}
                                 </tbody>
                             </table>
-                            <Pagination links={users.links} />
+                            <Pagination
+                                nextPage={users.next_page_url}
+                                prevPage={users.prev_page_url}
+                            />
                         </div>
                     </div>
                 </div>

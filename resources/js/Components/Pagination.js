@@ -1,18 +1,21 @@
 import React from "react";
 import { Link } from "@inertiajs/inertia-react";
 
-const Pagination = ({ links }) => {
+const Pagination = ({ nextPage, prevPage }) => {
     return (
         <div dir="ltr" className="flex max-w-lg justify-around">
-            {links.map((link, key) => (
-                <Link
-                    key={key}
-                    className="p-2 bg-green-500 text-background rounded-md"
-                    href={link.url === null ? "#" : link.url}
-                >
-                    {link.label}
-                </Link>
-            ))}
+            <Link
+                className="p-2 bg-green-500 text-background rounded-md"
+                href={prevPage === null ? "#" : prevPage}
+            >
+                السابق{" "}
+            </Link>
+            <Link
+                className="p-2 bg-green-500 text-background rounded-md"
+                href={nextPage === null ? "#" : nextPage}
+            >
+                التالي
+            </Link>
         </div>
     );
 };
