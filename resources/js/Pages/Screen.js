@@ -5,7 +5,7 @@ import { Visitor } from "@/Layouts/Visitor";
 export default function Screen({ emp, queue }) {
     setTimeout(() => {
         Inertia.reload();
-    }, 10000);
+    }, 2000);
 
     return (
         <Visitor classes="print:w-20 print:h-20 w-40 h-40">
@@ -25,7 +25,7 @@ export default function Screen({ emp, queue }) {
                 <div class="grid grid-cols-2">
                     <div class="m-4 rounded-lg shadow-lg bg-nav">
                         <div class="text-center m-2 p-3 rounded-lg text-black">
-                            <div class="text-white font-black text-5xl pb-3">
+                            <div class="text-white font-black text-7xl pb-3">
                                 {emp.name}
                             </div>
                             <svg
@@ -43,7 +43,7 @@ export default function Screen({ emp, queue }) {
                     </div>
                     <div class="m-4 rounded-lg shadow-lg bg-nav">
                         <div class="text-center m-2 p-3 rounded-lg text-black">
-                            <div class="text-white font-black text-5xl pb-3">
+                            <div class="text-white font-black text-7xl pb-3">
                                 {emp.id}
                             </div>
                             <svg

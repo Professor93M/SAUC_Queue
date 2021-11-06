@@ -5,7 +5,7 @@ export default function ApplicationLogo({ classes }) {
         <div className={classes}>
             <img
                 src="/logo.png"
-                className="object-fill w-20 h-20 print:w-9 print:h-10"
+                className="object-fill w-24 h-24 print:w-9 print:h-9"
                 alt="logo"
             />
         </div>

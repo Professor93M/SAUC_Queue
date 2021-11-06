@@ -35,8 +35,8 @@ export default function Welcome({ nextqueue }) {
                         </h2>
                     </div>
                     <h2 className="text-6xl print:text-5xl">
-                        <span className="bg-qnum  text-black  rounded-lg p-3">
-                            رقم المراجع : {nextqueue}
+                        <span className=" text-black font-bold rounded-lg p-3">
+                            رقم المراجع التالي : {nextqueue}
                         </span>
                     </h2>
                     <Button

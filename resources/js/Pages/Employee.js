@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Head } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Button";
 
 export default function Employee({ auth, queueCount }) {
-    const handelClick = () => {
-        new Audio("./" + auth.user.id + ".mp3").play();
-        setTimeout(() => {
-            Inertia.post("/employee", { id: auth.user.id });
-        }, 6000);
+    const playSound = (id) => {
+        new Audio("./" + id + ".mp3").play();
     };
+
+    const handelClick = () => {
+        Inertia.post("/employee", { id: auth.user.id });
+    };
+
+    useEffect(() => {
+        playSound(auth.user.id);
+    }, [queueCount]);
 
     setTimeout(() => {
         Inertia.reload();

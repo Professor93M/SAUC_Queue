@@ -11,9 +11,9 @@ export default function Authenticated({ auth, header, children }) {
 
     return (
         <div className="min-h-screen text-gray-100  ">
-            <nav className=" bg-nav border-b py-2">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between py-2">
+            <nav className=" bg-nav border-b ">
+                <div className=" mx-auto  h-28 px-4 sm:px-6 lg:px-8">
+                    <div className="flex h-full justify-around items-center">
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
                             <div className="ml-3 relative">
                                 <Dropdown>
@@ -21,7 +21,7 @@ export default function Authenticated({ auth, header, children }) {
                                         <span className="inline-flex rounded-md border-2 border-gray-200">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center bg-nav px-3 py-2 border border-transparent text-xl leading-4 font-medium rounded-md text-white hover:text-gray-200 focus:outline-none transition ease-in-out duration-150"
+                                                className="inline-flex items-center bg-nav px-3 py-2 border border-transparent text-2xl leading-4 font-medium rounded-md text-white hover:text-gray-200 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 {auth.user.name}
 
@@ -51,7 +51,7 @@ export default function Authenticated({ auth, header, children }) {
                                             method="get"
                                             as="button"
                                         >
-                                            Dashboard
+                                            السجل
                                         </Dropdown.Link>
                                         {auth.user.isAdmin === 1 ? (
                                             <Dropdown.Link
@@ -59,7 +59,7 @@ export default function Authenticated({ auth, header, children }) {
                                                 method="get"
                                                 as="button"
                                             >
-                                                Add user
+                                                إضافة موظف
                                             </Dropdown.Link>
                                         ) : (
                                             ""
@@ -69,17 +69,22 @@ export default function Authenticated({ auth, header, children }) {
                                             method="post"
                                             as="button"
                                         >
-                                            Log Out
+                                            تسجيل خروج{" "}
                                         </Dropdown.Link>
                                     </Dropdown.Content>
                                 </Dropdown>
                             </div>
                         </div>
                         <div className="flex">
-                            <div className="flex-shrink-0 flex items-center">
+                            <div className="flex-shrink-0 flex items-center space-x-3">
+                                <div className="flex text-xl print:text-xs flex-col  text-right">
+                                    <h2>نظام الطابور الالكتروني</h2>
+                                    <h2>كلية شط العرب</h2>
+                                </div>
                                 <ApplicationLogo />
                             </div>
                         </div>
+
                         <div className="-mr-2 flex items-center sm:hidden">
                             <button
                                 onClick={() =>

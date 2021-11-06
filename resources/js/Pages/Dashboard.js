@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import moment from "moment";
+import "moment/locale/ar";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head, Link } from "@inertiajs/inertia-react";
 import Input from "@/Components/Input";
-import Button from "@/Components/Button";
 import { Inertia } from "@inertiajs/inertia";
 
 export default function Dashboard({ users, auth, count }) {
@@ -59,7 +59,7 @@ export default function Dashboard({ users, auth, count }) {
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="20"
                                             height="20"
-                                            fill="currentColor"
+                                            fill="#fff"
                                             className="bi bi-arrow-clockwise"
                                             viewBox="0 0 16 16"
                                         >
