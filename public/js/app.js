@@ -3307,7 +3307,7 @@ function Button(_ref) {
       children = _ref.children;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     type: type,
-    className: "px-8 py-4 rounded-md ".concat(className),
+    className: "px-8 py-2 rounded-md bg-green-500 text-background ".concat(className),
     disabled: processing,
     onClick: handelClick,
     children: children
@@ -3492,7 +3492,7 @@ var DropdownLink = function DropdownLink(_ref4) {
     href: href,
     method: method,
     as: as,
-    className: "block w-full px-4 py-2 text-right text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out",
+    className: "block w-full px-4 py-2 text-right text-lg leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out",
     children: children
   });
 };
@@ -4210,7 +4210,7 @@ function Login(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Layouts_Guest__WEBPACK_IMPORTED_MODULE_3__["default"], {
     classes: "print:w-20 print:h-20 w-40 h-40",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.Head, {
-      title: "Log in"
+      title: "\u062A\u0633\u062C\u064A\u0644 \u062F\u062E\u0648\u0644"
     }), status && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
       className: "mb-4 font-medium text-sm text-green-600",
       children: status
@@ -4226,7 +4226,7 @@ function Login(_ref) {
           type: "text",
           name: "email",
           value: data.email,
-          className: "mt-1 block w-full",
+          className: "mt-1 py-2 block w-full",
           autoComplete: "username",
           isFocused: true,
           handleChange: onHandleChange
@@ -4240,7 +4240,7 @@ function Login(_ref) {
           type: "password",
           name: "password",
           value: data.password,
-          className: "mt-1 block w-full",
+          className: "mt-1 py-2 block w-full",
           autoComplete: "current-password",
           handleChange: onHandleChange
         })]
@@ -4348,7 +4348,7 @@ function Register() {
           type: "text",
           name: "name",
           value: data.name,
-          className: "mt-1 block w-full",
+          className: "mt-1 py-2 block w-full",
           autoComplete: "name",
           isFocused: true,
           handleChange: onHandleChange,
@@ -4363,7 +4363,7 @@ function Register() {
           type: "email",
           name: "email",
           value: data.email,
-          className: "mt-1 block w-full",
+          className: "mt-1 py-2 block w-full",
           autoComplete: "username",
           handleChange: onHandleChange,
           required: true
@@ -4377,7 +4377,7 @@ function Register() {
           type: "password",
           name: "password",
           value: data.password,
-          className: "mt-1 block w-full",
+          className: "mt-1 py-2 block w-full",
           autoComplete: "new-password",
           handleChange: onHandleChange,
           required: true
@@ -4391,7 +4391,7 @@ function Register() {
           type: "password",
           name: "password_confirmation",
           value: data.password_confirmation,
-          className: "mt-1 block w-full",
+          className: "mt-1 py-2 block w-full",
           handleChange: onHandleChange,
           required: true
         })]
@@ -4684,7 +4684,7 @@ function Dashboard(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
     auth: auth,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.Head, {
-      title: "Dashboard"
+      title: "\u0627\u0644\u0633\u062C\u0644"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "py-12 ",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
@@ -4821,6 +4821,7 @@ __webpack_require__.r(__webpack_exports__);
 function Employee(_ref) {
   var auth = _ref.auth,
       queueCount = _ref.queueCount;
+  var counter = queueCount;
 
   var playSound = function playSound(id) {
     new Audio("./" + id + ".mp3").play();
@@ -4834,26 +4835,28 @@ function Employee(_ref) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     playSound(auth.user.id);
-  }, [queueCount]);
+  }, [counter]);
   setTimeout(function () {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
   }, 10000);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
     auth: auth,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      title: "\u0627\u0644\u0645\u0648\u0638\u0641"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       style: {
-        height: "77vh"
+        height: "60vh"
       },
-      className: " flex items-center justify-center text-4xl flex-col text-gray-700 space-y-4  ",
+      className: " flex items-center pt-6 justify-evenly text-6xl flex-col text-gray-700 space-y-4  ",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h1", {
         children: [" \u0639\u062F\u062F \u0627\u0644\u0645\u0631\u0627\u062C\u0639\u064A\u0646 \u0641\u064A \u0627\u0644\u0627\u0646\u062A\u0638\u0627\u0631 : ", queueCount, " "]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
         handelClick: handelClick,
         type: "button",
-        className: "bg-green-500 text-background text-3xl",
+        className: "bg-green-500 py-4 text-background text-3xl",
         children: "\u0627\u0644\u062A\u0627\u0644\u064A"
       })]
-    })
+    })]
   });
 }
 
@@ -4900,9 +4903,11 @@ function Welcome(_ref) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__.Visitor, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__.Visitor, {
     classes: "print:w-20 print:h-20 w-40 h-40",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      title: "\u0637\u0644\u0628 \u062A\u0633\u0644\u0633\u0644"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       style: {
         height: "78vh"
       },
@@ -4930,11 +4935,11 @@ function Welcome(_ref) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
           handelClick: handelClick,
           type: "button",
-          className: " bg-green-500 print:hidden text-background text-5xl",
+          className: " bg-green-500 print:hidden py-4 text-background text-5xl",
           children: "\u0627\u0636\u063A\u0637 \u0647\u0646\u0627"
         })]
       })
-    })
+    })]
   });
 }
 
@@ -4952,9 +4957,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Screen)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _Layouts_Visitor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/Visitor */ "./resources/js/Layouts/Visitor.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/Visitor */ "./resources/js/Layouts/Visitor.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -4964,59 +4971,61 @@ function Screen(_ref) {
   var emp = _ref.emp,
       queue = _ref.queue;
   setTimeout(function () {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.reload();
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
   }, 2000);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_2__.Visitor, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__.Visitor, {
     classes: "print:w-20 print:h-20 w-40 h-40",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      title: "\u0627\u0644\u062A\u0633\u0644\u0633\u0644 \u0627\u0644\u062A\u0627\u0644\u064A"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: " flex items-center justify-evenly text-4xl flex-col space-y-4",
       style: {
         height: "78vh"
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h3", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h3", {
         className: "text-6xl align-middle mt-5",
-        children: [" ", "\u062A\u0633\u0644\u0633\u0644 \u0627\u0644\u0645\u0631\u0627\u062C\u0639 \u0627\u0644\u062A\u0627\u0644\u064A \u0647\u0648 :", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+        children: [" ", "\u062A\u0633\u0644\u0633\u0644 \u0627\u0644\u0645\u0631\u0627\u062C\u0639 \u0627\u0644\u062A\u0627\u0644\u064A \u0647\u0648 :", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
           "class": "text-red-500 font-bold bg-gray-200 border-2 rounded-lg px-2 text-7xl",
           children: [" ", queue.queue, " "]
         }), " "]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         "class": "grid grid-cols-2",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           "class": "m-4 rounded-lg shadow-lg bg-nav",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             "class": "text-center m-2 p-3 rounded-lg text-black",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               "class": "text-white font-black text-7xl pb-3",
               children: emp.name
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
               xmlns: "http://www.w3.org/2000/svg",
               width: "200",
               height: "200",
               fill: "#fff",
               "class": "bi bi-person-square my-3 mx-auto opacity-40",
               viewBox: "0 0 16 16",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
                 d: "M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
                 d: "M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"
               })]
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           "class": "m-4 rounded-lg shadow-lg bg-nav",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             "class": "text-center m-2 p-3 rounded-lg text-black",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               "class": "text-white font-black text-7xl pb-3",
               children: emp.id
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("svg", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
               xmlns: "http://www.w3.org/2000/svg",
               width: "200",
               height: "200",
               fill: "#fff",
               "class": "bi bi-pc-display-horizontal my-3 mx-auto opacity-40",
               viewBox: "0 0 16 16",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
                 "fill-rule": "evenodd",
                 d: "M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5h-13ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"
               })
@@ -5024,7 +5033,7 @@ function Screen(_ref) {
           })
         })]
       })]
-    })
+    })]
   });
 }
 

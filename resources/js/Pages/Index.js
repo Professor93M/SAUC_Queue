@@ -21,6 +21,7 @@ export default function Welcome({ nextqueue }) {
 
     return (
         <Visitor classes="print:w-20 print:h-20 w-40 h-40">
+            <Head title="طلب تسلسل" />
             <div style={{ height: "78vh" }} className=" w-full ">
                 <div
                     style={{ height: "60vh" }}
@@ -42,7 +43,7 @@ export default function Welcome({ nextqueue }) {
                     <Button
                         handelClick={handelClick}
                         type="button"
-                        className=" bg-green-500 print:hidden text-background text-5xl"
+                        className=" bg-green-500 print:hidden py-4 text-background text-5xl"
                     >
                         اضغط هنا
                     </Button>

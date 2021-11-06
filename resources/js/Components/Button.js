@@ -10,7 +10,7 @@ export default function Button({
     return (
         <button
             type={type}
-            className={`px-8 py-4 rounded-md ${className}`}
+            className={`px-8 py-2 rounded-md bg-green-500 text-background ${className}`}
             disabled={processing}
             onClick={handelClick}
         >

@@ -37,7 +37,7 @@ export default function Login({ status, canResetPassword }) {
 
     return (
         <Guest classes="print:w-20 print:h-20 w-40 h-40">
-            <Head title="Log in" />
+            <Head title="تسجيل دخول" />
 
             {status && (
                 <div className="mb-4 font-medium text-sm text-green-600">
@@ -55,7 +55,7 @@ export default function Login({ status, canResetPassword }) {
                         type="text"
                         name="email"
                         value={data.email}
-                        className="mt-1 block w-full"
+                        className="mt-1 py-2 block w-full"
                         autoComplete="username"
                         isFocused={true}
                         handleChange={onHandleChange}
@@ -69,7 +69,7 @@ export default function Login({ status, canResetPassword }) {
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        className="mt-1 py-2 block w-full"
                         autoComplete="current-password"
                         handleChange={onHandleChange}
                     />

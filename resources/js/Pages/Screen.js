@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, Head } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import { Visitor } from "@/Layouts/Visitor";
 
@@ -9,6 +10,7 @@ export default function Screen({ emp, queue }) {
 
     return (
         <Visitor classes="print:w-20 print:h-20 w-40 h-40">
+            <Head title="التسلسل التالي" />
             <div
                 className=" flex items-center justify-evenly text-4xl flex-col space-y-4"
                 style={{ height: "78vh" }}

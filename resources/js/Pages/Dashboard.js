@@ -33,7 +33,7 @@ export default function Dashboard({ users, auth, count }) {
     const { serveDate } = search;
     return (
         <Authenticated auth={auth}>
-            <Head title="Dashboard" />
+            <Head title="السجل" />
 
             <div className="py-12 ">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">

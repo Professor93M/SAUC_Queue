@@ -5,6 +5,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Button";
 
 export default function Employee({ auth, queueCount }) {
+    const counter = queueCount;
     const playSound = (id) => {
         new Audio("./" + id + ".mp3").play();
     };
@@ -15,7 +16,7 @@ export default function Employee({ auth, queueCount }) {
 
     useEffect(() => {
         playSound(auth.user.id);
-    }, [queueCount]);
+    }, [counter]);
 
     setTimeout(() => {
         Inertia.reload();
@@ -23,15 +24,16 @@ export default function Employee({ auth, queueCount }) {
 
     return (
         <Authenticated auth={auth}>
+            <Head title="الموظف" />
             <div
-                style={{ height: "77vh" }}
-                className=" flex items-center justify-center text-4xl flex-col text-gray-700 space-y-4  "
+                style={{ height: "60vh" }}
+                className=" flex items-center pt-6 justify-evenly text-6xl flex-col text-gray-700 space-y-4  "
             >
                 <h1> عدد المراجعين في الانتظار : {queueCount} </h1>
                 <Button
                     handelClick={handelClick}
                     type="button"
-                    className="bg-green-500 text-background text-3xl"
+                    className="bg-green-500 py-4 text-background text-3xl"
                 >
                     التالي
                 </Button>

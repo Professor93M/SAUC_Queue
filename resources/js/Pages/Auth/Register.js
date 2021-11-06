@@ -49,7 +49,7 @@ export default function Register() {
                         type="text"
                         name="name"
                         value={data.name}
-                        className="mt-1 block w-full"
+                        className="mt-1 py-2 block w-full"
                         autoComplete="name"
                         isFocused={true}
                         handleChange={onHandleChange}
@@ -64,7 +64,7 @@ export default function Register() {
                         type="email"
                         name="email"
                         value={data.email}
-                        className="mt-1 block w-full"
+                        className="mt-1 py-2 block w-full"
                         autoComplete="username"
                         handleChange={onHandleChange}
                         required
@@ -78,7 +78,7 @@ export default function Register() {
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        className="mt-1 py-2 block w-full"
                         autoComplete="new-password"
                         handleChange={onHandleChange}
                         required
@@ -95,7 +95,7 @@ export default function Register() {
                         type="password"
                         name="password_confirmation"
                         value={data.password_confirmation}
-                        className="mt-1 block w-full"
+                        className="mt-1 py-2 block w-full"
                         handleChange={onHandleChange}
                         required
                     />
