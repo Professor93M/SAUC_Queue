@@ -5,6 +5,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import { Head, Link } from "@inertiajs/inertia-react";
 import Input from "@/Components/Input";
 import { Inertia } from "@inertiajs/inertia";
+import Pagination from "@/Components/Pagination";
 
 export default function Dashboard({ users, auth, count }) {
     let initialState = {
@@ -89,7 +90,7 @@ export default function Dashboard({ users, auth, count }) {
                                     </tr>
                                 </thead>
                                 <tbody className="text-center text-2xl font-medium text-gray-600">
-                                    {users.map((user, key) => {
+                                    {users.data.map((user, key) => {
                                         return (
                                             <tr key={key}>
                                                 <td className="py-4 ">
@@ -125,6 +126,7 @@ export default function Dashboard({ users, auth, count }) {
                                     })}
                                 </tbody>
                             </table>
+                            <Pagination links={users.links} />
                         </div>
                     </div>
                 </div>

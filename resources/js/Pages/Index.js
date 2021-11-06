@@ -48,7 +48,7 @@ export default function Welcome({ nextqueue }) {
                         handelClick={handelClick}
                         type="button"
                         processing={disabled}
-                        className="  print:hidden py-4 text-background text-5xl"
+                        className=" bg-green-500 print:hidden py-4 text-background text-5xl"
                     >
                         اضغط هنا
                     </Button>

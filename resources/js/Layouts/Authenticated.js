@@ -64,6 +64,17 @@ export default function Authenticated({ auth, header, children }) {
                                         ) : (
                                             ""
                                         )}
+                                        {auth.user.isAdmin === 1 ? (
+                                            <Dropdown.Link
+                                                href="/employee/show"
+                                                method="get"
+                                                as="button"
+                                            >
+                                                الموظفين
+                                            </Dropdown.Link>
+                                        ) : (
+                                            ""
+                                        )}
                                         <Dropdown.Link
                                             href={route("logout")}
                                             method="post"

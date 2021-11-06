@@ -13,7 +13,7 @@ export default function Button({
             className={
                 processing
                     ? `pointer-events-none px-8 py-2  rounded-md bg-gray-400 ${className}`
-                    : `px-8 py-2  rounded-md bg-green-500 text-background ${className}`
+                    : `  rounded-md  text-background ${className}`
             }
             disabled={processing}
             onClick={handelClick}
