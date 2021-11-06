@@ -3273,7 +3273,7 @@ function ApplicationLogo(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     className: classes,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-      src: "./logo.png",
+      src: "/logo.png",
       className: "object-fill w-20 h-20 print:w-9 print:h-10",
       alt: "logo"
     })
@@ -3749,7 +3749,7 @@ function Authenticated(_ref) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-          className: "flex justify-between h-40 py-2",
+          className: "flex justify-between py-2",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "hidden sm:flex sm:items-center sm:ml-6",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
@@ -3780,7 +3780,12 @@ function Authenticated(_ref) {
                     method: "get",
                     as: "button",
                     children: "Dashboard"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Dropdown__WEBPACK_IMPORTED_MODULE_2__["default"].Link, {
+                  }), auth.user.isAdmin === 1 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Dropdown__WEBPACK_IMPORTED_MODULE_2__["default"].Link, {
+                    href: "/register",
+                    method: "get",
+                    as: "button",
+                    children: "Add user"
+                  }) : "", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Dropdown__WEBPACK_IMPORTED_MODULE_2__["default"].Link, {
                     href: route("logout"),
                     method: "post",
                     as: "button",
@@ -3930,7 +3935,7 @@ var Visitor = function Visitor(_ref) {
       classes = _ref.classes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "flex h-28 items-center py-2  text-gray-100 print:text-black bg-nav justify-around m-auto",
+      className: "flex  items-center py-2  text-gray-100 print:text-black bg-nav justify-around m-auto",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "flex text-xl print:text-xs flex-col items-center justify-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
@@ -4695,16 +4700,16 @@ function Dashboard(_ref) {
                   handleChange: handleChange
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
                   href: "/dashboard",
-                  className: "bg-gray-300 text-black rounded-lg p-2 mx-2 hover:bg-blue-300 transition duration-500 ease-in-out",
+                  className: "bg-green-500 text-black rounded-lg p-2 mx-2 hover:bg-green-300 transition duration-500 ease-in-out",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("svg", {
                     xmlns: "http://www.w3.org/2000/svg",
                     width: "16",
                     height: "16",
                     fill: "currentColor",
-                    "class": "bi bi-arrow-clockwise",
+                    className: "bi bi-arrow-clockwise",
                     viewBox: "0 0 16 16",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("path", {
-                      "fill-rule": "evenodd",
+                      fillRule: "evenodd",
                       d: "M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("path", {
                       d: "M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
@@ -4716,7 +4721,7 @@ function Dashboard(_ref) {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
                   children: "\u0639\u062F\u062F \u0627\u0644\u0645\u0631\u0627\u062C\u0639\u0627\u062A : \xA0"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-                  className: "text-white font-black bg-gray-700 rounded-lg px-2 select-none cursor-default",
+                  className: "text-white font-black bg-green-500 rounded-lg px-2 select-none cursor-default",
                   children: count
                 })]
               })]

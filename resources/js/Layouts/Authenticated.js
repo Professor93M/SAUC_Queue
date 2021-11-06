@@ -13,7 +13,7 @@ export default function Authenticated({ auth, header, children }) {
         <div className="min-h-screen text-gray-100  ">
             <nav className=" bg-nav border-b py-2">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between h-40 py-2">
+                    <div className="flex justify-between py-2">
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
                             <div className="ml-3 relative">
                                 <Dropdown>
@@ -53,6 +53,17 @@ export default function Authenticated({ auth, header, children }) {
                                         >
                                             Dashboard
                                         </Dropdown.Link>
+                                        {auth.user.isAdmin === 1 ? (
+                                            <Dropdown.Link
+                                                href="/register"
+                                                method="get"
+                                                as="button"
+                                            >
+                                                Add user
+                                            </Dropdown.Link>
+                                        ) : (
+                                            ""
+                                        )}
                                         <Dropdown.Link
                                             href={route("logout")}
                                             method="post"

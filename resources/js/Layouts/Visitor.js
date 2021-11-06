@@ -4,7 +4,7 @@ import ApplicationLogo from "@/Components/ApplicationLogo";
 export const Visitor = ({ children, classes }) => {
     return (
         <>
-            <div className="flex h-28 items-center py-2  text-gray-100 print:text-black bg-nav justify-around m-auto">
+            <div className="flex  items-center py-2  text-gray-100 print:text-black bg-nav justify-around m-auto">
                 <div className="flex text-xl print:text-xs flex-col items-center justify-center">
                     <h2>نظام الطابور الالكتروني</h2>
                     <h2>كلية شط العرب</h2>
