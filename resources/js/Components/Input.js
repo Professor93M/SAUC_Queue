@@ -12,6 +12,7 @@ export default function Input({
     placeholder,
     handleFocus,
     handleBlur,
+    checked,
 }) {
     const input = useRef();
 
@@ -27,7 +28,9 @@ export default function Input({
                 type={type}
                 name={name}
                 value={value}
-                className={`border-gray-300 rounded-md shadow-sm ` + className}
+                className={
+                    `border-gray-300 border rounded-md shadow-sm ` + className
+                }
                 ref={input}
                 placeholder={placeholder}
                 autoComplete={autoComplete}
@@ -35,6 +38,7 @@ export default function Input({
                 onChange={(e) => handleChange(e)}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
+                checked={checked}
             />
         </div>
     );

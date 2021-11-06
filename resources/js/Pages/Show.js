@@ -1,45 +1,46 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link, Head } from "@inertiajs/inertia-react";
-import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
-import Button from "@/Components/Button";
 
 export default function Show({ auth, users }) {
     console.log(users);
     return (
         <Authenticated auth={auth}>
             <Head title="معلومات الموظفين" />
-            <div className=" pt-4">
+            <div className=" pt-8">
                 <h2 className="text-black font-bold text-center text-4xl">
                     اسماء الموظفين
                 </h2>
-                <div className="max-w-2xl mx-auto pt-20">
-                    <table className="w-full">
-                        <thead className="text-2xl border-b-2 text-gray-800">
-                            <tr>
-                                <th className="pb-4">اسم الموظف</th>
-                                <th className="pb-4">البريد الالكتروني</th>
-                                <th className="pb-4">الخيارات</th>
-                            </tr>
-                        </thead>
-                        <tbody className="text-center text-2xl font-medium text-gray-600">
-                            {users.map((user, key) => {
-                                return (
-                                    <tr key={key}>
-                                        <td className="pb-4">
-                                            {auth.user.isAdmin === 1 ? (
-                                                <Link
-                                                    className="hover:text-red-500 transition duration-500 ease-in-out"
-                                                    href={`/dashboard/${user.id}`}
-                                                >
-                                                    {user.name}
-                                                </Link>
-                                            ) : (
-                                                user.name
-                                            )}
-                                        </td>
-                                        <td className="py-4 ">{user.email}</td>
-                                        <td className="py-4 flex items-center justify-around">
+                <div className="pt-16">
+                    <div className="max-w-2xl mx-auto border-2 border-green-500 p-8">
+                        <table className="w-full">
+                            <thead className="text-2xl border-b-2 text-gray-800">
+                                <tr>
+                                    <th className="pb-4">اسم الموظف</th>
+                                    <th className="pb-4">البريد الالكتروني</th>
+                                    {/* <th className="pb-4">الخيارات</th> */}
+                                </tr>
+                            </thead>
+                            <tbody className="text-center text-2xl font-medium text-gray-600">
+                                {users.map((user, key) => {
+                                    return (
+                                        <tr key={key}>
+                                            <td className="pb-4">
+                                                {auth.user.isAdmin === 1 ? (
+                                                    <Link
+                                                        className="hover:text-red-500 transition duration-500 ease-in-out"
+                                                        href={`/employee/${user.id}/edit`}
+                                                    >
+                                                        {user.name}
+                                                    </Link>
+                                                ) : (
+                                                    user.name
+                                                )}
+                                            </td>
+                                            <td className="py-4 ">
+                                                {user.email}
+                                            </td>
+                                            {/* <td className="py-4 flex items-center justify-around">
                                             <Button className="px-2 py-2 bg-red-500">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
@@ -75,12 +76,13 @@ export default function Show({ auth, users }) {
                                                     />
                                                 </svg>
                                             </Link>
-                                        </td>
-                                    </tr>
-                                );
-                            })}
-                        </tbody>
-                    </table>
+                                        </td> */}
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </Authenticated>
