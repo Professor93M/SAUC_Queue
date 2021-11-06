@@ -45,3 +45,15 @@ Route::get('/employee', [Controller::class, 'employee'])
 Route::post('/employee', [QueueController::class, 'submit'])
                 ->middleware('auth')
                 ->name('submit');
+
+Route::get('/employee/show', [Controller::class, 'show'])
+                ->middleware('auth')
+                ->name('show');
+
+Route::post('/employee/{id}/edit', [Controller::class, 'edit'])
+                ->middleware('admin')
+                ->name('edit');
+
+Route::put('/employee/{id}', [Controller::class, 'update'])
+                ->middleware('admin')
+                ->name('update');
