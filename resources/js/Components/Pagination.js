@@ -7,7 +7,7 @@ const Pagination = ({ links }) => {
             {links.map((link, key) => (
                 <Link
                     key={key}
-                    className="p-2 bg-nav text-background rounded-md"
+                    className="p-2 bg-green-500 text-background rounded-md"
                     href={link.url === null ? "#" : link.url}
                 >
                     {link.label}
