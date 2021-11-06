@@ -54,7 +54,7 @@ class Controller extends BaseController
     }
 
     public function show(){
-        return Inertia::render([
+        return Inertia::render('Show', [
             'users' => User::all(),
         ]);
     }
