@@ -14,20 +14,7 @@ export default function Authenticated({ auth, header, children }) {
             <nav className=" bg-gray-600 border-b py-2">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-40 py-2">
-                        <div className="flex">
-                            <div className="flex-shrink-0 flex items-center">
-                                <ApplicationLogo classes="print:w-20 print:h-20 w-40 h-40" />
-                            </div>
-                        </div>
-
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
-                            {auth.user.isAdmin === 1 ? (
-                                <div className=" space-x-8  sm:-my-px sm:mr-10 sm:flex">
-                                    <Link href={"/dashboard"}>Dashboard</Link>
-                                </div>
-                            ) : (
-                                ""
-                            )}
                             <div className="ml-3 relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>
@@ -56,6 +43,17 @@ export default function Authenticated({ auth, header, children }) {
 
                                     <Dropdown.Content>
                                         <Dropdown.Link
+                                            href={
+                                                auth.user.isAdmin === 1
+                                                    ? "/dashboard"
+                                                    : `/dashboard/${auth.user.id}`
+                                            }
+                                            method="get"
+                                            as="button"
+                                        >
+                                            Dashboard
+                                        </Dropdown.Link>
+                                        <Dropdown.Link
                                             href={route("logout")}
                                             method="post"
                                             as="button"
@@ -66,7 +64,11 @@ export default function Authenticated({ auth, header, children }) {
                                 </Dropdown>
                             </div>
                         </div>
-
+                        <div className="flex">
+                            <div className="flex-shrink-0 flex items-center">
+                                <ApplicationLogo classes="print:w-20 print:h-20 w-40 h-40" />
+                            </div>
+                        </div>
                         <div className="-mr-2 flex items-center sm:hidden">
                             <button
                                 onClick={() =>

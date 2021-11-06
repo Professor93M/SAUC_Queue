@@ -1,3 +1,10 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@layer base {
+    @font-face {
+        font-family: "Tajawal";
+        src: url("/fonts/Tajawal-Regular.ttf") format("tttf");
+    }
+}

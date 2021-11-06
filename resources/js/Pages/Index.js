@@ -35,7 +35,11 @@ export default function Welcome({ nextqueue }) {
                             رقم المراجع : {nextqueue}
                         </span>
                     </h2>
-                    <Button handelClick={handelClick} type="button">
+                    <Button
+                        handelClick={handelClick}
+                        type="button"
+                        className=""
+                    >
                         اضغط هنا
                     </Button>
                 </div>
