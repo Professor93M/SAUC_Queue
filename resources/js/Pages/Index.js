@@ -5,13 +5,17 @@ import { Visitor } from "@/Layouts/Visitor";
 import Button from "@/Components/Button";
 
 export default function Welcome({ nextqueue }) {
+    let [disabled, setDisabled] = useState(true);
+
     useEffect(() => {
-        // new Audio("./welcome.m4a").play();
-        // setInterval(new Audio("./welcome.m4a").play(), 20000);
-    });
+        setTimeout(() => {
+            setDisabled(false);
+        }, 10000);
+    }, [nextqueue]);
 
     const handelClick = () => {
         window.print();
+        setDisabled(true);
         new Audio("./success.mp3").play().then(() => {
             setTimeout(() => {
                 Inertia.post("/", { nextqueue });
@@ -43,7 +47,8 @@ export default function Welcome({ nextqueue }) {
                     <Button
                         handelClick={handelClick}
                         type="button"
-                        className=" bg-green-500 print:hidden py-4 text-background text-5xl"
+                        processing={disabled}
+                        className="  print:hidden py-4 text-background text-5xl"
                     >
                         اضغط هنا
                     </Button>

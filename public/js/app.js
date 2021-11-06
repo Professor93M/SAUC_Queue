@@ -3307,7 +3307,7 @@ function Button(_ref) {
       children = _ref.children;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     type: type,
-    className: "px-8 py-2 rounded-md bg-green-500 text-background ".concat(className),
+    className: processing ? "pointer-events-none px-8 py-2  rounded-md bg-gray-400 ".concat(className) : "px-8 py-2  rounded-md bg-green-500 text-background ".concat(className),
     disabled: processing,
     onClick: handelClick,
     children: children
@@ -4811,6 +4811,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.js");
 /* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -4821,13 +4833,20 @@ __webpack_require__.r(__webpack_exports__);
 function Employee(_ref) {
   var auth = _ref.auth,
       queueCount = _ref.queueCount;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      disabled = _useState2[0],
+      setDisabled = _useState2[1];
+
   var counter = queueCount;
 
   var playSound = function playSound(id) {
     new Audio("./" + id + ".mp3").play();
   };
 
-  var handelClick = function handelClick() {
+  var handelClick = function handelClick(e) {
+    setDisabled(false);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/employee", {
       id: auth.user.id
     });
@@ -4835,6 +4854,9 @@ function Employee(_ref) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     playSound(auth.user.id);
+    setTimeout(function () {
+      setDisabled(false);
+    }, 10000);
   }, [counter]);
   setTimeout(function () {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
@@ -4853,7 +4875,8 @@ function Employee(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
         handelClick: handelClick,
         type: "button",
-        className: "bg-green-500 py-4 text-background text-3xl",
+        processing: disabled,
+        className: " py-4 text-background text-3xl",
         children: "\u0627\u0644\u062A\u0627\u0644\u064A"
       })]
     })]
@@ -4879,6 +4902,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/Visitor */ "./resources/js/Layouts/Visitor.js");
 /* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -4888,12 +4923,21 @@ __webpack_require__.r(__webpack_exports__);
 
 function Welcome(_ref) {
   var nextqueue = _ref.nextqueue;
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {// new Audio("./welcome.m4a").play();
-    // setInterval(new Audio("./welcome.m4a").play(), 20000);
-  });
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      disabled = _useState2[0],
+      setDisabled = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setTimeout(function () {
+      setDisabled(false);
+    }, 10000);
+  }, [nextqueue]);
 
   var handelClick = function handelClick() {
     window.print();
+    setDisabled(true);
     new Audio("./success.mp3").play().then(function () {
       setTimeout(function () {
         _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/", {
@@ -4935,7 +4979,8 @@ function Welcome(_ref) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
           handelClick: handelClick,
           type: "button",
-          className: " bg-green-500 print:hidden py-4 text-background text-5xl",
+          processing: disabled,
+          className: "  print:hidden py-4 text-background text-5xl",
           children: "\u0627\u0636\u063A\u0637 \u0647\u0646\u0627"
         })]
       })

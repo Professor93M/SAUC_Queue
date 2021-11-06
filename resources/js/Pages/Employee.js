@@ -5,17 +5,22 @@ import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Button";
 
 export default function Employee({ auth, queueCount }) {
+    let [disabled, setDisabled] = useState(true);
     const counter = queueCount;
     const playSound = (id) => {
         new Audio("./" + id + ".mp3").play();
     };
 
-    const handelClick = () => {
+    const handelClick = (e) => {
+        setDisabled(false);
         Inertia.post("/employee", { id: auth.user.id });
     };
 
     useEffect(() => {
         playSound(auth.user.id);
+        setTimeout(() => {
+            setDisabled(false);
+        }, 10000);
     }, [counter]);
 
     setTimeout(() => {
@@ -33,7 +38,8 @@ export default function Employee({ auth, queueCount }) {
                 <Button
                     handelClick={handelClick}
                     type="button"
-                    className="bg-green-500 py-4 text-background text-3xl"
+                    processing={disabled}
+                    className=" py-4 text-background text-3xl"
                 >
                     التالي
                 </Button>
