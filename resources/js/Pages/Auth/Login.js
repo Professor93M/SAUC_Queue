@@ -36,7 +36,7 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <Guest classes="print:w-20 print:h-20 w-40 h-40">
+        <Guest title="تسجيل دخول">
             <Head title="تسجيل دخول" />
 
             {status && (
