@@ -30,7 +30,7 @@ export default function Login({ status, canResetPassword }) {
     };
 
     const goBack =() =>{
-        history.back();
+        location.href = "/"
     }
 
     const submit = (e) => {
