@@ -28,28 +28,32 @@ class Controller extends BaseController
     public function dashboard(){
         $query = Queue::query();
         if(request('date')){
-            $users = $query->whereNotNull('updated_at')->whereDate('updated_at', '=', request('date'))->with('users')->orderBy('updated_at', 'desc')->simplePaginate(5);
+            $users = $query->whereNotNull('updated_at')->whereDate('updated_at', '=', request('date'))->with('users')->orderBy('updated_at', 'desc')->simplePaginate(20);
+            $count = $query->whereNotNull('updated_at')->whereDate('updated_at', '=', request('date'))->with('users')->count();
         }else{
-            $users = $query->whereNotNull('updated_at')->with('users')->orderBy('updated_at', 'desc')->simplePaginate(5);
+            $users = $query->whereNotNull('updated_at')->with('users')->orderBy('updated_at', 'desc')->simplePaginate(20);
+            $count = $query->whereNotNull('updated_at')->with('users')->count();
         }
         return Inertia::render('Dashboard', [
             'users' => $users,
-            'count' => $users->count(),
+            'count' => $count,
         ]);
     }
 
     public function dashboardID($id){
         if(intval($id) === Auth::user()->id){
-            $queue = Queue::where('users_id', Auth::user()->id)->with('users')->orderBy('updated_at')->simplePaginate(5);
+            $queue = Queue::where('users_id', Auth::user()->id)->with('users')->orderBy('updated_at')->simplePaginate(20);
+            $count = Queue::where('users_id', Auth::user()->id)->with('users')->count();
         }elseif(Auth::user()->isAdmin){
             User::findOrFail($id);
-            $queue = Queue::where('users_id', $id)->with('users')->orderBy('updated_at', 'desc')->simplePaginate(5);
+            $queue = Queue::where('users_id', $id)->with('users')->orderBy('updated_at', 'desc')->simplePaginate(20);
+            $count = Queue::where('users_id', $id)->with('users')->count();
         }else{
             return abort(404);
         }
         return Inertia::render('Dashboard', [
             'users' => $queue,
-            'count' => $queue->count(),
+            'count' => $count,
         ]);
     }
 
@@ -101,9 +105,9 @@ class Controller extends BaseController
                 'email' => $request->email,
                 'password' => !isset($request->password) ? $user->password : Hash::make($request->password),
             ]);
-            return Redirect::route('employee')->with('success', 'تم تعديل بيانات المشرف بنجاح');
+            return Redirect::route('employee/show')->with('success', 'تم تعديل بيانات المشرف بنجاح');
         }else{
-            return Redirect::route('employee');
+            return Redirect::route('employee/show');
         }
     }
 

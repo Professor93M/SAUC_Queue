@@ -4898,9 +4898,11 @@ function Edit(_ref) {
   var auth = _ref.auth,
       user = _ref.user;
   var initialState = {
-    empName: user.name,
-    empEmail: user.email,
-    isAdmin: user.isAdmin
+    name: user.name,
+    email: user.email,
+    isAdmin: user.isAdmin,
+    password: "",
+    password_confirmation: ""
   };
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialState),
@@ -4920,12 +4922,14 @@ function Edit(_ref) {
   };
 
   var handelClick = function handelClick() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.put("/employee/".concat(user.id, "/edit"), userState);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.put("/employee/".concat(user.id), userState);
   };
 
-  var empEmail = userState.empEmail,
-      empName = userState.empName,
-      isAdmin = userState.isAdmin;
+  var email = userState.email,
+      name = userState.name,
+      isAdmin = userState.isAdmin,
+      password = userState.password,
+      password_confirmation = userState.password_confirmation;
   console.log(user);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
     auth: auth,
@@ -4934,36 +4938,64 @@ function Edit(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: " flex justify-center  text-gray-900 text-2xl",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "pt-20",
+        className: "pt-20 max-w-7xl",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "max-w-7xl mx-auto border-2 border-nav p-8 space-y-6",
+          className: "w-full mx-auto border-2 border-nav p-8 space-y-6",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
               className: "text-xl pb-2",
-              forInput: "empName",
+              forInput: "name",
               value: "\u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
               className: "p-2 text-center",
-              name: "empName",
+              name: "name",
               placeholder: user.name,
               handleChange: handleChange,
-              value: empName
+              value: name
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
               className: "text-xl pb-2",
-              forInput: "empEmail",
+              forInput: "email",
               value: "\u0627\u0644\u0628\u0631\u064A\u062F \u0627\u0644\u0627\u0644\u0643\u062A\u0631\u0648\u0646\u064A"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "email",
-              name: "empEmail",
+              name: "email",
               placeholder: user.email,
               handleChange: handleChange,
-              value: empEmail,
+              value: email,
               className: "p-2 text-center"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              className: "text-xl pb-2",
+              forInput: "email",
+              value: "\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              type: "password",
+              name: "email",
+              handleChange: handleChange,
+              value: password,
+              className: "p-2 text-center placeholder-gray-600",
+              placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              className: "text-xl pb-2",
+              forInput: "email",
+              value: "\u062A\u0623\u0643\u064A\u062F \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              type: "password_confirmation",
+              name: "email",
+              handleChange: handleChange,
+              value: password_confirmation,
+              className: "p-2 text-center placeholder-gray-600",
+              placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "flex items-center h-10 text-gray-900",
