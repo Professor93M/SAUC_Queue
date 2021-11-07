@@ -3532,7 +3532,8 @@ function Input(_ref) {
       placeholder = _ref.placeholder,
       handleFocus = _ref.handleFocus,
       handleBlur = _ref.handleBlur,
-      checked = _ref.checked;
+      checked = _ref.checked,
+      handleCheked = _ref.handleCheked;
   var input = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (isFocused) {
@@ -3544,18 +3545,14 @@ function Input(_ref) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
       type: type,
       name: name,
-      value: value,
       className: "border-gray-300 border rounded-md shadow-sm " + className,
       ref: input,
       placeholder: placeholder,
       autoComplete: autoComplete,
       required: required,
-      onChange: function onChange(e) {
-        return handleChange(e);
-      },
+      onChange: handleChange,
       onFocus: handleFocus,
-      onBlur: handleBlur,
-      checked: checked
+      onBlur: handleBlur
     })
   });
 }
@@ -3650,12 +3647,12 @@ var Pagination = function Pagination(_ref) {
     className: "flex max-w-lg justify-center space-x-3",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       className: "py-2 px-3 bg-green-500 text-background rounded-md",
-      href: prevPage === null ? "#" : prevPage,
-      children: "\u0627\u0644\u0633\u0627\u0628\u0642"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-      className: "py-2 px-3 bg-green-500 text-background rounded-md",
       href: nextPage === null ? "#" : nextPage,
       children: "\u0627\u0644\u062A\u0627\u0644\u064A"
+    }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      className: "py-2 px-3 bg-green-500 text-background rounded-md",
+      href: prevPage === null ? "#" : prevPage,
+      children: "\u0627\u0644\u0633\u0627\u0628\u0642"
     })]
   });
 };
@@ -4897,6 +4894,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Edit(_ref) {
   var auth = _ref.auth,
       user = _ref.user;
+  var checked = false;
   var initialState = {
     name: user.name,
     email: user.email,
@@ -4921,16 +4919,16 @@ function Edit(_ref) {
     // );
   };
 
-  var handelClick = function handelClick() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.put("/employee/".concat(user.id), userState);
-  };
-
   var email = userState.email,
       name = userState.name,
       isAdmin = userState.isAdmin,
       password = userState.password,
       password_confirmation = userState.password_confirmation;
-  console.log(user);
+
+  var handelClick = function handelClick() {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.put("/employee/show", userState);
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
     auth: auth,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
@@ -5000,13 +4998,12 @@ function Edit(_ref) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "flex items-center h-10 text-gray-900",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
-              type: "radio",
+              type: "checkBox",
               name: "isAdmin",
               value: isAdmin,
               placeholder: user.isAdmin,
               handleChange: handleChange,
-              className: "w-6 h-6",
-              checked: isAdmin == 1
+              className: "w-6 h-6"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
               className: "mr-2",
               children: "\u062A\u0631\u0642\u064A\u0629 \u0644\u0645\u062F\u064A\u0631"

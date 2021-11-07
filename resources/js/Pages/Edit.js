@@ -7,6 +7,7 @@ import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 
 export default function Edit({ auth, user }) {
+    let checked = false;
     let initialState = {
         name: user.name,
         email: user.email,
@@ -15,6 +16,7 @@ export default function Edit({ auth, user }) {
         password_confirmation: "",
     };
     let [userState, setUserState] = useState(initialState);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setUserState({ ...userState, [name]: value });
@@ -25,13 +27,11 @@ export default function Edit({ auth, user }) {
         //     { replaces: true, preserveState: true }
         // );
     };
+    const { email, name, isAdmin, password, password_confirmation } = userState;
 
     const handelClick = () => {
-        Inertia.put(`/employee/${user.id}`, userState);
+        Inertia.put(`/employee/show`, userState);
     };
-
-    const { email, name, isAdmin, password, password_confirmation } = userState;
-    console.log(user);
 
     return (
         <Authenticated auth={auth}>
@@ -103,13 +103,12 @@ export default function Edit({ auth, user }) {
                         </div>
                         <div className="flex items-center h-10 text-gray-900">
                             <Input
-                                type="radio"
+                                type="checkBox"
                                 name="isAdmin"
                                 value={isAdmin}
                                 placeholder={user.isAdmin}
                                 handleChange={handleChange}
                                 className="w-6 h-6"
-                                checked={isAdmin == 1}
                             />
                             <span className="mr-2">ترقية لمدير</span>
                         </div>
