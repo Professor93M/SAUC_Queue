@@ -29,9 +29,9 @@ export default function Register() {
         );
     };
 
-    const goBack =() =>{
+    const goBack = () => {
         history.back();
-    }
+    };
 
     const submit = (e) => {
         e.preventDefault();
@@ -40,7 +40,7 @@ export default function Register() {
     };
 
     return (
-        <Guest classes="print:w-20 print:h-20 w-40 h-40">
+        <Guest title="اضافة  موظف جديد">
             <Head title="اضافة  موظف جديد" />
 
             <ValidationErrors errors={errors} />
@@ -62,7 +62,11 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4 text-right">
-                    <Label forInput="email" dir="rtl" value="البريد الالكتروني" />
+                    <Label
+                        forInput="email"
+                        dir="rtl"
+                        value="البريد الالكتروني"
+                    />
 
                     <Input
                         type="email"

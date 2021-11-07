@@ -2,7 +2,7 @@ import React from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import { Link } from "@inertiajs/inertia-react";
 
-export default function Guest({ children, classes }) {
+export default function Guest({ children, title }) {
     return (
         <div className="min-h-screen flex flex-col sm:justify-center items-center py-2 sm:pt-0 text-gray-100 ">
             <div>
@@ -14,7 +14,7 @@ export default function Guest({ children, classes }) {
             </div>
 
             <h2 className="text-black font-bold text-center text-3xl mt-3">
-                اضافة موظف جديد
+                {title}
             </h2>
 
             <div className="w-full sm:max-w-md mt-6 px-6 py-4 text-gray-700 bg-white shadow-md overflow-hidden sm:rounded-lg">
