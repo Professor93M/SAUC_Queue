@@ -77,7 +77,6 @@ class Controller extends BaseController
     }
 
     public function update(Request $request, $id){
-        dd($request->all());
         $user = User::findOrFail($id);
         if(($request->name !== $user->name) || ($request->email !== $user->email) || ($request->password !== $user->password) || ($request->isAdmin !== $user->isAdmin)){
             if($request->name !== $user->name){

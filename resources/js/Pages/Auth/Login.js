@@ -29,6 +29,10 @@ export default function Login({ status, canResetPassword }) {
         );
     };
 
+    const goBack =() =>{
+        history.back();
+    }
+
     const submit = (e) => {
         e.preventDefault();
 
@@ -48,8 +52,8 @@ export default function Login({ status, canResetPassword }) {
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit}>
-                <div>
-                    <Label forInput="email" value="Email" />
+                <div className="mt-4 text-right">
+                    <Label forInput="email" value="البريد الالكتروني" />
 
                     <Input
                         type="text"
@@ -62,8 +66,8 @@ export default function Login({ status, canResetPassword }) {
                     />
                 </div>
 
-                <div className="mt-4">
-                    <Label forInput="password" value="Password" />
+                <div className="mt-4 text-right">
+                    <Label forInput="password" value="كلمة المرور" />
 
                     <Input
                         type="password"
@@ -75,36 +79,35 @@ export default function Login({ status, canResetPassword }) {
                     />
                 </div>
 
-                <div className="block mt-4">
-                    <label className="flex items-center">
+                <div className="block mt-4 text-right">
+                    <label className="flex justify-end items-center">
+                        <span className="mr-2 text-sm text-gray-600">
+                            تذكرني
+                        </span>
                         <Checkbox
                             name="remember"
                             value={data.remember}
                             handleChange={onHandleChange}
                         />
 
-                        <span className="ml-2 text-sm text-gray-600">
-                            Remember me
-                        </span>
+
                     </label>
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
-                        <Link
-                            href={route("password.request")}
-                            className="underline text-sm text-gray-600 hover:text-gray-900"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )}
-
+                <div className="flex items-center justify-between mt-4">
                     <Button
                         className="ml-4 py-1 px-6 bg-green-500"
                         disabledClass="bg-gray-400 ml-4 py-1 px-6 text-background"
                         processing={processing}
                     >
-                        Log in
+                        تسجيل دخول
+                    </Button>
+
+                    <Button
+                        className="ml-4 py-1 px-6 bg-blue-500"
+                        handelClick={goBack}
+                    >
+                        رجوع
                     </Button>
                 </div>
             </form>

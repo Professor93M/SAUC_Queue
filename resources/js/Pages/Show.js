@@ -13,11 +13,10 @@ export default function Show({ auth, users }) {
                     اسماء الموظفين
                 </h2>
                 <div className="pt-16">
-                    <div className="max-w-5xl mx-auto py-2">
-                        <div className="pb-4">
+                    <div className="max-w-5xl mx-auto py-1">
+                        <div className="float-left flex mb-4">
                             <Link
-                                className=" rounded-md flex items-center text-background
-                             w-1/5 text-2xl bg-green-500 py-2 px-3"
+                                className="rounded-md text-base bg-green-500 py-1 px-3 hover:bg-green-300 hover:text-black transition duration-500 ease-in-out"
                                 href="/register"
                             >
                                 <svg
@@ -25,8 +24,8 @@ export default function Show({ auth, users }) {
                                     width="30"
                                     height="30"
                                     fill="currentColor"
-                                    className="bi bi-plus"
-                                    viewBox="0 0 12 12"
+                                    className="bi bi-plus inline"
+                                    viewBox="0 0 15 15"
                                 >
                                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                                 </svg>
@@ -65,26 +64,6 @@ export default function Show({ auth, users }) {
 
                                             <td className="py-4 flex items-center justify-around">
                                                 <Link
-                                                    href={`/dashboard/${user.id}`}
-                                                    className="px-2 py-2 bg-blue-500"
-                                                >
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="20"
-                                                        height="20"
-                                                        fill="#fff"
-                                                        className="bi bi-journal-check"
-                                                        viewBox="0 0 16 16"
-                                                    >
-                                                        <path
-                                                            fillRule="evenodd"
-                                                            d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"
-                                                        />
-                                                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
-                                                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
-                                                    </svg>
-                                                </Link>
-                                                <Link
                                                     href={`/employee/${user.id}/edit`}
                                                     className="bg-green-500 text-black p-2 rounded-lg mx-2 hover:bg-green-300 transition duration-500 ease-in-out"
                                                 >
@@ -103,6 +82,27 @@ export default function Show({ auth, users }) {
                                                         />
                                                     </svg>
                                                 </Link>
+                                                <Link
+                                                    href={`/dashboard/${user.id}`}
+                                                    className="px-2 py-2 bg-blue-500 rounded-lg mx-2 hover:bg-blue-300 transition duration-500 ease-in-out"
+                                                >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="20"
+                                                        height="20"
+                                                        fill="#fff"
+                                                        className="bi bi-journal-check"
+                                                        viewBox="0 0 16 16"
+                                                    >
+                                                        <path
+                                                            fillRule="evenodd"
+                                                            d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"
+                                                        />
+                                                        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                                                        <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                                                    </svg>
+                                                </Link>
+
                                             </td>
                                         </tr>
                                     );
