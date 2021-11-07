@@ -17,13 +17,13 @@ export default function Employee({ auth, queueCount, voice }) {
     };
 
     useEffect(() => {
-        if(voice){
+        if (voice) {
             // playSound(auth.user.id);
             responsiveVoice.speak(voice, "Arabic Female");
         }
         setTimeout(() => {
             setDisabled(false);
-        }, 10000);
+        }, 100);
     }, [counter]);
 
     setTimeout(() => {
@@ -38,14 +38,19 @@ export default function Employee({ auth, queueCount, voice }) {
                 className=" flex items-center pt-6 justify-evenly text-6xl flex-col text-gray-700 space-y-4  "
             >
                 <h1> عدد المراجعين في الانتظار : {queueCount} </h1>
-                <Button
-                    handelClick={handelClick}
-                    type="button"
-                    processing={disabled}
-                    className=" py-4 px-6 bg-green-500  text-background text-4xl"
-                >
-                    {disabled ? "انتظر قليلاً" : "التالي "}
-                </Button>
+                {queueCount > 0 ? (
+                    <Button
+                        handelClick={handelClick}
+                        type="button"
+                        processing={disabled}
+                        disabledClass="bg-gray-400 p-4 text-4xl text-background"
+                        className=" py-4 px-6 bg-green-500  text-background text-4xl"
+                    >
+                        {disabled ? "انتظر قليلاً" : "التالي "}
+                    </Button>
+                ) : (
+                    ""
+                )}
             </div>
         </Authenticated>
     );
