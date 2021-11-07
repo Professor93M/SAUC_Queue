@@ -7,7 +7,6 @@ import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 
 export default function Edit({ auth, user }) {
-    let checked = false;
     let initialState = {
         name: user.name,
         email: user.email,
@@ -30,7 +29,7 @@ export default function Edit({ auth, user }) {
     const { email, name, isAdmin, password, password_confirmation } = userState;
 
     const handelClick = () => {
-        Inertia.put(`/employee/show`, userState);
+        Inertia.put(`/employee/${user.id}`, userState);
     };
 
     return (
@@ -101,16 +100,20 @@ export default function Edit({ auth, user }) {
                                 placeholder="اترك الحقل فارغ لعدم التغيير"
                             />
                         </div>
-                        <div className="flex items-center h-10 text-gray-900">
+                        <div className="flex items-center h-10 w-1/2 text-gray-900">
                             <Input
                                 type="checkBox"
                                 name="isAdmin"
                                 value={isAdmin}
                                 placeholder={user.isAdmin}
                                 handleChange={handleChange}
-                                className="w-6 h-6"
+                                className="w-6 h-6 "
                             />
-                            <span className="mr-2">ترقية لمدير</span>
+                            <Label
+                                forInput="isAdmin"
+                                className="text-xl px-4 "
+                                value="ترقية الى مدير"
+                            />
                         </div>
 
                         <Button

@@ -4895,7 +4895,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Edit(_ref) {
   var auth = _ref.auth,
       user = _ref.user;
-  var checked = false;
   var initialState = {
     name: user.name,
     email: user.email,
@@ -4927,7 +4926,7 @@ function Edit(_ref) {
       password_confirmation = userState.password_confirmation;
 
   var handelClick = function handelClick() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.put("/employee/show", userState);
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.put("/employee/".concat(user.id), userState);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -5000,17 +4999,18 @@ function Edit(_ref) {
               placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "flex items-center h-10 text-gray-900",
+            className: "flex items-center h-10 w-1/2 text-gray-900",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "checkBox",
               name: "isAdmin",
               value: isAdmin,
               placeholder: user.isAdmin,
               handleChange: handleChange,
-              className: "w-6 h-6"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-              className: "mr-2",
-              children: "\u062A\u0631\u0642\u064A\u0629 \u0644\u0645\u062F\u064A\u0631"
+              className: "w-6 h-6 "
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              forInput: "isAdmin",
+              className: "text-xl px-4 ",
+              value: "\u062A\u0631\u0642\u064A\u0629 \u0627\u0644\u0649 \u0645\u062F\u064A\u0631"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
             className: "bg-green-500 py-2 w-full",
