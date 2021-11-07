@@ -3304,7 +3304,8 @@ function Button(_ref) {
       className = _ref$className === void 0 ? "" : _ref$className,
       processing = _ref.processing,
       handelClick = _ref.handelClick,
-      children = _ref.children;
+      children = _ref.children,
+      disabledClass = _ref.disabledClass;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     type: type,
     className: processing ? "pointer-events-none rounded-md ".concat(disabledClass) : "  rounded-md  text-background ".concat(className),

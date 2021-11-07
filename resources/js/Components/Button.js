@@ -6,6 +6,7 @@ export default function Button({
     processing,
     handelClick,
     children,
+    disabledClass,
 }) {
     return (
         <button
