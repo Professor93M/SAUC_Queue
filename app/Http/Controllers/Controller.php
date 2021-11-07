@@ -11,6 +11,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -23,6 +24,11 @@ class Controller extends BaseController
         return Inertia::render('Employee', [
             'queueCount' => Queue::where('updated_at', null)->count(),
         ]);
+    }
+
+    public function reset(){
+        DB::table('queues')->truncate();
+        return Redirect::route('dashboard');
     }
 
     public function dashboard(){

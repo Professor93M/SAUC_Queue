@@ -21,7 +21,11 @@ Route::post('/register', [RegisteredUserController::class, 'store'])
 
 Route::get('/dashboard', [Controller::class, 'dashboard'])
                 ->middleware('admin')
-                ->name('dashbaord');
+                ->name('dashboard');
+
+Route::get('/reset', [Controller::class, 'reset'])
+                ->middleware('admin')
+                ->name('reset');
 
 Route::get('/dashboard/{id}', [Controller::class, 'dashboardID'])
                 ->middleware('auth')

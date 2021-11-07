@@ -25,7 +25,7 @@ class QueueController extends Controller
             'users_id' => $request->id,
             'UPDATED_AT' => Carbon::now(),
         ]);
-        return Redirect::route('employee')->with('voice', " على صاحب التسلسل الذي سيظهر على الشاشة مراجعة الحاسبة" . $request->id);
+        return Redirect::route('employee')->with('voice', " على صاحب التسلسل " . $queue->queue . " مراجعة الحاسبة " . $request->id);
     }
 
     public function screen(){
