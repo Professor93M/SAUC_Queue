@@ -52,6 +52,7 @@ export default function Welcome({ nextqueue }) {
                         handelClick={handelClick}
                         type="button"
                         processing={disabled}
+                        disabledClass="bg-gray-400 p-4 text-background"
                         className="  print:hidden p-4 bg-green-500 text-background text-5xl"
                     >
                         {disabled ? "انتظر قليلاً" : "اضغط هنا"}

@@ -7,7 +7,7 @@ const Pagination = ({ nextPage, prevPage, prePage, to, currentPage }) => {
             {nextPage && (
                 <Link
                     className="py-2 px-3 bg-green-500 text-background rounded-md"
-                    href={nextPage === null ? "#" : nextPage}
+                    href={nextPage}
                 >
                     التالي
                 </Link>
@@ -16,7 +16,7 @@ const Pagination = ({ nextPage, prevPage, prePage, to, currentPage }) => {
             {prevPage && (
                 <Link
                     className="py-2 px-3 bg-green-500 text-background rounded-md"
-                    href={prevPage === null ? "#" : prevPage}
+                    href={prevPage}
                 >
                     السابق
                 </Link>

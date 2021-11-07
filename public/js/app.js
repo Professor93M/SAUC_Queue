@@ -3307,7 +3307,7 @@ function Button(_ref) {
       children = _ref.children;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     type: type,
-    className: processing ? "pointer-events-none   rounded-md bg-gray-400 p-4 text-background" : "  rounded-md  text-background ".concat(className),
+    className: processing ? "pointer-events-none rounded-md ".concat(disabledClass) : "  rounded-md  text-background ".concat(className),
     disabled: processing,
     onClick: handelClick,
     children: children
@@ -3653,11 +3653,11 @@ var Pagination = function Pagination(_ref) {
     className: "flex max-w-lg justify-center space-x-3",
     children: [nextPage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       className: "py-2 px-3 bg-green-500 text-background rounded-md",
-      href: nextPage === null ? "#" : nextPage,
+      href: nextPage,
       children: "\u0627\u0644\u062A\u0627\u0644\u064A"
     }), prevPage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       className: "py-2 px-3 bg-green-500 text-background rounded-md",
-      href: prevPage === null ? "#" : prevPage,
+      href: prevPage,
       children: "\u0627\u0644\u0633\u0627\u0628\u0642"
     })]
   });
@@ -3954,7 +3954,7 @@ function Guest(_ref) {
   var children = _ref.children,
       classes = _ref.classes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "min-h-screen flex flex-col sm:justify-center items-center py-2 sm:pt-0 text-gray-100 bg-gray-600",
+    className: "min-h-screen flex flex-col sm:justify-center items-center py-2 sm:pt-0 text-gray-100 ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
         href: "/",
@@ -4316,6 +4316,7 @@ function Login(_ref) {
           children: "Forgot your password?"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           className: "ml-4 py-1 px-6 bg-green-500",
+          disabledClass: "bg-gray-400 ml-4 py-1 px-6 text-background",
           processing: processing,
           children: "Log in"
         })]
@@ -4454,6 +4455,7 @@ function Register() {
           children: "Already registered?"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           className: "ml-4 py-1 px-6 bg-green-500",
+          disabledClass: "bg-gray-400 ml-4 py-1 px-6 text-background",
           processing: processing,
           children: "Register"
         })]
@@ -5026,6 +5028,7 @@ function Edit(_ref) {
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
             className: "bg-green-500 py-2 w-full",
+            disabledClass: "bg-gray-400 p-4 text-background",
             handelClick: handelClick,
             type: "button",
             children: "\u062D\u0641\u0638"
@@ -5228,6 +5231,7 @@ function Welcome(_ref) {
           handelClick: handelClick,
           type: "button",
           processing: disabled,
+          disabledClass: "bg-gray-400 p-4 text-background",
           className: "  print:hidden p-4 bg-green-500 text-background text-5xl",
           children: disabled ? "انتظر قليلاً" : "اضغط هنا"
         })]

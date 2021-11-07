@@ -111,6 +111,7 @@ export default function Register() {
 
                     <Button
                         className="ml-4 py-1 px-6 bg-green-500"
+                        disabledClass="bg-gray-400 ml-4 py-1 px-6 text-background"
                         processing={processing}
                     >
                         Register

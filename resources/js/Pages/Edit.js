@@ -117,6 +117,7 @@ export default function Edit({ auth, user }) {
 
                         <Button
                             className="bg-green-500 py-2 w-full"
+                            disabledClass="bg-gray-400 p-4 text-background"
                             handelClick={handelClick}
                             type="button"
                         >
