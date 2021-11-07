@@ -47,7 +47,7 @@ Route::post('/employee', [QueueController::class, 'submit'])
                 ->name('submit');
 
 Route::get('/employee/show', [Controller::class, 'show'])
-                ->middleware('auth')
+                ->middleware('admin')
                 ->name('show');
 
 Route::get('/employee/{id}/edit', [Controller::class, 'edit'])

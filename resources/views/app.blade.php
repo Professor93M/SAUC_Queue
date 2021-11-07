@@ -13,6 +13,7 @@
         <!-- Scripts -->
         @routes
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="https://code.responsivevoice.org/responsivevoice.js?key=XE9xDRg0"></script>
     </head>
     <style>
         body {

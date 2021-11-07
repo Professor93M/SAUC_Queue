@@ -5064,7 +5064,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Employee(_ref) {
   var auth = _ref.auth,
-      queueCount = _ref.queueCount;
+      queueCount = _ref.queueCount,
+      voice = _ref.voice;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
       _useState2 = _slicedToArray(_useState, 2),
@@ -5085,7 +5086,11 @@ function Employee(_ref) {
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    playSound(auth.user.id);
+    if (voice) {
+      // playSound(auth.user.id);
+      responsiveVoice.speak(voice, "Arabic Female");
+    }
+
     setTimeout(function () {
       setDisabled(false);
     }, 10000);
@@ -5170,12 +5175,11 @@ function Welcome(_ref) {
   var handelClick = function handelClick() {
     window.print();
     setDisabled(true);
-    new Audio("./success.mp3").play().then(function () {
-      setTimeout(function () {
-        _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/", {
-          nextqueue: nextqueue
-        });
-      }, 7000);
+    responsiveVoice.speak(' شكراً لكم لزيارة كلية شط العرب الجامعة, سيتم طباعة تسلسلكَ ' + nextqueue + 'يرجى الانتظارْ', 'Arabic Female', {
+      volume: 1
+    });
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/", {
+      nextqueue: nextqueue
     });
   };
 

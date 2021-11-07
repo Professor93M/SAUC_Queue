@@ -23,9 +23,7 @@ Route::get('/', function () {
     $next_id=$id[0]->Auto_increment;
 
     return Inertia::render('Index', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'nextqueue' => $next_id
+        'nextqueue' => $next_id,
     ]);
 });
 

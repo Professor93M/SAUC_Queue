@@ -71,6 +71,7 @@ class Controller extends BaseController
     }
 
     public function update(Request $request, $id){
+        dd($request->all());
         $user = User::findOrFail($id);
         if(($request->name !== $user->name) || ($request->email !== $user->email) || ($request->password !== $user->password) || ($request->isAdmin !== $user->isAdmin)){
             if($request->name !== $user->name){
@@ -95,7 +96,6 @@ class Controller extends BaseController
                     ],[
                     'password.required'  => 'يجب ادخال كلمة المرور',
                     'password.confirmed' => 'كلمة المرور غير متطابقة',
-                    // 'password'       => 'يجب ادخال على الاقل 8 حروف او رموز او ارقام',
                 ]);
             }
 
@@ -105,9 +105,9 @@ class Controller extends BaseController
                 'email' => $request->email,
                 'password' => !isset($request->password) ? $user->password : Hash::make($request->password),
             ]);
-            return Redirect::route('employee/show')->with('success', 'تم تعديل بيانات المشرف بنجاح');
+            return Redirect::route('show')->with('success', 'تم تعديل بيانات المشرف بنجاح');
         }else{
-            return Redirect::route('employee/show');
+            return Redirect::route('show');
         }
     }
 

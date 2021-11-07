@@ -4,7 +4,7 @@ import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Button";
 
-export default function Employee({ auth, queueCount }) {
+export default function Employee({ auth, queueCount, voice }) {
     let [disabled, setDisabled] = useState(true);
     const counter = queueCount;
     const playSound = (id) => {
@@ -17,7 +17,10 @@ export default function Employee({ auth, queueCount }) {
     };
 
     useEffect(() => {
-        playSound(auth.user.id);
+        if(voice){
+            // playSound(auth.user.id);
+            responsiveVoice.speak(voice, "Arabic Female");
+        }
         setTimeout(() => {
             setDisabled(false);
         }, 10000);

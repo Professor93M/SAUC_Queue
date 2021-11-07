@@ -7,6 +7,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class QueueController extends Controller
@@ -19,14 +20,12 @@ class QueueController extends Controller
     }
 
     public function submit(Request $request){
-        // $queue = Queue::find($request->id);
         $queue = Queue::firstWhere('updated_at', null);
         $queue->update([
             'users_id' => $request->id,
             'UPDATED_AT' => Carbon::now(),
         ]);
-
-        return Inertia::location('/employee');
+        return Redirect::route('employee')->with('voice', " على صاحب التسلسل الذي سيظهر على الشاشة مراجعة الحاسبة" . $request->id);
     }
 
     public function screen(){

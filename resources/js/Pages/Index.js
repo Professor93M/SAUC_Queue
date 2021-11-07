@@ -16,11 +16,9 @@ export default function Welcome({ nextqueue }) {
     const handelClick = () => {
         window.print();
         setDisabled(true);
-        new Audio("./success.mp3").play().then(() => {
-            setTimeout(() => {
-                Inertia.post("/", { nextqueue });
-            }, 7000);
-        });
+
+        responsiveVoice.speak(' شكراً لكم لزيارة كلية شط العرب الجامعة, سيتم طباعة تسلسلكَ ' + nextqueue + 'يرجى الانتظارْ' , 'Arabic Female', {volume: 1})
+        Inertia.post("/", { nextqueue });
     };
 
     return (
