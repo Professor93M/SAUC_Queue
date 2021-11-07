@@ -3552,7 +3552,8 @@ function Input(_ref) {
       required: required,
       onChange: handleChange,
       onFocus: handleFocus,
-      onBlur: handleBlur
+      onBlur: handleBlur,
+      value: value
     })
   });
 }
@@ -4936,18 +4937,21 @@ function Edit(_ref) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: " flex justify-center  text-gray-900 text-2xl",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "pt-20 max-w-7xl",
+        className: "pt-12",
+        style: {
+          width: "512px"
+        },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "w-full mx-auto border-2 border-nav p-8 space-y-6",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              className: "text-xl pb-2",
+              className: "text-xl w-full pb-2",
               forInput: "name",
               value: "\u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "text",
-              className: "p-2 text-center",
+              className: "p-2 w-full text-center",
               name: "name",
               placeholder: user.name,
               handleChange: handleChange,
@@ -4956,7 +4960,7 @@ function Edit(_ref) {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              className: "text-xl pb-2",
+              className: "text-xl  pb-2",
               forInput: "email",
               value: "\u0627\u0644\u0628\u0631\u064A\u062F \u0627\u0644\u0627\u0644\u0643\u062A\u0631\u0648\u0646\u064A"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -4965,7 +4969,7 @@ function Edit(_ref) {
               placeholder: user.email,
               handleChange: handleChange,
               value: email,
-              className: "p-2 text-center"
+              className: "p-2 w-full text-center"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "",
@@ -4978,7 +4982,7 @@ function Edit(_ref) {
               name: "email",
               handleChange: handleChange,
               value: password,
-              className: "p-2 text-center placeholder-gray-600",
+              className: "p-2 text-center w-full placeholder-gray-600",
               placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -4988,11 +4992,11 @@ function Edit(_ref) {
               forInput: "email",
               value: "\u062A\u0623\u0643\u064A\u062F \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
-              type: "password_confirmation",
-              name: "email",
+              name: "password_confirmation",
+              type: "password",
               handleChange: handleChange,
               value: password_confirmation,
-              className: "p-2 text-center placeholder-gray-600",
+              className: "p-2 text-center w-full placeholder-gray-600",
               placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -5009,7 +5013,7 @@ function Edit(_ref) {
               children: "\u062A\u0631\u0642\u064A\u0629 \u0644\u0645\u062F\u064A\u0631"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
-            className: "bg-green-500 py-2  w-full",
+            className: "bg-green-500 py-2 w-full",
             handelClick: handelClick,
             type: "button",
             children: "\u062D\u0641\u0638"

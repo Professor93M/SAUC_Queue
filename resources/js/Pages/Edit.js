@@ -37,17 +37,17 @@ export default function Edit({ auth, user }) {
         <Authenticated auth={auth}>
             <Head title="تعديل معلومات الموظف" />
             <div className=" flex justify-center  text-gray-900 text-2xl">
-                <div className="pt-20 max-w-7xl">
+                <div className="pt-12" style={{ width: "512px" }}>
                     <div className="w-full mx-auto border-2 border-nav p-8 space-y-6">
                         <div className="">
                             <Label
-                                className="text-xl pb-2"
+                                className="text-xl w-full pb-2"
                                 forInput="name"
                                 value="اسم الموظف"
                             />
                             <Input
                                 type="text"
-                                className="p-2 text-center"
+                                className="p-2 w-full text-center"
                                 name="name"
                                 placeholder={user.name}
                                 handleChange={handleChange}
@@ -57,7 +57,7 @@ export default function Edit({ auth, user }) {
 
                         <div className="">
                             <Label
-                                className="text-xl pb-2"
+                                className="text-xl  pb-2"
                                 forInput="email"
                                 value="البريد الالكتروني"
                             />
@@ -67,7 +67,7 @@ export default function Edit({ auth, user }) {
                                 placeholder={user.email}
                                 handleChange={handleChange}
                                 value={email}
-                                className="p-2 text-center"
+                                className="p-2 w-full text-center"
                             />
                         </div>
 
@@ -82,7 +82,7 @@ export default function Edit({ auth, user }) {
                                 name="email"
                                 handleChange={handleChange}
                                 value={password}
-                                className="p-2 text-center placeholder-gray-600"
+                                className="p-2 text-center w-full placeholder-gray-600"
                                 placeholder="اترك الحقل فارغ لعدم التغيير"
                             />
                         </div>
@@ -93,11 +93,11 @@ export default function Edit({ auth, user }) {
                                 value="تأكيد كلمة المرور"
                             />
                             <Input
-                                type="password_confirmation"
-                                name="email"
+                                name="password_confirmation"
+                                type="password"
                                 handleChange={handleChange}
                                 value={password_confirmation}
-                                className="p-2 text-center placeholder-gray-600"
+                                className="p-2 text-center w-full placeholder-gray-600"
                                 placeholder="اترك الحقل فارغ لعدم التغيير"
                             />
                         </div>
@@ -112,8 +112,9 @@ export default function Edit({ auth, user }) {
                             />
                             <span className="mr-2">ترقية لمدير</span>
                         </div>
+
                         <Button
-                            className="bg-green-500 py-2  w-full"
+                            className="bg-green-500 py-2 w-full"
                             handelClick={handelClick}
                             type="button"
                         >

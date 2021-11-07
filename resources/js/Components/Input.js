@@ -38,6 +38,7 @@ export default function Input({
                 onChange={handleChange}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
+                value={value}
             />
         </div>
     );
