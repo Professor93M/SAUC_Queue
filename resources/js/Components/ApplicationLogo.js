@@ -7,6 +7,7 @@ export default function ApplicationLogo({ classes }) {
                 src="/logo.png"
                 className="object-fill w-24 h-24 print:w-9 print:h-9"
                 alt="logo"
+                loading="eager"
             />
         </div>
     );

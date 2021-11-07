@@ -21,11 +21,14 @@ class QueueController extends Controller
 
     public function submit(Request $request){
         $queue = Queue::firstWhere('updated_at', null);
-        $queue->update([
-            'users_id' => $request->id,
-            'UPDATED_AT' => Carbon::now(),
-        ]);
-        return Redirect::route('employee')->with('voice', " على صاحب التسلسل " . $queue->queue . " مراجعة الحاسبة " . $request->id);
+        if($queue > 0){
+            $queue->update([
+                'users_id' => $request->id,
+                'UPDATED_AT' => Carbon::now(),
+            ]);
+            return Redirect::route('employee')->with('voice', " على صاحب التسلسل " . $queue->queue . " مراجعة الحاسبة " . $request->id);
+        }
+        return Redirect::route('employee');
     }
 
     public function screen(){
