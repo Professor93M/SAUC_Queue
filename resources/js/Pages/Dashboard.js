@@ -130,6 +130,9 @@ export default function Dashboard({ users, auth, count }) {
                             <Pagination
                                 nextPage={users.next_page_url}
                                 prevPage={users.prev_page_url}
+                                perPage={users.perPage}
+                                to={users.to}
+                                currentPage={users.current_page}
                             />
                         </div>
                     </div>

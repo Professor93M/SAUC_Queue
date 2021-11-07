@@ -19,19 +19,17 @@ export default function Edit({ auth, user }) {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setUserState({ ...userState, [name]: value });
-
-        // Inertia.get(
-        //     `/dashboard`,
-        //     { date: e.target.value },
-        //     { replaces: true, preserveState: true }
-        // );
     };
-    const { email, name, isAdmin, password, password_confirmation } = userState;
+    let { email, name, isAdmin, password, password_confirmation } = userState;
 
     const handelClick = () => {
         Inertia.put(`/employee/${user.id}`, userState);
     };
 
+    const handlechecked = (e) => {
+        isAdmin = !isAdmin;
+        setUserState({ ...userState, isAdmin });
+    };
     return (
         <Authenticated auth={auth}>
             <Head title="تعديل معلومات الموظف" />
@@ -73,12 +71,12 @@ export default function Edit({ auth, user }) {
                         <div className="">
                             <Label
                                 className="text-xl pb-2"
-                                forInput="email"
+                                forInput="password"
                                 value="كلمة المرور"
                             />
                             <Input
                                 type="password"
-                                name="email"
+                                name="password"
                                 handleChange={handleChange}
                                 value={password}
                                 className="p-2 text-center w-full placeholder-gray-600"
@@ -106,8 +104,9 @@ export default function Edit({ auth, user }) {
                                 name="isAdmin"
                                 value={isAdmin}
                                 placeholder={user.isAdmin}
-                                handleChange={handleChange}
-                                className="w-6 h-6 "
+                                handleChange={handlechecked}
+                                className="w-6 h-6"
+                                checked={isAdmin}
                             />
                             <Label
                                 forInput="isAdmin"

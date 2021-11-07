@@ -17,7 +17,13 @@ export default function Welcome({ nextqueue }) {
         window.print();
         setDisabled(true);
 
-        responsiveVoice.speak(' شكراً لكم لزيارة كلية شط العرب الجامعة, سيتم طباعة تسلسلكَ ' + nextqueue + 'يرجى الانتظارْ' , 'Arabic Female', {volume: 1})
+        responsiveVoice.speak(
+            " شكراً لكم لزيارة كلية شط العرب الجامعة, سيتم طباعة تسلسلكَ " +
+                nextqueue +
+                "يرجى الانتظارْ",
+            "Arabic Female",
+            { volume: 1 }
+        );
         Inertia.post("/", { nextqueue });
     };
 

@@ -3533,7 +3533,7 @@ function Input(_ref) {
       handleFocus = _ref.handleFocus,
       handleBlur = _ref.handleBlur,
       checked = _ref.checked,
-      handleCheked = _ref.handleCheked;
+      handleClick = _ref.handleClick;
   var input = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (isFocused) {
@@ -3553,7 +3553,9 @@ function Input(_ref) {
       onChange: handleChange,
       onFocus: handleFocus,
       onBlur: handleBlur,
-      value: value
+      onClick: handleClick,
+      value: type === "checkBox" ? !value : value,
+      defaultChecked: checked
     })
   });
 }
@@ -3642,15 +3644,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var Pagination = function Pagination(_ref) {
   var nextPage = _ref.nextPage,
-      prevPage = _ref.prevPage;
+      prevPage = _ref.prevPage,
+      prePage = _ref.prePage,
+      to = _ref.to,
+      currentPage = _ref.currentPage;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     dir: "ltr",
     className: "flex max-w-lg justify-center space-x-3",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    children: [nextPage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       className: "py-2 px-3 bg-green-500 text-background rounded-md",
       href: nextPage === null ? "#" : nextPage,
       children: "\u0627\u0644\u062A\u0627\u0644\u064A"
-    }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    }), prevPage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       className: "py-2 px-3 bg-green-500 text-background rounded-md",
       href: prevPage === null ? "#" : prevPage,
       children: "\u0627\u0644\u0633\u0627\u0628\u0642"
@@ -4835,7 +4840,10 @@ function Dashboard(_ref) {
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Pagination__WEBPACK_IMPORTED_MODULE_7__["default"], {
               nextPage: users.next_page_url,
-              prevPage: users.prev_page_url
+              prevPage: users.prev_page_url,
+              perPage: users.perPage,
+              to: users.to,
+              currentPage: users.current_page
             })]
           })
         })
@@ -4912,11 +4920,7 @@ function Edit(_ref) {
     var _e$target = e.target,
         name = _e$target.name,
         value = _e$target.value;
-    setUserState(_objectSpread(_objectSpread({}, userState), {}, _defineProperty({}, name, value))); // Inertia.get(
-    //     `/dashboard`,
-    //     { date: e.target.value },
-    //     { replaces: true, preserveState: true }
-    // );
+    setUserState(_objectSpread(_objectSpread({}, userState), {}, _defineProperty({}, name, value)));
   };
 
   var email = userState.email,
@@ -4927,6 +4931,13 @@ function Edit(_ref) {
 
   var handelClick = function handelClick() {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.put("/employee/".concat(user.id), userState);
+  };
+
+  var handlechecked = function handlechecked(e) {
+    isAdmin = !isAdmin;
+    setUserState(_objectSpread(_objectSpread({}, userState), {}, {
+      isAdmin: isAdmin
+    }));
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -4974,11 +4985,11 @@ function Edit(_ref) {
             className: "",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
               className: "text-xl pb-2",
-              forInput: "email",
+              forInput: "password",
               value: "\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "password",
-              name: "email",
+              name: "password",
               handleChange: handleChange,
               value: password,
               className: "p-2 text-center w-full placeholder-gray-600",
@@ -5005,8 +5016,9 @@ function Edit(_ref) {
               name: "isAdmin",
               value: isAdmin,
               placeholder: user.isAdmin,
-              handleChange: handleChange,
-              className: "w-6 h-6 "
+              handleChange: handlechecked,
+              className: "w-6 h-6",
+              checked: isAdmin
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
               forInput: "isAdmin",
               className: "text-xl px-4 ",
@@ -5175,7 +5187,7 @@ function Welcome(_ref) {
   var handelClick = function handelClick() {
     window.print();
     setDisabled(true);
-    responsiveVoice.speak(' شكراً لكم لزيارة كلية شط العرب الجامعة, سيتم طباعة تسلسلكَ ' + nextqueue + 'يرجى الانتظارْ', 'Arabic Female', {
+    responsiveVoice.speak(" شكراً لكم لزيارة كلية شط العرب الجامعة, سيتم طباعة تسلسلكَ " + nextqueue + "يرجى الانتظارْ", "Arabic Female", {
       volume: 1
     });
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/", {

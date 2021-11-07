@@ -13,7 +13,8 @@ export default function Input({
     handleFocus,
     handleBlur,
     checked,
-    handleCheked,
+    // handleCheked,
+    handleClick,
 }) {
     const input = useRef();
 
@@ -38,7 +39,9 @@ export default function Input({
                 onChange={handleChange}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                value={value}
+                onClick={handleClick}
+                value={type === "checkBox" ? !value : value}
+                defaultChecked={checked}
             />
         </div>
     );
