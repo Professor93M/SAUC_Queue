@@ -82,7 +82,14 @@ export default function Dashboard({ users, auth, count }) {
                                         </svg>
                                     </Link>
                                 </div>
-                                <div className="flex  items-center justify-around w-96">
+                                <div className="flex  items-center justify-evenly w-72">
+                                    <Button
+                                        className="bg-gray-400 hover:bg-red-500 text-base py-2 px-2"
+                                        handelClick={handleClick}
+                                        type="button"
+                                    >
+                                        تهيئة السجل
+                                    </Button>
                                     <div className="flex">
                                         <p className="">
                                             عدد المراجعات : &nbsp;
@@ -91,13 +98,6 @@ export default function Dashboard({ users, auth, count }) {
                                             {count}
                                         </span>
                                     </div>
-                                    <Button
-                                        className="bg-gray-400 hover:bg-red-500 py-2 px-2"
-                                        handelClick={handleClick}
-                                        type="button"
-                                    >
-                                        تهيئة السجل
-                                    </Button>
                                 </div>
                             </div>
                             <table className="w-full">
