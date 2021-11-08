@@ -7,6 +7,10 @@
 
         <title inertia>{{ config('app.name', 'SAUC') }}</title>
 
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
@@ -33,7 +37,7 @@
             outline: 1px solid slategrey;
         }
     </style>
-    <body class="antialiased font-sans bg-background  text-gray-700">
+    <body class="antialiased  bg-background  text-gray-700">
         @inertia
 
         @env ('local')

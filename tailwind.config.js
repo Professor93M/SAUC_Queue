@@ -10,9 +10,9 @@ module.exports = {
 
     theme: {
         extend: {
-            fontFamily: {
-                sans: ["Tajawal", ...defaultTheme.fontFamily.sans],
-            },
+            // fontFamily: {
+            //         sans: ["Tajawal", ...defaultTheme.fontFamily.sans],
+            //     },
             screens: {
                 print: { raw: "print" },
             },

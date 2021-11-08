@@ -6,6 +6,7 @@ import { Head, Link } from "@inertiajs/inertia-react";
 import Input from "@/Components/Input";
 import { Inertia } from "@inertiajs/inertia";
 import Pagination from "@/Components/Pagination";
+import Button from "@/Components/Button";
 
 export default function Dashboard({ users, auth, count }) {
     console.log(users);
@@ -31,6 +32,14 @@ export default function Dashboard({ users, auth, count }) {
             { replaces: true, preserveState: true }
         );
     };
+
+    const handleClick = () => {
+        Inertia.get("/reset");
+    };
+
+    setTimeout(() => {
+        Inertia.reload();
+    }, 10000);
 
     const { serveDate } = search;
     return (
@@ -73,11 +82,22 @@ export default function Dashboard({ users, auth, count }) {
                                         </svg>
                                     </Link>
                                 </div>
-                                <div className="flex items-center">
-                                    <p>عدد المراجعات : &nbsp;</p>
-                                    <span className="text-white font-black bg-green-500 rounded-lg px-2 select-none cursor-default">
-                                        {count}
-                                    </span>
+                                <div className="flex  items-center justify-around w-96">
+                                    <div className="flex">
+                                        <p className="">
+                                            عدد المراجعات : &nbsp;
+                                        </p>
+                                        <span className="text-white font-black  bg-green-500 rounded-lg px-2 select-none cursor-default">
+                                            {count}
+                                        </span>
+                                    </div>
+                                    <Button
+                                        className="bg-gray-400 hover:bg-red-500 py-2 px-2"
+                                        handelClick={handleClick}
+                                        type="button"
+                                    >
+                                        تهيئة السجل
+                                    </Button>
                                 </div>
                             </div>
                             <table className="w-full">

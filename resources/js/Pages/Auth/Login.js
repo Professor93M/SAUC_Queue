@@ -29,9 +29,9 @@ export default function Login({ status, canResetPassword }) {
         );
     };
 
-    const goBack =() =>{
-        location.href = "/"
-    }
+    const goBack = () => {
+        location.href = "/";
+    };
 
     const submit = (e) => {
         e.preventDefault();
@@ -89,25 +89,22 @@ export default function Login({ status, canResetPassword }) {
                             value={data.remember}
                             handleChange={onHandleChange}
                         />
-
-
                     </label>
                 </div>
 
                 <div className="flex items-center justify-between mt-4">
+                    <Button
+                        className="ml-4 py-1 px-6 bg-blue-500"
+                        handelClick={goBack}
+                    >
+                        رجوع
+                    </Button>
                     <Button
                         className="ml-4 py-1 px-6 bg-green-500"
                         disabledClass="bg-gray-400 ml-4 py-1 px-6 text-background"
                         processing={processing}
                     >
                         تسجيل دخول
-                    </Button>
-
-                    <Button
-                        className="ml-4 py-1 px-6 bg-blue-500"
-                        handelClick={goBack}
-                    >
-                        رجوع
                     </Button>
                 </div>
             </form>

@@ -111,18 +111,17 @@ export default function Register() {
 
                 <div className="flex items-center justify-between mt-5">
                     <Button
+                        className="ml-4 py-1 px-6 bg-blue-500"
+                        handelClick={goBack}
+                    >
+                        رجوع
+                    </Button>
+                    <Button
                         className="ml-4 py-1 px-6 bg-green-500"
                         disabledClass="bg-gray-400 ml-4 py-1 px-6 text-background"
                         processing={processing}
                     >
                         تسجيل
-                    </Button>
-
-                    <Button
-                        className="ml-4 py-1 px-6 bg-blue-500"
-                        handelClick={goBack}
-                    >
-                        رجوع
                     </Button>
                 </div>
             </form>

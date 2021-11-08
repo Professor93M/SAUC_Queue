@@ -64,13 +64,7 @@ export default function Authenticated({ auth, header, children }) {
                                         ) : (
                                             ""
                                         )}
-                                        <Dropdown.Link
-                                            href={"/reset"}
-                                            method="get"
-                                            as="button"
-                                        >
-                                            تهيئة السجل
-                                        </Dropdown.Link>
+
                                         <Dropdown.Link
                                             href={route("logout")}
                                             method="post"

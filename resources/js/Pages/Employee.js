@@ -23,12 +23,12 @@ export default function Employee({ auth, queueCount, voice }) {
         }
         setTimeout(() => {
             setDisabled(false);
-        }, 100);
+        }, 10000);
     }, [counter]);
 
     setTimeout(() => {
         Inertia.reload();
-    }, 10000);
+    }, 5000);
 
     return (
         <Authenticated auth={auth}>
