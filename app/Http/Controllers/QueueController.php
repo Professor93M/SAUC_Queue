@@ -21,21 +21,25 @@ class QueueController extends Controller
 
     public function submit(Request $request){
         $queue = Queue::firstWhere('updated_at', null);
-        if($queue > 0){
-            $queue->update([
-                'users_id' => $request->id,
-                'UPDATED_AT' => Carbon::now(),
-            ]);
-            return Redirect::route('employee')->with('voice', " على صاحب التسلسل " . $queue->queue . " مراجعة الحاسبة " . $request->id);
-        }
-        return Redirect::route('employee');
+        $queue->update([
+            'users_id' => $request->id,
+            'UPDATED_AT' => Carbon::now(),
+        ]);
+        return Redirect::route('employee')->with('voice', " على صاحب التسلسل " . $queue->queue . " مراجعة الحاسبة " . $request->id);
     }
 
     public function screen(){
         $queue = Queue::whereNotNull('updated_at')->orderBy('updated_at', 'desc')->first();
-        return Inertia::render('Screen', [
-            'queue' => $queue,
-            'emp'   => User::findOrFail($queue->users_id)
-        ]);
+        if($queue){
+            return Inertia::render('Screen', [
+                'queue' => $queue,
+                'emp'   => User::findOrFail($queue->users_id)
+            ]);
+        }else{
+            return Inertia::render('Screen', [
+                'queue' => null,
+                'emp'   => null
+            ]);
+        }
     }
 }
