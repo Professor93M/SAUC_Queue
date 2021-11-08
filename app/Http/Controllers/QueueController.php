@@ -30,7 +30,7 @@ class QueueController extends Controller
 
     public function screen(){
         $queue = Queue::whereNotNull('updated_at')->orderBy('updated_at', 'desc')->first();
-        if($queue){
+        if(count($queue) > 0){
             return Inertia::render('Screen', [
                 'queue' => $queue,
                 'emp'   => User::findOrFail($queue->users_id)
