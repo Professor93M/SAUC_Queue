@@ -4753,7 +4753,9 @@ function Dashboard(_ref) {
   };
 
   var handleClick = function handleClick() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.get("/reset");
+    if (confirm("هل انت متأكد من التهيئة")) {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.get("/reset");
+    }
   };
 
   setTimeout(function () {

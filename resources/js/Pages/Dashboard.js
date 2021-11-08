@@ -34,7 +34,9 @@ export default function Dashboard({ users, auth, count }) {
     };
 
     const handleClick = () => {
-        Inertia.get("/reset");
+        if (confirm("هل انت متأكد من التهيئة")) {
+            Inertia.get("/reset");
+        }
     };
 
     setTimeout(() => {
