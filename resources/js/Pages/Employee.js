@@ -7,18 +7,17 @@ import Button from "@/Components/Button";
 export default function Employee({ auth, queueCount, voice }) {
     let [disabled, setDisabled] = useState(true);
     const counter = queueCount;
-    const playSound = (id) => {
-        new Audio("./" + id + ".mp3").play();
-    };
 
     const handelClick = (e) => {
-        setDisabled(false);
+        setDisabled(true);
+        setTimeout(() => {
+            setDisabled(false);
+        }, 10000);
         Inertia.post("/employee", { id: auth.user.id });
     };
 
     useEffect(() => {
         if (voice) {
-            // playSound(auth.user.id);
             responsiveVoice.speak(voice, "Arabic Female");
         }
         setTimeout(() => {
