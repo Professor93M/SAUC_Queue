@@ -96,6 +96,7 @@ export default function Login({ status, canResetPassword }) {
                     <Button
                         className="ml-4 py-1 px-6 bg-blue-500"
                         handelClick={goBack}
+                        type="button"
                     >
                         رجوع
                     </Button>
