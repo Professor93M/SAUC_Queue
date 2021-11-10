@@ -3,8 +3,10 @@ import { Head } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Button";
+import moment from "moment";
+import "moment/locale/ar";
 
-export default function Employee({ auth, queueCount, voice }) {
+export default function Employee({ auth, queueCount, queue, voice }) {
     let [disabled, setDisabled] = useState(true);
     const counter = queueCount;
 
@@ -51,6 +53,32 @@ export default function Employee({ auth, queueCount, voice }) {
                     ""
                 )}
             </div>
+            <table className="w-1/2 mx-auto mb-3 bg-green-100 rounded-lg">
+                <thead className="text-2xl bg-blue-200 rounded-lg text-gray-800">
+                    <tr>
+                        <th className="py-3">#</th>
+                        <th className="py-3">تسلسل الانتظار</th>
+                        <th className="py-3">وقت الطلب</th>
+                    </tr>
+                </thead>
+                <tbody className="text-center text-2xl font-medium text-gray-600">
+                    {queue.map((queue, key) => {
+                        return (
+                            <tr key={key}>
+                                <td className="py-4">
+                                    {key+1}
+                                </td>
+                                <td className="py-4">
+                                    {queue.queue}
+                                </td>
+                                <td className="py-4">
+                                    {moment(queue.created_at).fromNow()}
+                                </td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
         </Authenticated>
     );
 }

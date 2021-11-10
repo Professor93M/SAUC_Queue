@@ -23,6 +23,8 @@ class Controller extends BaseController
     public function employee(){
         return Inertia::render('Employee', [
             'queueCount' => Queue::where('updated_at', null)->count(),
+            'queue' => Queue::where('updated_at', null)->orderBy('created_at')->limit(5)->get(['queue', 'created_at']),
+            'wait' => true
         ]);
     }
 
