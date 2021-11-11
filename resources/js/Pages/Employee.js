@@ -53,7 +53,7 @@ export default function Employee({ auth, queueCount, queue, voice, last_user }) 
                     ""
                 )}
             </div>
-            { last_user.users ? (
+            { last_user ? (
                 <>
                     <h1 className="text-gray-700 text-center text-3xl mb-4">اخر معالجة</h1>
                     <table className="w-1/2 mx-auto mb-3 bg-green-100 rounded-lg">
@@ -71,7 +71,7 @@ export default function Employee({ auth, queueCount, queue, voice, last_user }) 
                                     {last_user.users_id}
                                 </td>
                                 <td className="py-4">
-                                    {last_user.name}
+                                    {last_user.users.name}
                                 </td>
                                 <td className="py-4">
                                     {last_user.queue}
