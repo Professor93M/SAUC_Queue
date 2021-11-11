@@ -4721,7 +4721,6 @@ function Dashboard(_ref) {
   var users = _ref.users,
       auth = _ref.auth,
       count = _ref.count;
-  console.log(users);
   var initialState = {
     serveDate: ""
   };
@@ -4744,7 +4743,6 @@ function Dashboard(_ref) {
         name = _e$target.name,
         value = _e$target.value;
     setSearch(_objectSpread(_objectSpread({}, search), {}, _defineProperty({}, name, value)));
-    console.log(e.target.value);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.get("/dashboard", {
       date: e.target.value
     }, {
@@ -4891,6 +4889,171 @@ function Dashboard(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Edit copy.js":
+/*!*****************************************!*\
+  !*** ./resources/js/Pages/Edit copy.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.js");
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
+/* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.js");
+/* harmony import */ var _Components_Label__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/Label */ "./resources/js/Components/Label.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+function Edit(_ref) {
+  var auth = _ref.auth,
+      user = _ref.user;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    name: user.name || '',
+    email: user.email || '',
+    isAdmin: user.isAdmin || '',
+    password: "",
+    password_confirmation: "",
+    _method: 'PUT'
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      post = _useForm.post; // let [userState, setUserState] = useState(initialState);
+  // let { email, name, isAdmin, password, password_confirmation } = userState;
+
+
+  var handleChange = function handleChange(e) {
+    var _e$target = e.target,
+        name = _e$target.name,
+        value = _e$target.value;
+    setData(_objectSpread(_objectSpread({}, data), {}, _defineProperty({}, name, value)));
+  };
+
+  var handelClick = function handelClick() {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/employee/".concat(user.id), data);
+  };
+
+  var handlechecked = function handlechecked() {
+    isAdmin = !isAdmin;
+    setData(_objectSpread(_objectSpread({}, data), {}, {
+      isAdmin: isAdmin
+    }));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    auth: auth,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      title: "\u062A\u0639\u062F\u064A\u0644 \u0645\u0639\u0644\u0648\u0645\u0627\u062A \u0627\u0644\u0645\u0648\u0638\u0641"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: " flex justify-center  text-gray-900 text-2xl",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "pt-12",
+        style: {
+          width: "512px"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+          onSubmit: handelClick,
+          className: "w-full mx-auto border-2 border-nav p-8 space-y-6",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              className: "text-xl w-full pb-2",
+              forInput: "name",
+              value: "\u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              type: "text",
+              className: "p-2 w-full text-center",
+              name: "name",
+              handleChange: handleChange,
+              value: data.name
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              className: "text-xl  pb-2",
+              forInput: "email",
+              value: "\u0627\u0644\u0628\u0631\u064A\u062F \u0627\u0644\u0627\u0644\u0643\u062A\u0631\u0648\u0646\u064A"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              type: "email",
+              name: "email",
+              handleChange: handleChange,
+              value: data.email,
+              className: "p-2 w-full text-center"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              className: "text-xl pb-2",
+              forInput: "password",
+              value: "\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              type: "password",
+              name: "password",
+              handleChange: handleChange,
+              value: data.password,
+              className: "p-2 text-center w-full placeholder-gray-600",
+              placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              className: "text-xl pb-2",
+              forInput: "email",
+              value: "\u062A\u0623\u0643\u064A\u062F \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              name: "password_confirmation",
+              type: "password",
+              handleChange: handleChange,
+              value: data.password_confirmation,
+              className: "p-2 text-center w-full placeholder-gray-600",
+              placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "flex items-center h-10 w-1/2 text-gray-900",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              type: "checkBox",
+              name: "isAdmin",
+              value: data.isAdmin,
+              handleChange: handlechecked,
+              className: "w-6 h-6",
+              checked: data.isAdmin
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              forInput: "isAdmin",
+              className: "text-xl px-4 ",
+              value: "\u062A\u0631\u0642\u064A\u0629 \u0627\u0644\u0649 \u0645\u062F\u064A\u0631"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            className: "bg-green-500 py-2 w-full",
+            disabledClass: "bg-gray-400 p-4 text-background",
+            children: "\u062D\u0641\u0638"
+          })]
+        })
+      })
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Edit.js":
 /*!************************************!*\
   !*** ./resources/js/Pages/Edit.js ***!
@@ -4916,18 +5079,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -4940,39 +5091,40 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Edit(_ref) {
   var auth = _ref.auth,
       user = _ref.user;
-  var initialState = {
+
+  // let initialState = {
+  //     name: user.name,
+  //     email: user.email,
+  //     isAdmin: user.isAdmin,
+  //     password: "",
+  //     password_confirmation: "",
+  // };
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     name: user.name,
     email: user.email,
     isAdmin: user.isAdmin,
     password: "",
-    password_confirmation: ""
-  };
+    password_confirmation: "",
+    _method: 'put'
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      post = _useForm.post; // let [userState, setData] = useState(initialState);
+  // const handleChange = (e) => {
+  //     const { name, value } = e.target;
+  //     setData({ ...userState, [name]: value });
+  // };
+  // let { email, name, isAdmin, password, password_confirmation } = userState;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialState),
-      _useState2 = _slicedToArray(_useState, 2),
-      userState = _useState2[0],
-      setUserState = _useState2[1];
 
-  var handleChange = function handleChange(e) {
-    var _e$target = e.target,
-        name = _e$target.name,
-        value = _e$target.value;
-    setUserState(_objectSpread(_objectSpread({}, userState), {}, _defineProperty({}, name, value)));
-  };
-
-  var email = userState.email,
-      name = userState.name,
-      isAdmin = userState.isAdmin,
-      password = userState.password,
-      password_confirmation = userState.password_confirmation;
-
-  var handelClick = function handelClick() {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.put("/employee/".concat(user.id), userState);
+  var handelClick = function handelClick(e) {
+    e.preventDefault();
+    post('/employee/', user.id);
   };
 
   var handlechecked = function handlechecked(e) {
     isAdmin = !isAdmin;
-    setUserState(_objectSpread(_objectSpread({}, userState), {}, {
+    setData(_objectSpread(_objectSpread({}, userState), {}, {
       isAdmin: isAdmin
     }));
   };
@@ -4988,7 +5140,384 @@ function Edit(_ref) {
         style: {
           width: "512px"
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("form", {
+          onSubmit: handelClick,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "w-full mx-auto border-2 border-nav p-8 space-y-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              className: "",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                className: "text-xl w-full pb-2",
+                forInput: "name",
+                value: "\u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                type: "text",
+                className: "p-2 w-full text-center",
+                name: "name",
+                placeholder: user.name // handleChange={handleChange}
+                ,
+                onChange: function onChange(e) {
+                  return setData('name', e.target.value);
+                },
+                value: data.name
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              className: "",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                className: "text-xl  pb-2",
+                forInput: "email",
+                value: "\u0627\u0644\u0628\u0631\u064A\u062F \u0627\u0644\u0627\u0644\u0643\u062A\u0631\u0648\u0646\u064A"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                type: "email",
+                name: "email",
+                placeholder: user.email,
+                onChange: function onChange(e) {
+                  return setData('email', e.target.value);
+                } // handleChange={handleChange}
+                ,
+                value: data.email,
+                className: "p-2 w-full text-center"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              className: "",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                className: "text-xl pb-2",
+                forInput: "password",
+                value: "\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                type: "password",
+                name: "password",
+                onChange: function onChange(e) {
+                  return setData('password', e.target.value);
+                } // handleChange={handleChange}
+                // value={data.password}
+                ,
+                className: "p-2 text-center w-full placeholder-gray-600",
+                placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              className: "",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                className: "text-xl pb-2",
+                forInput: "email",
+                value: "\u062A\u0623\u0643\u064A\u062F \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                name: "password_confirmation",
+                type: "password",
+                onChange: function onChange(e) {
+                  return setData('password_confirmation', e.target.value);
+                } // handleChange={handleChange}
+                // value={password_confirmation}
+                ,
+                className: "p-2 text-center w-full placeholder-gray-600",
+                placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              className: "flex items-center h-10 w-1/2 text-gray-900",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                type: "checkBox",
+                name: "isAdmin" // value={isAdmin}
+                ,
+                placeholder: user.isAdmin,
+                onChange: function onChange(e) {
+                  return setData('isAdmin', e.target.value);
+                } // handleChange={handlechecked}
+                ,
+                className: "w-6 h-6",
+                checked: data.isAdmin
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                forInput: "isAdmin",
+                className: "text-xl px-4 ",
+                value: "\u062A\u0631\u0642\u064A\u0629 \u0627\u0644\u0649 \u0645\u062F\u064A\u0631"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              className: "bg-green-500 py-2 w-full",
+              disabledClass: "bg-gray-400 p-4 text-background" // handelClick={handelClick}
+              ,
+              type: "submit",
+              children: "\u062D\u0641\u0638"
+            })]
+          })
+        })
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Edit1.js":
+/*!*************************************!*\
+  !*** ./resources/js/Pages/Edit1.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.js");
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
+/* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.js");
+/* harmony import */ var _Components_Label__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/Label */ "./resources/js/Components/Label.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+var Edit = function Edit() {
+  var user = usePage().props.user;
+
+  var _useFrom = useFrom({
+    name: user.name || '',
+    email: user.email || '',
+    isAdmin: user.isAdmin || '',
+    password: "",
+    password_confirmation: "" // _method:'PUT'
+
+  }),
+      data = _useFrom.data,
+      setData = _useFrom.setData,
+      put = _useFrom.put;
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    put(route('show'), user.id);
+  } // export default function Edit({ auth, user }) {
+  //     let {data,setData , post } =useForm ({
+  //         name: user.name || '',
+  //         email: user.email||'',
+  //         isAdmin: user.isAdmin||'',
+  //         password: "",
+  //         password_confirmation: "",
+  //         _method:'PUT'
+  //     })
+  // let [userState, setUserState] = useState(initialState);
+  // let { email, name, isAdmin, password, password_confirmation } = userState;
+
+
+  var handleChange = function handleChange(e) {
+    var _e$target = e.target,
+        name = _e$target.name,
+        value = _e$target.value;
+    setData(_objectSpread(_objectSpread({}, data), {}, _defineProperty({}, name, value)));
+  }; // const handelClick = () => {
+  //     Inertia.post(`/employee/${user.id}`, data);
+  // };
+
+
+  var handlechecked = function handlechecked() {
+    isAdmin = !isAdmin;
+    setData(_objectSpread(_objectSpread({}, data), {}, {
+      isAdmin: isAdmin
+    }));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    auth: auth,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      title: "\u062A\u0639\u062F\u064A\u0644 \u0645\u0639\u0644\u0648\u0645\u0627\u062A \u0627\u0644\u0645\u0648\u0638\u0641"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: " flex justify-center  text-gray-900 text-2xl",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "pt-12",
+        style: {
+          width: "512px"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+          onSubmit: handelClick,
+          className: "w-full mx-auto border-2 border-nav p-8 space-y-6",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              className: "text-xl w-full pb-2",
+              forInput: "name",
+              value: "\u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              type: "text",
+              className: "p-2 w-full text-center",
+              name: "name" // handleChange={handleChange}
+              ,
+              onChange: function onChange(e) {
+                return setData('name', e.target.value);
+              },
+              value: data.name
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              className: "text-xl  pb-2",
+              forInput: "email",
+              value: "\u0627\u0644\u0628\u0631\u064A\u062F \u0627\u0644\u0627\u0644\u0643\u062A\u0631\u0648\u0646\u064A"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              type: "email",
+              name: "email" // handleChange={handleChange}
+              ,
+              onChange: function onChange(e) {
+                return setData('email', e.target.value);
+              },
+              value: data.email,
+              className: "p-2 w-full text-center"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              className: "text-xl pb-2",
+              forInput: "password",
+              value: "\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              type: "password",
+              name: "password" // handleChange={handleChange}
+              ,
+              onChange: function onChange(e) {
+                return setData('password', e.target.value);
+              },
+              value: data.password,
+              className: "p-2 text-center w-full placeholder-gray-600",
+              placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              className: "text-xl pb-2",
+              forInput: "email",
+              value: "\u062A\u0623\u0643\u064A\u062F \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              name: "password_confirmation",
+              type: "password" // handleChange={handleChange}
+              ,
+              onChange: function onChange(e) {
+                return setData('password_confirmation', e.target.value);
+              },
+              value: data.password_confirmation,
+              className: "p-2 text-center w-full placeholder-gray-600",
+              placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "flex items-center h-10 w-1/2 text-gray-900",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              type: "checkBox",
+              name: "isAdmin",
+              value: data.isAdmin // handleChange={handlechecked}
+              ,
+              onChange: function onChange(e) {
+                return setData('isAdmin', e.target.value);
+              },
+              className: "w-6 h-6",
+              checked: data.isAdmin
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              forInput: "isAdmin",
+              className: "text-xl px-4 ",
+              value: "\u062A\u0631\u0642\u064A\u0629 \u0627\u0644\u0649 \u0645\u062F\u064A\u0631"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            className: "bg-green-500 py-2 w-full",
+            disabledClass: "bg-gray-400 p-4 text-background",
+            children: "\u062D\u0641\u0638"
+          })]
+        })
+      })
+    })]
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Edit2.js":
+/*!*************************************!*\
+  !*** ./resources/js/Pages/Edit2.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.js");
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
+/* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.js");
+/* harmony import */ var _Components_Label__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/Label */ "./resources/js/Components/Label.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+function Edit(_ref) {
+  var auth = _ref.auth,
+      user = _ref.user;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    name: user.name || '',
+    email: user.email || '',
+    isAdmin: user.isAdmin || '',
+    password: "",
+    password_confirmation: "",
+    _method: 'PUT'
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      put = _useForm.put; // let [userState, setUserState] = useState(initialState);
+  // let { email, name, isAdmin, password, password_confirmation } = userState;
+
+
+  var handleChange = function handleChange(e) {
+    var _e$target = e.target,
+        name = _e$target.name,
+        value = _e$target.value;
+    setData(_objectSpread(_objectSpread({}, data), {}, _defineProperty({}, name, value)));
+  };
+
+  var handleSubmit = function handleSubmit() {
+    // Inertia.post(`/employee/${user.id}`, data);
+    console.log(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm);
+    put('/employee/', user.id); // put('/employee/', user.id)
+  }; // const handlechecked = () => {
+  //     isAdmin = !isAdmin;
+  //     setData({...data, isAdmin });
+  // };
+
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    auth: auth,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      title: "\u062A\u0639\u062F\u064A\u0644 \u0645\u0639\u0644\u0648\u0645\u0627\u062A \u0627\u0644\u0645\u0648\u0638\u0641"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: " flex justify-center  text-gray-900 text-2xl",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "pt-12",
+        style: {
+          width: "512px"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+          onSubmit: handleSubmit,
           className: "w-full mx-auto border-2 border-nav p-8 space-y-6",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "",
@@ -5000,9 +5529,8 @@ function Edit(_ref) {
               type: "text",
               className: "p-2 w-full text-center",
               name: "name",
-              placeholder: user.name,
               handleChange: handleChange,
-              value: name
+              value: data.name
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "",
@@ -5013,9 +5541,8 @@ function Edit(_ref) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
               type: "email",
               name: "email",
-              placeholder: user.email,
               handleChange: handleChange,
-              value: email,
+              value: data.email,
               className: "p-2 w-full text-center"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -5028,7 +5555,7 @@ function Edit(_ref) {
               type: "password",
               name: "password",
               handleChange: handleChange,
-              value: password,
+              value: data.password,
               className: "p-2 text-center w-full placeholder-gray-600",
               placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
             })]
@@ -5042,30 +5569,14 @@ function Edit(_ref) {
               name: "password_confirmation",
               type: "password",
               handleChange: handleChange,
-              value: password_confirmation,
+              value: data.password_confirmation,
               className: "p-2 text-center w-full placeholder-gray-600",
               placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "flex items-center h-10 w-1/2 text-gray-900",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
-              type: "checkBox",
-              name: "isAdmin",
-              value: isAdmin,
-              placeholder: user.isAdmin,
-              handleChange: handlechecked,
-              className: "w-6 h-6",
-              checked: isAdmin
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              forInput: "isAdmin",
-              className: "text-xl px-4 ",
-              value: "\u062A\u0631\u0642\u064A\u0629 \u0627\u0644\u0649 \u0645\u062F\u064A\u0631"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
             className: "bg-green-500 py-2 w-full",
             disabledClass: "bg-gray-400 p-4 text-background",
-            handelClick: handelClick,
-            type: "button",
+            type: "submit",
             children: "\u062D\u0641\u0638"
           })]
         })
@@ -5174,7 +5685,7 @@ function Employee(_ref) {
         className: " py-4 px-6 bg-green-500  text-background text-4xl",
         children: disabled ? "انتظر قليلاً" : "التالي "
       }) : ""]
-    }), last_user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    }), last_user.users ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
         className: "text-gray-700 text-center text-3xl mb-4",
         children: "\u0627\u062E\u0631 \u0645\u0639\u0627\u0644\u062C\u0629"
@@ -5205,7 +5716,7 @@ function Employee(_ref) {
               children: last_user.users_id
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
               className: "py-4",
-              children: last_user.users.name
+              children: last_user.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
               className: "py-4",
               children: last_user.queue
@@ -5315,11 +5826,11 @@ function Welcome(_ref) {
   }, [nextqueue]);
 
   var handelClick = function handelClick() {
-    window.print();
-    setDisabled(true);
-    responsiveVoice.speak(" شكراً لكم لزيارة كلية شط العرب الجامعة, سيتم طباعة تسلسلكَ " + nextqueue + "يرجى الانتظارْ", "Arabic Female", {
+    responsiveVoice.speak(" شكراً لكم لزيارة كلية شط العرب الجامعةْ ........ , سيتم طباعة تسلسلكَ " + nextqueue + "يرجى الانتظارْ", "Arabic Female", {
       volume: 1
     });
+    window.print();
+    setDisabled(true);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/", {
       nextqueue: nextqueue
     });
@@ -5407,11 +5918,15 @@ __webpack_require__.r(__webpack_exports__);
 
 function Screen(_ref) {
   var emp = _ref.emp,
-      queue = _ref.queue;
-  console.log(queue);
+      queue = _ref.queue,
+      voice = _ref.voice;
   setTimeout(function () {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
   }, 2000);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {// if (voice) {
+    //     responsiveVoice.speak(voice, "Arabic Female");
+    // }
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__.Visitor, {
     classes: "print:w-20 print:h-20 w-40 h-40",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
@@ -5508,7 +6023,6 @@ __webpack_require__.r(__webpack_exports__);
 function Show(_ref) {
   var auth = _ref.auth,
       users = _ref.users;
-  console.log(users);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_2__["default"], {
     auth: auth,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
@@ -80244,7 +80758,13 @@ var map = {
 	"./Dashboard": "./resources/js/Pages/Dashboard.js",
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
 	"./Edit": "./resources/js/Pages/Edit.js",
+	"./Edit copy": "./resources/js/Pages/Edit copy.js",
+	"./Edit copy.js": "./resources/js/Pages/Edit copy.js",
 	"./Edit.js": "./resources/js/Pages/Edit.js",
+	"./Edit1": "./resources/js/Pages/Edit1.js",
+	"./Edit1.js": "./resources/js/Pages/Edit1.js",
+	"./Edit2": "./resources/js/Pages/Edit2.js",
+	"./Edit2.js": "./resources/js/Pages/Edit2.js",
 	"./Employee": "./resources/js/Pages/Employee.js",
 	"./Employee.js": "./resources/js/Pages/Employee.js",
 	"./Index": "./resources/js/Pages/Index.js",

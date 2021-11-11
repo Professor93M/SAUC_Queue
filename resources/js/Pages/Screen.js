@@ -3,11 +3,15 @@ import { Link, Head } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import { Visitor } from "@/Layouts/Visitor";
 
-export default function Screen({ emp, queue }) {
-    console.log(queue);
+export default function Screen({ emp, queue, voice }) {
     setTimeout(() => {
         Inertia.reload();
     }, 2000);
+    useEffect(() => {
+        // if (voice) {
+        //     responsiveVoice.speak(voice, "Arabic Female");
+        // }
+    });
 
     return (
         <Visitor classes="print:w-20 print:h-20 w-40 h-40">

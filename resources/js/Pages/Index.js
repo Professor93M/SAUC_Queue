@@ -15,16 +15,16 @@ export default function Welcome({ nextqueue, wait }) {
     }, [nextqueue]);
 
     const handelClick = () => {
-        window.print();
-        setDisabled(true);
-
         responsiveVoice.speak(
-            " شكراً لكم لزيارة كلية شط العرب الجامعة, سيتم طباعة تسلسلكَ " +
+            " شكراً لكم لزيارة كلية شط العرب الجامعةْ ........ , سيتم طباعة تسلسلكَ " +
                 nextqueue +
                 "يرجى الانتظارْ",
             "Arabic Female",
             { volume: 1 }
         );
+        window.print();
+        setDisabled(true);
+
         Inertia.post("/", { nextqueue });
     };
 

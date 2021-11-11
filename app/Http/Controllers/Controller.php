@@ -21,10 +21,11 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function employee(){
+        $last_user = Queue::orderBy('updated_at', 'desc')->first()->with('users')->get() ? Queue::orderBy('updated_at', 'desc')->first()->with('users')->get() : null;
         return Inertia::render('Employee', [
             'queueCount' => Queue::where('updated_at', null)->count(),
             'queue' => Queue::where('updated_at', null)->orderBy('created_at')->limit(5)->get(['queue', 'created_at']),
-            'last_user' => Queue::orderBy('updated_at', 'desc')->with('users')->first(),
+            'last_user' => $last_user
         ]);
     }
 
@@ -79,6 +80,7 @@ class Controller extends BaseController
     }
 
     public function update(Request $request, $id){
+        // dd($request->all());
         $user = User::findOrFail($id);
         if(($request->name !== $user->name) || ($request->email !== $user->email) || ($request->password !== $user->password) || ($request->isAdmin !== $user->isAdmin)){
             if($request->name !== $user->name){
@@ -112,8 +114,10 @@ class Controller extends BaseController
                 'email' => $request->email,
                 'password' => !isset($request->password) ? $user->password : Hash::make($request->password),
             ]);
-            return Redirect::route('show')->with('success', 'تم تعديل بيانات المشرف بنجاح');
+            return Redirect::route('show');
         }else{
+            dd($request->all());
+
             return Redirect::route('show');
         }
     }

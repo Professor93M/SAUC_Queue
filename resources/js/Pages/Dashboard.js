@@ -9,7 +9,6 @@ import Pagination from "@/Components/Pagination";
 import Button from "@/Components/Button";
 
 export default function Dashboard({ users, auth, count }) {
-    console.log(users);
     let initialState = {
         serveDate: "",
     };
@@ -25,7 +24,6 @@ export default function Dashboard({ users, auth, count }) {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setSearch({ ...search, [name]: value });
-        console.log(e.target.value);
         Inertia.get(
             `/dashboard`,
             { date: e.target.value },

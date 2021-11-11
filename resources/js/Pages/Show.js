@@ -4,7 +4,6 @@ import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Button";
 
 export default function Show({ auth, users }) {
-    console.log(users);
     return (
         <Authenticated auth={auth}>
             <Head title="معلومات الموظفين" />
