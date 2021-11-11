@@ -8,18 +8,20 @@ export default function Screen({ emp, queue }) {
         Inertia.reload();
     }, 2000);
     useEffect(() => {
-        if (
-            localStorage.getItem("voice", queue.updated_at) !== queue.updated_at
-        ) {
-            responsiveVoice.speak(
-                "على صاحب التسلسل " +
-                    queue.queue +
-                    " مراجعة الحاسبة " +
-                    queue.users_id,
-                "Arabic Female"
-            );
+        if(queue){
+            if (
+                localStorage.getItem("voice", queue.updated_at) !== queue.updated_at
+            ) {
+                responsiveVoice.speak(
+                    "على صاحب التسلسل " +
+                        queue.queue +
+                        " مراجعة الحاسبة " +
+                        queue.users_id,
+                    "Arabic Female"
+                );
+            }
+            localStorage.setItem("voice", queue.updated_at);
         }
-        localStorage.setItem("voice", queue.updated_at);
     });
 
     return (
