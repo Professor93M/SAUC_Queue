@@ -3,6 +3,7 @@ import { Head } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Button";
+import Alert from "@/Components/Alert";
 import moment from "moment";
 import "moment/locale/ar";
 
@@ -10,7 +11,7 @@ export default function Employee({
     auth,
     queueCount,
     queue,
-    voice,
+    alert,
     last_user,
 }) {
     let [disabled, setDisabled] = useState(true);
@@ -41,6 +42,7 @@ export default function Employee({
                 style={{ height: "60vh" }}
                 className=" flex items-center pt-6 justify-evenly text-6xl flex-col text-gray-700 space-y-4  "
             >
+                {alert && <Alert />}
                 <h1> عدد المراجعين في الانتظار : {queueCount} </h1>
                 {queueCount > 0 ? (
                     <Button

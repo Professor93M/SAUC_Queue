@@ -3,17 +3,23 @@ import { Link, Head } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import { Visitor } from "@/Layouts/Visitor";
 
-export default function Screen({ emp, queue, voice }) {
+export default function Screen({ emp, queue }) {
     setTimeout(() => {
         Inertia.reload();
     }, 2000);
     useEffect(() => {
-        if(localStorage.getItem('voice', queue.updated_at) !== queue.updated_at){
+        if (
+            localStorage.getItem("voice", queue.updated_at) !== queue.updated_at
+        ) {
             responsiveVoice.speak(
-                "على صاحب التسلسل " + queue.queue + " مراجعة الحاسبة " + queue.users_id, "Arabic Female"
+                "على صاحب التسلسل " +
+                    queue.queue +
+                    " مراجعة الحاسبة " +
+                    queue.users_id,
+                "Arabic Female"
             );
         }
-        localStorage.setItem('voice', queue.updated_at)
+        localStorage.setItem("voice", queue.updated_at);
     });
 
     return (
