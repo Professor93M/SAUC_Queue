@@ -28,9 +28,9 @@ class QueueController extends Controller
                     'users_id' => $request->id,
                     'UPDATED_AT' => Carbon::now(),
                 ]);
-                return Redirect::back()->with('voice', " على صاحب التسلسل " . $queue->queue . " مراجعة الحاسبة " . $request->id);
+                return Redirect::back();
             }else{
-                return Redirect::back()->with('voice', "يرجى الانتظار قليلا");
+                return Redirect::back()->with('alert', "يرجى الانتظار قليلا");
             }
         }else{
             $queue->update([
