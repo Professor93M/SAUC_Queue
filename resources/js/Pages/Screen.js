@@ -2,35 +2,36 @@ import React, { useEffect, useState } from "react";
 import { Link, Head } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import { Visitor } from "@/Layouts/Visitor";
+import Video from "@/Components/Video";
 
 export default function Screen({ emp, queue }) {
     setTimeout(() => {
         Inertia.reload();
     }, 2000);
     useEffect(() => {
-        if(queue){
-            if (
-                localStorage.getItem("voice", queue.updated_at) !== queue.updated_at
-            ) {
-                responsiveVoice.speak(
-                    "على صاحب التسلسل " +
-                        queue.queue +
-                        " مراجعة الحاسبة " +
-                        queue.users_id,
-                    "Arabic Female"
-                );
-            }
-            localStorage.setItem("voice", queue.updated_at);
+        if (
+            localStorage.getItem("voice", queue.updated_at) !== queue.updated_at
+        ) {
+            responsiveVoice.speak(
+                "على صاحب التسلسل " +
+                    queue.queue +
+                    " مراجعة الحاسبة " +
+                    queue.users_id,
+                "Arabic Female"
+            );
         }
+        localStorage.setItem("voice", queue.updated_at);
     });
 
     return (
         <Visitor classes="print:w-20 print:h-20 w-40 h-40">
             <Head title="التسلسل التالي" />
             <div
-                className=" flex items-center justify-evenly text-4xl flex-col space-y-4"
+                className=" flex items-center z-30 justify-evenly text-4xl flex-col space-y-4"
                 style={{ height: "78vh" }}
             >
+                <Video clip="/sauc.mp4" poster="/Logo.png" />
+
                 {queue <= 0 ? (
                     <h1 className="text-5xl">لا يوجد مراجعين في الانتظار</h1>
                 ) : (
