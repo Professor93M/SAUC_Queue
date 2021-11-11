@@ -8,10 +8,13 @@ export default function Screen({ emp, queue, voice }) {
         Inertia.reload();
     }, 2000);
     useEffect(() => {
-        if (voice) {
-            responsiveVoice.speak(voice, "Arabic Female");
+        if(localStorage.getItem('voice', queue.updated_at) !== queue.updated_at){
+            responsiveVoice.speak(
+                "على صاحب التسلسل " + queue.queue + " مراجعة الحاسبة " + queue.users_id, "Arabic Female"
+            );
         }
-    }, [queue]);
+        localStorage.setItem('voice', queue.updated_at)
+    });
 
     return (
         <Visitor classes="print:w-20 print:h-20 w-40 h-40">

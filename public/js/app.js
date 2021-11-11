@@ -5374,10 +5374,12 @@ function Screen(_ref) {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
   }, 2000);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (voice) {
-      responsiveVoice.speak(voice, "Arabic Female");
+    if (localStorage.getItem('voice', queue.updated_at) !== queue.updated_at) {
+      responsiveVoice.speak("على صاحب التسلسل " + queue.queue + " مراجعة الحاسبة " + queue.users_id, "Arabic Female");
     }
-  }, [queue]);
+
+    localStorage.setItem('voice', queue.updated_at);
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__.Visitor, {
     classes: "print:w-20 print:h-20 w-40 h-40",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
