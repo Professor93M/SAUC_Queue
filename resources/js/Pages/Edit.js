@@ -101,7 +101,7 @@ export default function Edit({ auth, user }) {
                                 placeholder="اترك الحقل فارغ لعدم التغيير"
                             />
                         </div>
-                        <div className="flex items-center h-10 w-1/2 text-gray-900">
+                        {/* <div className="flex items-center h-10 w-1/2 text-gray-900">
                             <Input
                                 type="checkBox"
                                 name="isAdmin"
@@ -115,7 +115,7 @@ export default function Edit({ auth, user }) {
                                 className="text-xl px-4 "
                                 value="ترقية الى مدير"
                             />
-                        </div>
+                        </div> */}
 
                         <Button
                             className="bg-green-500 py-2 w-full"

@@ -6,7 +6,13 @@ import Button from "@/Components/Button";
 import moment from "moment";
 import "moment/locale/ar";
 
-export default function Employee({ auth, queueCount, queue, voice, last_user }) {
+export default function Employee({
+    auth,
+    queueCount,
+    queue,
+    voice,
+    last_user,
+}) {
     let [disabled, setDisabled] = useState(true);
     const counter = queueCount;
 
@@ -19,9 +25,6 @@ export default function Employee({ auth, queueCount, queue, voice, last_user }) 
     };
 
     useEffect(() => {
-        if (voice) {
-            responsiveVoice.speak(voice, "Arabic Female");
-        }
         setTimeout(() => {
             setDisabled(false);
         }, 10000);
@@ -53,9 +56,11 @@ export default function Employee({ auth, queueCount, queue, voice, last_user }) 
                     ""
                 )}
             </div>
-            { last_user ? (
+            {last_user ? (
                 <>
-                    <h1 className="text-gray-700 text-center text-3xl mb-4">اخر معالجة</h1>
+                    <h1 className="text-gray-700 text-center text-3xl mb-4">
+                        اخر معالجة
+                    </h1>
                     <table className="w-1/2 mx-auto mb-3 bg-green-100 rounded-lg">
                         <thead className="text-2xl bg-blue-200 rounded-lg text-gray-800">
                             <tr>
@@ -67,15 +72,9 @@ export default function Employee({ auth, queueCount, queue, voice, last_user }) 
                         </thead>
                         <tbody className="text-center text-2xl font-medium text-gray-600">
                             <tr>
-                                <td className="py-4">
-                                    {last_user.users_id}
-                                </td>
-                                <td className="py-4">
-                                    {last_user.users.name}
-                                </td>
-                                <td className="py-4">
-                                    {last_user.queue}
-                                </td>
+                                <td className="py-4">{last_user.users_id}</td>
+                                <td className="py-4">{last_user.users.name}</td>
+                                <td className="py-4">{last_user.queue}</td>
                                 <td className="py-4">
                                     {moment(last_user.updated_at).fromNow()}
                                 </td>
@@ -83,38 +82,40 @@ export default function Employee({ auth, queueCount, queue, voice, last_user }) 
                         </tbody>
                     </table>
                 </>
-            ) : '' }
-            { queue.length > 0 ? (
+            ) : (
+                ""
+            )}
+            {queue.length > 0 ? (
                 <>
-                    <h1 className="text-gray-700 text-center text-3xl my-4">المراجعين في الانتظار</h1>
-                <table className="w-1/2 mx-auto mb-3 bg-red-100 rounded-lg">
-                    <thead className="text-2xl bg-red-200 rounded-lg text-gray-800">
-                        <tr>
-                            <th className="py-3">#</th>
-                            <th className="py-3">تسلسل الانتظار</th>
-                            <th className="py-3">وقت الطلب</th>
-                        </tr>
-                    </thead>
-                    <tbody className="text-center text-2xl font-medium text-gray-600">
-                        {queue.map((queue, key) => {
-                            return (
-                                <tr key={key}>
-                                    <td className="py-4">
-                                        {key+1}
-                                    </td>
-                                    <td className="py-4">
-                                        {queue.queue}
-                                    </td>
-                                    <td className="py-4">
-                                        {moment(queue.created_at).fromNow()}
-                                    </td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
+                    <h1 className="text-gray-700 text-center text-3xl my-4">
+                        المراجعين في الانتظار
+                    </h1>
+                    <table className="w-1/2 mx-auto mb-3 bg-red-100 rounded-lg">
+                        <thead className="text-2xl bg-red-200 rounded-lg text-gray-800">
+                            <tr>
+                                <th className="py-3">#</th>
+                                <th className="py-3">تسلسل الانتظار</th>
+                                <th className="py-3">وقت الطلب</th>
+                            </tr>
+                        </thead>
+                        <tbody className="text-center text-2xl font-medium text-gray-600">
+                            {queue.map((queue, key) => {
+                                return (
+                                    <tr key={key}>
+                                        <td className="py-4">{key + 1}</td>
+                                        <td className="py-4">{queue.queue}</td>
+                                        <td className="py-4">
+                                            {moment(queue.created_at).fromNow()}
+                                        </td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
                 </>
-            ) : ''}
+            ) : (
+                ""
+            )}
         </Authenticated>
     );
 }

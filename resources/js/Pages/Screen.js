@@ -8,10 +8,10 @@ export default function Screen({ emp, queue, voice }) {
         Inertia.reload();
     }, 2000);
     useEffect(() => {
-        // if (voice) {
-        //     responsiveVoice.speak(voice, "Arabic Female");
-        // }
-    });
+        if (voice) {
+            responsiveVoice.speak(voice, "Arabic Female");
+        }
+    }, [queue]);
 
     return (
         <Visitor classes="print:w-20 print:h-20 w-40 h-40">
@@ -28,15 +28,15 @@ export default function Screen({ emp, queue, voice }) {
                         <h3 className="text-6xl align-middle mt-5">
                             {" "}
                             تسلسل المراجع التالي هو :{" "}
-                            <span class="text-red-500 font-bold bg-gray-200 border-2 rounded-lg px-2 text-7xl">
+                            <span className="text-red-500 font-bold bg-gray-200 border-2 rounded-lg px-2 text-7xl">
                                 {" "}
                                 {queue.queue}{" "}
                             </span>{" "}
                         </h3>
-                        <div class="grid grid-cols-2">
-                            <div class="m-4 rounded-lg shadow-lg bg-nav">
-                                <div class="text-center m-2 p-3 rounded-lg text-black">
-                                    <div class="text-white font-black text-7xl pb-3">
+                        <div className="grid grid-cols-2">
+                            <div className="m-4 rounded-lg shadow-lg bg-nav">
+                                <div className="text-center m-2 p-3 rounded-lg text-black">
+                                    <div className="text-white font-black text-7xl pb-3">
                                         {emp.name}
                                     </div>
                                     <svg
@@ -52,9 +52,9 @@ export default function Screen({ emp, queue, voice }) {
                                     </svg>
                                 </div>
                             </div>
-                            <div class="m-4 rounded-lg shadow-lg bg-nav">
-                                <div class="text-center m-2 p-3 rounded-lg text-black">
-                                    <div class="text-white font-black text-7xl pb-3">
+                            <div className="m-4 rounded-lg shadow-lg bg-nav">
+                                <div className="text-center m-2 p-3 rounded-lg text-black">
+                                    <div className="text-white font-black text-7xl pb-3">
                                         {emp.id}
                                     </div>
                                     <svg

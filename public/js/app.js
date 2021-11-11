@@ -5028,20 +5028,6 @@ function Edit(_ref) {
               className: "p-2 text-center w-full placeholder-gray-600",
               placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-            className: "flex items-center h-10 w-1/2 text-gray-900",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
-              type: "checkBox",
-              name: "isAdmin",
-              value: data.isAdmin,
-              handleChange: handlechecked,
-              className: "w-6 h-6",
-              checked: data.isAdmin
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              forInput: "isAdmin",
-              className: "text-xl px-4 ",
-              value: "\u062A\u0631\u0642\u064A\u0629 \u0627\u0644\u0649 \u0645\u062F\u064A\u0631"
-            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
             className: "bg-green-500 py-2 w-full",
             disabledClass: "bg-gray-400 p-4 text-background",
@@ -5123,10 +5109,6 @@ function Employee(_ref) {
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (voice) {
-      responsiveVoice.speak(voice, "Arabic Female");
-    }
-
     setTimeout(function () {
       setDisabled(false);
     }, 10000);
@@ -5153,7 +5135,7 @@ function Employee(_ref) {
         className: " py-4 px-6 bg-green-500  text-background text-4xl",
         children: disabled ? "انتظر قليلاً" : "التالي "
       }) : ""]
-    }), last_user.users ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    }), last_user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
         className: "text-gray-700 text-center text-3xl mb-4",
         children: "\u0627\u062E\u0631 \u0645\u0639\u0627\u0644\u062C\u0629"
@@ -5184,7 +5166,7 @@ function Employee(_ref) {
               children: last_user.users_id
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
               className: "py-4",
-              children: last_user.name
+              children: last_user.users.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
               className: "py-4",
               children: last_user.queue
@@ -5195,7 +5177,7 @@ function Employee(_ref) {
           })
         })]
       })]
-    }) : '', queue.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    }) : "", queue.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
         className: "text-gray-700 text-center text-3xl my-4",
         children: "\u0627\u0644\u0645\u0631\u0627\u062C\u0639\u064A\u0646 \u0641\u064A \u0627\u0644\u0627\u0646\u062A\u0638\u0627\u0631"
@@ -5233,7 +5215,7 @@ function Employee(_ref) {
           })
         })]
       })]
-    }) : '']
+    }) : ""]
   });
 }
 
@@ -5391,10 +5373,11 @@ function Screen(_ref) {
   setTimeout(function () {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
   }, 2000);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {// if (voice) {
-    //     responsiveVoice.speak(voice, "Arabic Female");
-    // }
-  });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (voice) {
+      responsiveVoice.speak(voice, "Arabic Female");
+    }
+  }, [queue]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Visitor__WEBPACK_IMPORTED_MODULE_3__.Visitor, {
     classes: "print:w-20 print:h-20 w-40 h-40",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
@@ -5411,17 +5394,17 @@ function Screen(_ref) {
         children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h3", {
           className: "text-6xl align-middle mt-5",
           children: [" ", "\u062A\u0633\u0644\u0633\u0644 \u0627\u0644\u0645\u0631\u0627\u062C\u0639 \u0627\u0644\u062A\u0627\u0644\u064A \u0647\u0648 :", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
-            "class": "text-red-500 font-bold bg-gray-200 border-2 rounded-lg px-2 text-7xl",
+            className: "text-red-500 font-bold bg-gray-200 border-2 rounded-lg px-2 text-7xl",
             children: [" ", queue.queue, " "]
           }), " "]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          "class": "grid grid-cols-2",
+          className: "grid grid-cols-2",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            "class": "m-4 rounded-lg shadow-lg bg-nav",
+            className: "m-4 rounded-lg shadow-lg bg-nav",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              "class": "text-center m-2 p-3 rounded-lg text-black",
+              className: "text-center m-2 p-3 rounded-lg text-black",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "text-white font-black text-7xl pb-3",
+                className: "text-white font-black text-7xl pb-3",
                 children: emp.name
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
                 xmlns: "http://www.w3.org/2000/svg",
@@ -5438,11 +5421,11 @@ function Screen(_ref) {
               })]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            "class": "m-4 rounded-lg shadow-lg bg-nav",
+            className: "m-4 rounded-lg shadow-lg bg-nav",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              "class": "text-center m-2 p-3 rounded-lg text-black",
+              className: "text-center m-2 p-3 rounded-lg text-black",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                "class": "text-white font-black text-7xl pb-3",
+                className: "text-white font-black text-7xl pb-3",
                 children: emp.id
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
                 xmlns: "http://www.w3.org/2000/svg",
