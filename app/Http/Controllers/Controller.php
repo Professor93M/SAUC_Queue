@@ -21,7 +21,8 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function employee(){
-        $last_user = Queue::orderBy('updated_at', 'desc')->first()->with('users')->get() ? Queue::orderBy('updated_at', 'desc')->first()->with('users')->get() : null;
+        $last_user = Queue::whereNotNull('updated_at')->orderBy('updated_at', 'desc')->with('users')->first();
+
         return Inertia::render('Employee', [
             'queueCount' => Queue::where('updated_at', null)->count(),
             'queue' => Queue::where('updated_at', null)->orderBy('created_at')->limit(5)->get(['queue', 'created_at']),
