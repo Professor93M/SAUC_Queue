@@ -1,10 +1,10 @@
 import React from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 
-export const Visitor = ({ children, classes }) => {
+export const Visitor = ({ children, classes, hide }) => {
     return (
         <div className="h-28">
-            <div className="flex h-full items-center py-2  text-gray-100 bg-nav justify-around m-auto">
+            <div className={`${hide ? "hidden" : "flex h-full items-center py-2  text-gray-100 bg-nav justify-around m-auto"}`}>
                 <div className="flex text-xl print:text-xs print:hidden flex-col items-center justify-center">
                     <h2>نظام الطابور الالكتروني</h2>
                     <h2>كلية شط العرب</h2>

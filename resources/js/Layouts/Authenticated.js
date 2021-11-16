@@ -43,6 +43,13 @@ export default function Authenticated({ auth, header, children }) {
 
                                     <Dropdown.Content>
                                         <Dropdown.Link
+                                            href= "/employee"
+                                            method="get"
+                                            as="button"
+                                        >
+                                            الطابور
+                                        </Dropdown.Link>
+                                        <Dropdown.Link
                                             href={
                                                 auth.user.isAdmin === 1
                                                     ? "/dashboard"

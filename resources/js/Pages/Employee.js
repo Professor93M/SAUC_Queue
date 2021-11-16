@@ -37,12 +37,12 @@ export default function Employee({
 
     return (
         <Authenticated auth={auth}>
-            <Head title="الموظف" />
+            <Head title={auth.user.name} />
             <div
                 style={{ height: "60vh" }}
                 className=" flex items-center pt-6 justify-evenly text-6xl flex-col text-gray-700 space-y-4  "
             >
-                {alert && <Alert />}
+                {alert ? <Alert /> : ''}
                 <h1> عدد المراجعين في الانتظار : {queueCount} </h1>
                 {queueCount > 0 ? (
                     <Button
