@@ -5414,9 +5414,9 @@ function Screen(_ref) {
     if (emp) return new Audio("/".concat(id, ".mp3")).play();
   };
 
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    playSound(emp.id);
-  }, [queue.queue]);
+  queue ? (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (emp != null) return playSound(emp.id);
+  }, [queue.queue]) : null;
 
   var renderQueueCountOnly = function renderQueueCountOnly(queueCount) {
     if (queueCount !== null) {
@@ -5467,9 +5467,9 @@ function Screen(_ref) {
             className: "flex flex-col text-6xl py-3 items-center rounded-lg h-64 bg-nav bg-opacity-20 justify-around",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h2", {
               children: ["\u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u0627\u062C\u0639 ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), " \u0627\u0644\u062D\u0627\u0644\u064A"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
               className: "text-7xl",
-              children: [" ", queue.queue, " "]
+              children: queue !== null ? queue.queue : 0
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "flex flex-col col-span-2 text-6xl py-3 rounded-lg h-64 bg-nav bg-opacity-20 items-center justify-around",

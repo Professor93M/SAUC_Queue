@@ -13,9 +13,11 @@ export default function Screen({ queue, emp, queueCount }) {
         if (emp) return new Audio(`/${id}.mp3`).play();
     };
 
-    useEffect(() => {
-        playSound(emp.id);
-    }, [queue.queue]);
+    queue
+        ? useEffect(() => {
+              if (emp != null) return playSound(emp.id);
+          }, [queue.queue])
+        : null;
 
     const renderQueueCountOnly = (queueCount) => {
         if (queueCount !== null) {
@@ -67,8 +69,7 @@ export default function Screen({ queue, emp, queueCount }) {
                                     رقم المراجع <br /> الحالي
                                 </h2>
                                 <span className="text-7xl">
-                                    {" "}
-                                    {queue.queue}{" "}
+                                    {queue !== null ? queue.queue : 0}
                                 </span>
                             </div>
 
