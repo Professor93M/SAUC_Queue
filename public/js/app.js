@@ -5408,9 +5408,15 @@ function Screen(_ref) {
       queueCount = _ref.queueCount;
   setTimeout(function () {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
-  }, 2000); // useEffect(() => {
-  //     new Audio("/success.mp3").play();
-  // }, [queue.queue]);
+  }, 2000);
+
+  var playSound = function playSound(id) {
+    if (emp) return new Audio("/".concat(id, ".mp3")).play();
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    playSound(emp.id);
+  }, [queue.queue]);
 
   var renderQueueCountOnly = function renderQueueCountOnly(queueCount) {
     if (queueCount !== null) {

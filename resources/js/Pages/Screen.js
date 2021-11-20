@@ -9,9 +9,13 @@ export default function Screen({ queue, emp, queueCount }) {
         Inertia.reload();
     }, 2000);
 
-    // useEffect(() => {
-    //     new Audio("/success.mp3").play();
-    // }, [queue.queue]);
+    const playSound = (id) => {
+        if (emp) return new Audio(`/${id}.mp3`).play();
+    };
+
+    useEffect(() => {
+        playSound(emp.id);
+    }, [queue.queue]);
 
     const renderQueueCountOnly = (queueCount) => {
         if (queueCount !== null) {
