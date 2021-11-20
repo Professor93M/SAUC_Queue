@@ -81,7 +81,6 @@ class Controller extends BaseController
     }
 
     public function update(Request $request, $id){
-        // dd($request->all());
         $user = User::findOrFail($id);
         if(($request->name !== $user->name) || ($request->email !== $user->email) || ($request->password !== $user->password) || ($request->isAdmin !== $user->isAdmin)){
             if($request->name !== $user->name){
@@ -108,8 +107,6 @@ class Controller extends BaseController
                     'password.confirmed' => 'كلمة المرور غير متطابقة',
                 ]);
             }
-
-            // dd(isset($request->password));
             $user->update([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -117,8 +114,6 @@ class Controller extends BaseController
             ]);
             return Redirect::route('show');
         }else{
-            dd($request->all());
-
             return Redirect::route('show');
         }
     }

@@ -10,13 +10,7 @@ export default function Screen({ emp, queue }) {
     useEffect(() => {
         if(queue){
             if (localStorage.getItem("voice", queue.updated_at) !== queue.updated_at) {
-                responsiveVoice.speak(
-                    "على صاحب التسلسل " +
-                        queue.queue +
-                        " مراجعة الحاسبة " +
-                        queue.users_id,
-                    "Arabic Female"
-                );
+                new Audio('./' + emp.id + '.mp3').play()
             }
             localStorage.setItem("voice", queue.updated_at);
         }else{

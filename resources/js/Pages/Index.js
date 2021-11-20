@@ -15,13 +15,7 @@ export default function Welcome({ nextqueue, wait }) {
     }, [nextqueue]);
 
     const handelClick = () => {
-        responsiveVoice.speak(
-            " شكراً لكم لزيارة كلية شط العرب الجامعةْ ........ , سيتم طباعة تسلسلكَ " +
-                nextqueue +
-                "يرجى الانتظارْ",
-            "Arabic Female",
-            { volume: 1 }
-        );
+        new Audio('./success.mp3').play();
         window.print();
         setDisabled(true);
 
