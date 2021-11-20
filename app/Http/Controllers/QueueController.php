@@ -52,7 +52,7 @@ class QueueController extends Controller
         }else{
             return Inertia::render('Screen', [
                 'queue' => null,
-                'queueCount' => null,
+                'queueCount' => Queue::where('updated_at', null)->count(),
                 'emp'   => null
             ]);
         }
