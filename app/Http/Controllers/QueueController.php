@@ -46,11 +46,13 @@ class QueueController extends Controller
         if(isset($queue)){
             return Inertia::render('Screen', [
                 'queue' => $queue,
+                'queueCount' => Queue::where('updated_at', null)->count(),
                 'emp'   => User::findOrFail($queue->users_id)
             ]);
         }else{
             return Inertia::render('Screen', [
                 'queue' => null,
+                'queueCount' => null,
                 'emp'   => null
             ]);
         }
