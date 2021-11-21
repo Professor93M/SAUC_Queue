@@ -5,7 +5,7 @@ import { Visitor } from "@/Layouts/Visitor";
 import Button from "@/Components/Button";
 import moment from "moment";
 
-export default function Welcome({ nextqueue, wait }) {
+export default function Welcome({ nextqueue }) {
     let [disabled, setDisabled] = useState(true);
 
     useEffect(() => {
@@ -13,6 +13,11 @@ export default function Welcome({ nextqueue, wait }) {
             setDisabled(false);
         }, 10000);
     }, [nextqueue]);
+
+    setTimeout(() => {
+        Inertia.reload();
+        console.log('hyhy')
+    }, 5000);
 
     const handelClick = () => {
         new Audio('./success.mp3').play();
