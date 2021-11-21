@@ -4790,9 +4790,11 @@ function Dashboard(_ref) {
     }
   };
 
-  setTimeout(function () {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.reload();
-  }, 10000);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setInterval(function () {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__.Inertia.reload();
+    }, 10000);
+  }, []);
   var serveDate = search.serveDate;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
     auth: auth,
@@ -5146,11 +5148,13 @@ function Employee(_ref) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setTimeout(function () {
       setDisabled(false);
-    }, 10000);
+    }, 4000);
   }, [counter]);
-  setTimeout(function () {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
-  }, 5000);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setInterval(function () {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
+    }, 7000);
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
     auth: auth,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
@@ -5160,7 +5164,7 @@ function Employee(_ref) {
         height: "60vh"
       },
       className: " flex items-center pt-6 justify-evenly text-6xl flex-col text-gray-700 space-y-4  ",
-      children: [alert ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Alert__WEBPACK_IMPORTED_MODULE_5__["default"], {}) : '', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("h1", {
+      children: [alert ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Alert__WEBPACK_IMPORTED_MODULE_5__["default"], {}) : "", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("h1", {
         children: [" \u0639\u062F\u062F \u0627\u0644\u0645\u0631\u0627\u062C\u0639\u064A\u0646 \u0641\u064A \u0627\u0644\u0627\u0646\u062A\u0638\u0627\u0631 : ", queueCount, " "]
       }), queueCount > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
         handelClick: handelClick,
@@ -5301,20 +5305,26 @@ function Welcome(_ref) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
       _useState2 = _slicedToArray(_useState, 2),
       disabled = _useState2[0],
-      setDisabled = _useState2[1];
+      setDisabled = _useState2[1]; // let [queue, setQueue] = useState(nextqueue);
+  // setInterval(
+  //     15000
+  // );
 
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setInterval(function () {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
+      console.log("3333");
+    }, 8000);
+  }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setTimeout(function () {
       setDisabled(false);
-    }, 10000);
+    }, 4000);
   }, [nextqueue]);
-  setTimeout(function () {
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
-    console.log('hyhy');
-  }, 5000);
 
   var handelClick = function handelClick() {
-    new Audio('./success.mp3').play();
+    new Audio("./success.mp3").play();
     window.print();
     setDisabled(true);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/", {
@@ -5349,7 +5359,7 @@ function Welcome(_ref) {
           className: "text-6xl print:hidden",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("span", {
             className: " text-black font-bold rounded-lg p-3",
-            children: ["\u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u0627\u062C\u0639 \u0627\u0644\u062A\u0627\u0644\u064A  ", nextqueue]
+            children: ["\u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u0627\u062C\u0639 \u0627\u0644\u062A\u0627\u0644\u064A ", nextqueue]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
           className: "hidden print:block print:text-4xl mb-3 print:text-center",
@@ -5362,7 +5372,7 @@ function Welcome(_ref) {
           className: "hidden print:block ml-auto text-sm",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
             className: " text-black",
-            children: moment__WEBPACK_IMPORTED_MODULE_5___default()().format('YYYY/MM/DD - hh:mm:ss a')
+            children: moment__WEBPACK_IMPORTED_MODULE_5___default()().format("YYYY/MM/DD - hh:mm:ss a")
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
           handelClick: handelClick,
@@ -5409,7 +5419,7 @@ function Screen(_ref) {
   var queue = _ref.queue,
       emp = _ref.emp,
       queueCount = _ref.queueCount;
-  setTimeout(function () {
+  setInterval(function () {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.reload();
   }, 2000);
 

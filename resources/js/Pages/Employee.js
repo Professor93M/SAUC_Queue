@@ -28,12 +28,14 @@ export default function Employee({
     useEffect(() => {
         setTimeout(() => {
             setDisabled(false);
-        }, 10000);
+        }, 4000);
     }, [counter]);
 
-    setTimeout(() => {
-        Inertia.reload();
-    }, 5000);
+    useEffect(() => {
+        setInterval(() => {
+            Inertia.reload();
+        }, 7000);
+    }, []);
 
     return (
         <Authenticated auth={auth}>
@@ -42,7 +44,7 @@ export default function Employee({
                 style={{ height: "60vh" }}
                 className=" flex items-center pt-6 justify-evenly text-6xl flex-col text-gray-700 space-y-4  "
             >
-                {alert ? <Alert /> : ''}
+                {alert ? <Alert /> : ""}
                 <h1> عدد المراجعين في الانتظار : {queueCount} </h1>
                 {queueCount > 0 ? (
                     <Button

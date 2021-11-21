@@ -7,23 +7,28 @@ import moment from "moment";
 
 export default function Welcome({ nextqueue }) {
     let [disabled, setDisabled] = useState(true);
+    // let [queue, setQueue] = useState(nextqueue);
+    // setInterval(
+
+    //     15000
+    // );
+    useEffect(() => {
+        setInterval(() => {
+            Inertia.reload();
+            console.log("3333");
+        }, 8000);
+    }, []);
 
     useEffect(() => {
         setTimeout(() => {
             setDisabled(false);
-        }, 10000);
+        }, 4000);
     }, [nextqueue]);
 
-    setTimeout(() => {
-        Inertia.reload();
-        console.log('hyhy')
-    }, 5000);
-
     const handelClick = () => {
-        new Audio('./success.mp3').play();
+        new Audio("./success.mp3").play();
         window.print();
         setDisabled(true);
-
         Inertia.post("/", { nextqueue });
     };
 
@@ -45,7 +50,7 @@ export default function Welcome({ nextqueue }) {
                     </div>
                     <h2 className="text-6xl print:hidden">
                         <span className=" text-black font-bold rounded-lg p-3">
-                            رقم المراجع التالي  {nextqueue}
+                            رقم المراجع التالي {nextqueue}
                         </span>
                     </h2>
                     <h2 className="hidden print:block print:text-4xl mb-3 print:text-center">
@@ -55,7 +60,7 @@ export default function Welcome({ nextqueue }) {
                     </h2>
                     <p dir="ltr" className="hidden print:block ml-auto text-sm">
                         <span className=" text-black">
-                            {moment().format('YYYY/MM/DD - hh:mm:ss a')}
+                            {moment().format("YYYY/MM/DD - hh:mm:ss a")}
                         </span>
                     </p>
                     <Button

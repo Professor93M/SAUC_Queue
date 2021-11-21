@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
 import "moment/locale/ar";
 import Authenticated from "@/Layouts/Authenticated";
@@ -37,9 +37,11 @@ export default function Dashboard({ users, auth, count }) {
         }
     };
 
-    setTimeout(() => {
-        Inertia.reload();
-    }, 10000);
+    useEffect(() => {
+        setInterval(() => {
+            Inertia.reload();
+        }, 10000);
+    }, []);
 
     const { serveDate } = search;
     return (
