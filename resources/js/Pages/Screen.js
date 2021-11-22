@@ -5,19 +5,28 @@ import { Visitor } from "@/Layouts/Visitor";
 import { zIndex } from "tailwindcss/defaultTheme";
 
 export default function Screen({ queue, emp, queueCount }) {
-    setInterval(() => {
-        Inertia.reload();
-    }, 2000);
-
     const playSound = (id) => {
         if (emp) return new Audio(`/${id}.mp3`).play();
     };
 
-    queue
-        ? useEffect(() => {
-              if (emp != null) return playSound(emp.id);
-          }, [queue.queue])
-        : null;
+    useEffect(() => {
+        setInterval(() => {
+            Inertia.reload();
+        }, 5000);
+    }, []);
+
+    if(queue){
+        if(localStorage.getItem('voice', queue.updated_at) !== queue.updated_at){
+            playSound(emp.id)
+            localStorage.setItem('voice', queue.updated_at)
+        }
+    }
+
+    // queue
+    //     ? useEffect(() => {
+    //           if (emp != null) return playSound(emp.id);
+    //       }, [queue.queue])
+    //     : null;
 
     const renderQueueCountOnly = (queueCount) => {
         if (queueCount) {

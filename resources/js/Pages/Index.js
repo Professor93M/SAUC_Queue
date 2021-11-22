@@ -15,8 +15,7 @@ export default function Welcome({ nextqueue }) {
     useEffect(() => {
         setInterval(() => {
             Inertia.reload();
-            console.log("3333");
-        }, 8000);
+        }, 20000);
     }, []);
 
     useEffect(() => {
