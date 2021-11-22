@@ -85,9 +85,10 @@ class Controller extends BaseController
         if(($request->name !== $user->name) || ($request->email !== $user->email) || ($request->password !== $user->password) || ($request->isAdmin !== $user->isAdmin)){
             if($request->name !== $user->name){
                 $request->validate([
-                    'name' => 'required'
+                    'name' => 'required|unique:users,name'
                     ],[
                     'name.required'        => 'يجب ادخال اسم الموظف',
+                    'name.unique'        => 'اسم الموظف مستخدم',
                 ]);
             }
             if($request->email !== $user->email){
@@ -110,6 +111,7 @@ class Controller extends BaseController
             $user->update([
                 'name' => $request->name,
                 'email' => $request->email,
+                'isAdmin' => $request->isAdmin,
                 'password' => !isset($request->password) ? $user->password : Hash::make($request->password),
             ]);
             return Redirect::route('show');
