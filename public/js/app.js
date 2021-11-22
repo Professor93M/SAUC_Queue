@@ -3564,6 +3564,7 @@ function Input(_ref) {
       checked = _ref.checked,
       handleClick = _ref.handleClick;
   var input = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  console.log("[[k[" + value);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (isFocused) {
       input.current.focus();
@@ -3583,7 +3584,7 @@ function Input(_ref) {
       onFocus: handleFocus,
       onBlur: handleBlur,
       onClick: handleClick,
-      value: type === "checkBox" ? !value : value,
+      value: value,
       defaultChecked: checked
     })
   });
@@ -4960,6 +4961,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function Edit(_ref) {
   var auth = _ref.auth,
       user = _ref.user;
+  console.log(user);
 
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     name: user.name || "",
@@ -4970,8 +4972,7 @@ function Edit(_ref) {
     _method: "PUT"
   }),
       data = _useForm.data,
-      setData = _useForm.setData,
-      post = _useForm.post; // let [userState, setUserState] = useState(initialState);
+      setData = _useForm.setData; // let [userState, setUserState] = useState(initialState);
   // let { email, name, isAdmin, password, password_confirmation } = userState;
 
 
@@ -4984,14 +4985,20 @@ function Edit(_ref) {
 
   var handelClick = function handelClick(e) {
     e.preventDefault();
+    console.log(data);
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post("/employee/".concat(user.id), data);
   };
 
   var handlechecked = function handlechecked() {
-    isAdmin = !isAdmin;
-    setData(_objectSpread(_objectSpread({}, data), {}, {
-      isAdmin: isAdmin
-    }));
+    if (data.isAdmin === "1") {
+      setData(_objectSpread(_objectSpread({}, data), {}, {
+        isAdmin: "0"
+      }));
+    } else {
+      setData(_objectSpread(_objectSpread({}, data), {}, {
+        isAdmin: "1"
+      }));
+    }
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -5061,6 +5068,20 @@ function Edit(_ref) {
               value: data.password_confirmation,
               className: "p-2 text-center w-full placeholder-gray-600",
               placeholder: "\u0627\u062A\u0631\u0643 \u0627\u0644\u062D\u0642\u0644 \u0641\u0627\u0631\u063A \u0644\u0639\u062F\u0645 \u0627\u0644\u062A\u063A\u064A\u064A\u0631"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "flex items-center h-10 w-1/2 text-gray-900",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              type: "checkBox",
+              name: "isAdmin",
+              value: data.isAdmin,
+              handleChange: handlechecked,
+              className: "w-6 h-6",
+              checked: data.isAdmin
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              forInput: "isAdmin",
+              className: "text-xl px-4 ",
+              value: "\u062A\u0631\u0642\u064A\u0629 \u0627\u0644\u0649 \u0645\u062F\u064A\u0631"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
             className: "bg-green-500 py-2 w-full",

@@ -17,7 +17,7 @@ export default function Input({
     handleClick,
 }) {
     const input = useRef();
-
+    console.log("[[k[" + value);
     useEffect(() => {
         if (isFocused) {
             input.current.focus();
@@ -40,7 +40,7 @@ export default function Input({
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 onClick={handleClick}
-                value={type === "checkBox" ? !value : value}
+                value={value}
                 defaultChecked={checked}
             />
         </div>
