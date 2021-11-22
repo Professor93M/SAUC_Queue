@@ -14,12 +14,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Inertia::share('voice', function(){
-            return session()->get('voice') ? session()->get('voice') : null;
-        });
+        // Inertia::share('voice', function(){
+        //     return session()->get('voice') ? session()->get('voice') : null;
+        // });
         Inertia::share('alert', function(){
             return session()->get('alert') ? session()->get('alert') : null;
         });
+        // $this->app->bind('path.public', function()
+        // {
+        //     return base_path('public_html');
+        // });
     }
 
     /**
