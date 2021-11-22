@@ -7,7 +7,6 @@ import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 
 export default function Edit({ auth, user }) {
-    console.log(user);
     let { data, setData } = useForm({
         name: user.name || "",
         email: user.email || "",

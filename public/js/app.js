@@ -4961,7 +4961,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function Edit(_ref) {
   var auth = _ref.auth,
       user = _ref.user;
-  console.log(user);
 
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     name: user.name || "",
