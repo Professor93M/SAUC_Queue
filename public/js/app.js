@@ -3564,7 +3564,6 @@ function Input(_ref) {
       checked = _ref.checked,
       handleClick = _ref.handleClick;
   var input = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  console.log("[[k[" + value);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (isFocused) {
       input.current.focus();

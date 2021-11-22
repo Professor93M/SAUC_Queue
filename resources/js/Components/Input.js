@@ -17,7 +17,6 @@ export default function Input({
     handleClick,
 }) {
     const input = useRef();
-    console.log("[[k[" + value);
     useEffect(() => {
         if (isFocused) {
             input.current.focus();
