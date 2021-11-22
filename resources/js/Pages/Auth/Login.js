@@ -59,7 +59,7 @@ export default function Login({ status, canResetPassword }) {
                         type="text"
                         name="email"
                         value={data.email}
-                        className="mt-1 py-2 block w-full"
+                        className="mt-1 py-2 px-2 block w-full"
                         autoComplete="username"
                         isFocused={true}
                         handleChange={onHandleChange}
@@ -73,7 +73,7 @@ export default function Login({ status, canResetPassword }) {
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 py-2 block w-full"
+                        className="mt-1 py-2 px-2 block w-full"
                         autoComplete="current-password"
                         handleChange={onHandleChange}
                     />

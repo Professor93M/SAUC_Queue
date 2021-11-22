@@ -45,9 +45,9 @@ export default function Register() {
 
             <ValidationErrors errors={errors} />
 
-            <form onSubmit={submit}>
+            <form onSubmit={submit} dir="rtl">
                 <div className="mt-4 text-right">
-                    <Label dir="rtl" forInput="name" value="اسم الموظف" />
+                    <Label forInput="name" value="اسم الموظف" />
 
                     <Input
                         type="text"
@@ -62,11 +62,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4 text-right">
-                    <Label
-                        forInput="email"
-                        dir="rtl"
-                        value="البريد الالكتروني"
-                    />
+                    <Label forInput="email" value="البريد الالكتروني" />
 
                     <Input
                         type="email"
@@ -80,7 +76,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4 text-right">
-                    <Label dir="rtl" forInput="password" value="كلمة المرور" />
+                    <Label forInput="password" value="كلمة المرور" />
 
                     <Input
                         type="password"
@@ -109,7 +105,10 @@ export default function Register() {
                     />
                 </div>
 
-                <div className="flex items-center justify-between mt-5">
+                <div
+                    dir="ltr"
+                    className="flex items-center justify-between mt-5"
+                >
                     <Button
                         className="ml-4 py-1 px-6 bg-blue-500"
                         handelClick={goBack}

@@ -53,46 +53,66 @@ export default function Dashboard({ users, auth, count }) {
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 bg-white space-y-6 border-b flex flex-col text-2xl justify-between text-gray-600 border-gray-200">
                             <div className="flex items-center w-full justify-between text-lg mb-4">
-                                <div className="flex items-center h-10">
-                                    <Input
-                                        placeholder="ادخل تاريخ المعالجة"
-                                        className="border-4 focus:outline-none focus:border-0 w-96 px-5 py-2"
-                                        type="text"
-                                        name="serveDate"
-                                        handleFocus={handleOnFocus}
-                                        handleBlur={handleOnBlur}
-                                        value={serveDate}
-                                        handleChange={handleChange}
-                                    />
-                                    <Link
-                                        href="/dashboard"
-                                        className="bg-green-500 text-black rounded-lg p-3 mx-2 hover:bg-green-300 transition duration-500 ease-in-out"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="20"
-                                            height="20"
-                                            fill="#fff"
-                                            className="bi bi-arrow-clockwise"
-                                            viewBox="0 0 16 16"
+                                {auth.user.isAdmin === 1 ? (
+                                    <div className="flex items-center h-10">
+                                        <Input
+                                            placeholder="ادخل تاريخ المعالجة"
+                                            className="border-4 focus:outline-none focus:border-0 w-96 px-5 py-2"
+                                            type="text"
+                                            name="serveDate"
+                                            handleFocus={handleOnFocus}
+                                            handleBlur={handleOnBlur}
+                                            value={serveDate}
+                                            handleChange={handleChange}
+                                        />
+                                        <Link
+                                            href="/dashboard"
+                                            className="bg-green-500 text-black rounded-lg p-3 mx-2 hover:bg-green-300 transition duration-500 ease-in-out"
                                         >
-                                            <path
-                                                fillRule="evenodd"
-                                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
-                                            />
-                                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
-                                        </svg>
-                                    </Link>
-                                </div>
-                                <div className="flex  items-center justify-evenly w-72">
-                                    <Button
-                                        className="bg-gray-400 hover:bg-red-500 text-base py-2 px-2"
-                                        handelClick={handleClick}
-                                        type="button"
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="20"
+                                                height="20"
+                                                fill="#fff"
+                                                className="bi bi-arrow-clockwise"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    fillRule="evenodd"
+                                                    d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+                                                />
+                                                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                            </svg>
+                                        </Link>
+                                    </div>
+                                ) : (
+                                    ""
+                                )}
+                                <div
+                                    className={`${
+                                        auth.user.isAdmin === 1
+                                            ? "flex  items-center justify-evenly w-72"
+                                            : "flex  items-center justify-evenly w-full"
+                                    }`}
+                                >
+                                    {auth.user.isAdmin === 1 ? (
+                                        <Button
+                                            className="bg-gray-400 hover:bg-red-500 text-base py-2 px-2"
+                                            handelClick={handleClick}
+                                            type="button"
+                                        >
+                                            تهيئة السجل
+                                        </Button>
+                                    ) : (
+                                        ""
+                                    )}
+                                    <div
+                                        className={`${
+                                            auth.user.isAdmin === 1
+                                                ? "flex"
+                                                : " w-full flex justify-end"
+                                        }`}
                                     >
-                                        تهيئة السجل
-                                    </Button>
-                                    <div className="flex">
                                         <p className="">
                                             عدد المراجعات : &nbsp;
                                         </p>

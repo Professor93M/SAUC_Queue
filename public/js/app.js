@@ -4315,7 +4315,7 @@ function Login(_ref) {
           type: "text",
           name: "email",
           value: data.email,
-          className: "mt-1 py-2 block w-full",
+          className: "mt-1 py-2 px-2 block w-full",
           autoComplete: "username",
           isFocused: true,
           handleChange: onHandleChange
@@ -4329,7 +4329,7 @@ function Login(_ref) {
           type: "password",
           name: "password",
           value: data.password,
-          className: "mt-1 py-2 block w-full",
+          className: "mt-1 py-2 px-2 block w-full",
           autoComplete: "current-password",
           handleChange: onHandleChange
         })]
@@ -4435,10 +4435,10 @@ function Register() {
       errors: errors
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
       onSubmit: submit,
+      dir: "rtl",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "mt-4 text-right",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          dir: "rtl",
           forInput: "name",
           value: "\u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -4455,7 +4455,6 @@ function Register() {
         className: "mt-4 text-right",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_4__["default"], {
           forInput: "email",
-          dir: "rtl",
           value: "\u0627\u0644\u0628\u0631\u064A\u062F \u0627\u0644\u0627\u0644\u0643\u062A\u0631\u0648\u0646\u064A"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
           type: "email",
@@ -4469,7 +4468,6 @@ function Register() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "mt-4 text-right",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          dir: "rtl",
           forInput: "password",
           value: "\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -4495,6 +4493,7 @@ function Register() {
           required: true
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        dir: "ltr",
         className: "flex items-center justify-between mt-5",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
           className: "ml-4 py-1 px-6 bg-blue-500",
@@ -4810,7 +4809,7 @@ function Dashboard(_ref) {
             className: "p-6 bg-white space-y-6 border-b flex flex-col text-2xl justify-between text-gray-600 border-gray-200",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
               className: "flex items-center w-full justify-between text-lg mb-4",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+              children: [auth.user.isAdmin === 1 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                 className: "flex items-center h-10",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
                   placeholder: "\u0627\u062F\u062E\u0644 \u062A\u0627\u0631\u064A\u062E \u0627\u0644\u0645\u0639\u0627\u0644\u062C\u0629",
@@ -4839,15 +4838,15 @@ function Dashboard(_ref) {
                     })]
                   })
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                className: "flex  items-center justify-evenly w-72",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              }) : "", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                className: "".concat(auth.user.isAdmin === 1 ? "flex  items-center justify-evenly w-72" : "flex  items-center justify-evenly w-full"),
+                children: [auth.user.isAdmin === 1 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
                   className: "bg-gray-400 hover:bg-red-500 text-base py-2 px-2",
                   handelClick: handleClick,
                   type: "button",
                   children: "\u062A\u0647\u064A\u0626\u0629 \u0627\u0644\u0633\u062C\u0644"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-                  className: "flex",
+                }) : "", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                  className: "".concat(auth.user.isAdmin === 1 ? "flex" : " w-full flex justify-end"),
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
                     className: "",
                     children: "\u0639\u062F\u062F \u0627\u0644\u0645\u0631\u0627\u062C\u0639\u0627\u062A : \xA0"
