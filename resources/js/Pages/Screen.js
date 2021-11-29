@@ -15,10 +15,12 @@ export default function Screen({ queue, emp, queueCount }) {
         }, 5000);
     }, []);
 
-    if(queue){
-        if(localStorage.getItem('voice', queue.updated_at) !== queue.updated_at){
-            playSound(emp.id)
-            localStorage.setItem('voice', queue.updated_at)
+    if (queue) {
+        if (
+            localStorage.getItem("voice", queue.updated_at) !== queue.updated_at
+        ) {
+            playSound(emp.id);
+            localStorage.setItem("voice", queue.updated_at);
         }
     }
 
@@ -61,12 +63,12 @@ export default function Screen({ queue, emp, queueCount }) {
             <Head title="التسلسل التالي" />
             <div
                 dir="rtl"
-                className="flex  text-btn relative items-center z-30 bg-white justify-evenly text-4xl flex-col shadow-lg"
+                className="flex  text-btn relative items-center z-30 bg-white justify-start text-4xl flex-col shadow-lg"
                 style={{ height: "100vh" }}
             >
                 <div
                     style={{ width: "60rem" }}
-                    className=" grid text-5xl grid-cols-2 rounded-sm gap-4 text-center "
+                    className=" grid mt-28 text-5xl place-content-start grid-cols-2 rounded-sm gap-4 text-center "
                 >
                     <div
                         style={{ zIndex: "-1", opacity: "0.08" }}
@@ -79,25 +81,20 @@ export default function Screen({ queue, emp, queueCount }) {
                         />
                     </div>
                     {emp ? (
-                        <>
-                            <div className="flex flex-col text-4xl py-3 rounded-lg h-44 bg-nav bg-opacity-20 items-center justify-around shadow-lg">
-                                رقم الحاسبة
-                                <span className="text-5xl bg-btn rounded-lg text-yellow-300 font-extrabold  shadow-lg px-6  py-1">
-                                    {" "}
-                                    {emp.id}{" "}
-                                </span>
-                            </div>
-                            <div className="flex flex-col text-5xl py-3 rounded-lg h-44 bg-nav bg-opacity-20 items-center justify-around shadow-lg">
-                                <h2>{emp.name}</h2>
-                            </div>
-
-                            <div className="flex flex-col col-span-2 text-4xl py-3 items-center rounded-lg h-44 bg-nav bg-opacity-20 justify-around shadow-lg">
+                        <div className="flex justify-between items-center col-span-2">
+                            <div className="flex flex-col w-100 col-span-2 text-6xl py-3 items-center rounded-lg h-44 bg-nav bg-opacity-20 justify-around shadow-lg">
                                 <span>تسلسل المراجع</span>
                                 <span className="text-5xl bg-btn rounded-lg text-yellow-300 font-extrabold shadow-lg px-6  py-1">
                                     {queue !== null ? queue.queue : 0}
                                 </span>
                             </div>
-                        </>
+                            <div className="flex flex-col w-100 text-7xl py-3 rounded-lg h-44 bg-nav bg-opacity-20 items-center justify-around shadow-lg">
+                                <h2>{emp.name}</h2>
+                                <span className="text-5xl bg-btn rounded-lg text-yellow-300 font-extrabold  shadow-lg px-6  py-1">
+                                    حاسبة {emp.id}
+                                </span>
+                            </div>
+                        </div>
                     ) : (
                         ""
                     )}

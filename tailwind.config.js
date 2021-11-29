@@ -22,6 +22,12 @@ module.exports = {
                 btn: "#112758",
                 qnum: "#ead7c7",
             },
+            spacing: {
+                97: "25rem",
+                98: "26rem",
+                99: "27rem",
+                100: "28rem",
+            },
         },
 
         variants: {

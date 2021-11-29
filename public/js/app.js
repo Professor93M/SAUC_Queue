@@ -5448,9 +5448,9 @@ function Screen(_ref) {
   }, []);
 
   if (queue) {
-    if (localStorage.getItem('voice', queue.updated_at) !== queue.updated_at) {
+    if (localStorage.getItem("voice", queue.updated_at) !== queue.updated_at) {
       playSound(emp.id);
-      localStorage.setItem('voice', queue.updated_at);
+      localStorage.setItem("voice", queue.updated_at);
     }
   } // queue
   //     ? useEffect(() => {
@@ -5486,7 +5486,7 @@ function Screen(_ref) {
       title: "\u0627\u0644\u062A\u0633\u0644\u0633\u0644 \u0627\u0644\u062A\u0627\u0644\u064A"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       dir: "rtl",
-      className: "flex  text-btn relative items-center z-30 bg-white justify-evenly text-4xl flex-col shadow-lg",
+      className: "flex  text-btn relative items-center z-30 bg-white justify-start text-4xl flex-col shadow-lg",
       style: {
         height: "100vh"
       },
@@ -5494,7 +5494,7 @@ function Screen(_ref) {
         style: {
           width: "60rem"
         },
-        className: " grid text-5xl grid-cols-2 rounded-sm gap-4 text-center ",
+        className: " grid mt-28 text-5xl place-content-start grid-cols-2 rounded-sm gap-4 text-center ",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           style: {
             zIndex: "-1",
@@ -5506,25 +5506,23 @@ function Screen(_ref) {
             src: "/logo.png",
             alt: "logo"
           })
-        }), emp ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+        }), emp ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "flex justify-between items-center col-span-2",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "flex flex-col text-4xl py-3 rounded-lg h-44 bg-nav bg-opacity-20 items-center justify-around shadow-lg",
-            children: ["\u0631\u0642\u0645 \u0627\u0644\u062D\u0627\u0633\u0628\u0629", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
-              className: "text-5xl bg-btn rounded-lg text-yellow-300 font-extrabold  shadow-lg px-6  py-1",
-              children: [" ", emp.id, " "]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            className: "flex flex-col text-5xl py-3 rounded-lg h-44 bg-nav bg-opacity-20 items-center justify-around shadow-lg",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
-              children: emp.name
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "flex flex-col col-span-2 text-4xl py-3 items-center rounded-lg h-44 bg-nav bg-opacity-20 justify-around shadow-lg",
+            className: "flex flex-col w-100 col-span-2 text-6xl py-3 items-center rounded-lg h-44 bg-nav bg-opacity-20 justify-around shadow-lg",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
               children: "\u062A\u0633\u0644\u0633\u0644 \u0627\u0644\u0645\u0631\u0627\u062C\u0639"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
               className: "text-5xl bg-btn rounded-lg text-yellow-300 font-extrabold shadow-lg px-6  py-1",
               children: queue !== null ? queue.queue : 0
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "flex flex-col w-100 text-7xl py-3 rounded-lg h-44 bg-nav bg-opacity-20 items-center justify-around shadow-lg",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+              children: emp.name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
+              className: "text-5xl bg-btn rounded-lg text-yellow-300 font-extrabold  shadow-lg px-6  py-1",
+              children: ["\u062D\u0627\u0633\u0628\u0629 ", emp.id]
             })]
           })]
         }) : "", renderQueueCountOnly(queueCount)]
