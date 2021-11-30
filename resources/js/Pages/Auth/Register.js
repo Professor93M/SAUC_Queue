@@ -5,6 +5,7 @@ import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 import ValidationErrors from "@/Components/ValidationErrors";
 import { Head, Link, useForm } from "@inertiajs/inertia-react";
+import ComboBox from "@/Components/ComboBox";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -12,6 +13,7 @@ export default function Register() {
         email: "",
         password: "",
         password_confirmation: "",
+        PcN: 0,
     });
 
     useEffect(() => {
@@ -100,6 +102,17 @@ export default function Register() {
                         name="password_confirmation"
                         value={data.password_confirmation}
                         className="mt-1 py-2 block w-full px-2"
+                        handleChange={onHandleChange}
+                        required
+                    />
+                </div>
+                <div className="mt-4 flex w-full  items-center py-2 text-right">
+                    <Label forInput="PcN" value="رقم الحاسبة" />
+
+                    <ComboBox
+                        name="PcN"
+                        value={data.PcN}
+                        className=" block mr-8"
                         handleChange={onHandleChange}
                         required
                     />

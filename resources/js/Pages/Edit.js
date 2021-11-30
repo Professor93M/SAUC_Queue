@@ -5,12 +5,14 @@ import Authenticated from "@/Layouts/Authenticated";
 import Button from "@/Components/Button";
 import Input from "@/Components/Input";
 import Label from "@/Components/Label";
+import ComboBox from "@/Components/ComboBox";
 
 export default function Edit({ auth, user }) {
     let { data, setData } = useForm({
         name: user.name || "",
         email: user.email || "",
         isAdmin: user.isAdmin || "",
+        PcN: user.PcN || "",
         password: "",
         password_confirmation: "",
         _method: "PUT",
@@ -93,7 +95,7 @@ export default function Edit({ auth, user }) {
                         <div className="">
                             <Label
                                 className="text-xl pb-2"
-                                forInput="email"
+                                forInput="password_confirmation"
                                 value="تأكيد كلمة المرور"
                             />
                             <Input
@@ -102,6 +104,21 @@ export default function Edit({ auth, user }) {
                                 handleChange={handleChange}
                                 value={data.password_confirmation}
                                 className="p-2 text-center w-full placeholder-gray-600"
+                                placeholder="اترك الحقل فارغ لعدم التغيير"
+                            />
+                        </div>
+                        <div className="flex">
+                            <Label
+                                className="text-xl pb-2"
+                                forInput="password_confirmation"
+                                value="رقم الحاسبة"
+                            />
+                            <ComboBox
+                                name="PcN"
+                                type="password"
+                                handleChange={handleChange}
+                                value={data.PcN}
+                                className="block mr-8 px-2"
                                 placeholder="اترك الحقل فارغ لعدم التغيير"
                             />
                         </div>

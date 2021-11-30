@@ -81,16 +81,16 @@ export default function Screen({ queue, emp, queueCount }) {
                         />
                     </div>
                     {emp ? (
-                        <div className="flex justify-between items-center col-span-2">
-                            <div className="flex flex-col w-100 col-span-2 text-6xl py-3 items-center rounded-lg h-44 bg-nav bg-opacity-20 justify-around shadow-lg">
-                                <span>تسلسل المراجع</span>
-                                <span className="text-5xl bg-btn rounded-lg text-yellow-300 font-extrabold shadow-lg px-6  py-1">
+                        <div className="flex justify-around w-full gap-4 text-6xl items-center col-span-2 ">
+                            <div className="flex flex-col w-1/2 text-6xl py-3 items-center rounded-lg h-64 bg-nav bg-opacity-20 justify-around shadow-lg">
+                                <span className="">تسلسل المراجع</span>
+                                <span className="bg-btn rounded-lg text-yellow-300 font-extrabold shadow-lg px-6  py-1">
                                     {queue !== null ? queue.queue : 0}
                                 </span>
                             </div>
-                            <div className="flex flex-col w-100 text-7xl py-3 rounded-lg h-44 bg-nav bg-opacity-20 items-center justify-around shadow-lg">
+                            <div className="flex flex-col py-3 w-1/2  rounded-lg h-64 bg-nav bg-opacity-20 items-center justify-around shadow-lg">
                                 <h2>{emp.name}</h2>
-                                <span className="text-5xl bg-btn rounded-lg text-yellow-300 font-extrabold  shadow-lg px-6  py-1">
+                                <span className=" bg-btn rounded-lg text-yellow-300 font-extrabold  shadow-lg px-6  py-1">
                                     حاسبة {emp.id}
                                 </span>
                             </div>
