@@ -125,7 +125,7 @@ export default function Dashboard({ users, auth, count }) {
                             <table className="w-full">
                                 <thead className="text-2xl border-b-2 text-gray-800">
                                     <tr>
-                                        <th className="pb-4">رقم الجهاز</th>
+                                        <th className="pb-4">رقم الحاسبة</th>
                                         <th className="pb-4">اسم الموظف</th>
                                         <th className="pb-4">رقم المراجع</th>
                                         <th className="pb-4"> وقت الطلب </th>
@@ -137,13 +137,13 @@ export default function Dashboard({ users, auth, count }) {
                                         return (
                                             <tr key={key}>
                                                 <td className="py-4 ">
-                                                    {user.users.id}
+                                                    {user.users.PcN}
                                                 </td>
                                                 <td className="pb-4">
                                                     {auth.user.isAdmin === 1 ? (
                                                         <Link
                                                             className="hover:text-red-500 transition duration-500 ease-in-out"
-                                                            href={`/dashboard/${user.users.id}`}
+                                                            href={`/dashboard/${user.users.PcN}`}
                                                         >
                                                             {user.users.name}
                                                         </Link>

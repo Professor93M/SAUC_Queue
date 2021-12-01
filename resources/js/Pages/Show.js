@@ -34,9 +34,10 @@ export default function Show({ auth, users }) {
                         <table className="w-full pt-4">
                             <thead className="text-2xl border-b-2 text-gray-800">
                                 <tr>
-                                    <th className="pb-4"> رقم الجهاز </th>
+                                    <th className="pb-4">رقم الحاسبة</th>
                                     <th className="pb-4">اسم الموظف</th>
                                     <th className="pb-4">البريد الالكتروني</th>
+                                    <th className="pb-4">مميزات</th>
                                     <th className="pb-4">الخيارات</th>
                                 </tr>
                             </thead>
@@ -44,7 +45,7 @@ export default function Show({ auth, users }) {
                                 {users.map((user, key) => {
                                     return (
                                         <tr key={key}>
-                                            <td className="py-4 ">{user.id}</td>
+                                            <td className="py-4 ">{user.PcN}</td>
                                             <td className="pb-4">
                                                 {auth.user.isAdmin === 1 ? (
                                                     <Link
@@ -60,7 +61,14 @@ export default function Show({ auth, users }) {
                                             <td className="py-4 ">
                                                 {user.email}
                                             </td>
-
+                                            {user.isAdmin
+                                                ? <td className="py-4 text-green-600 px-5">
+                                                    مدير
+                                                </td>
+                                                : <td className="py-4 text-red-600 px-5">
+                                                    موظف
+                                                </td>
+                                            }
                                             <td className="py-4 flex items-center justify-around">
                                                 <Link
                                                     href={`/employee/${user.id}/edit`}

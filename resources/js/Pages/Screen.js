@@ -5,8 +5,8 @@ import { Visitor } from "@/Layouts/Visitor";
 import { zIndex } from "tailwindcss/defaultTheme";
 
 export default function Screen({ queue, emp, queueCount }) {
-    const playSound = (id) => {
-        if (emp) return new Audio(`/${id}.mp3`).play();
+    const playSound = (PcN) => {
+        if (emp) return new Audio(`/${PcN}.mp3`).play();
     };
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function Screen({ queue, emp, queueCount }) {
         if (
             localStorage.getItem("voice", queue.updated_at) !== queue.updated_at
         ) {
-            playSound(emp.id);
+            playSound(emp.PcN);
             localStorage.setItem("voice", queue.updated_at);
         }
     }
@@ -91,7 +91,7 @@ export default function Screen({ queue, emp, queueCount }) {
                             <div className="flex flex-col py-3 w-1/2  rounded-lg h-64 bg-nav bg-opacity-20 items-center justify-around shadow-lg">
                                 <h2>{emp.name}</h2>
                                 <span className=" bg-btn rounded-lg text-yellow-300 font-extrabold  shadow-lg px-6  py-1">
-                                    حاسبة {emp.id}
+                                    حاسبة {emp.PcN}
                                 </span>
                             </div>
                         </div>

@@ -7,11 +7,11 @@ import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 import ComboBox from "@/Components/ComboBox";
 
-export default function Edit({ auth, user }) {
+export default function Edit({ auth, user, errors }) {
     let { data, setData } = useForm({
         name: user.name || "",
         email: user.email || "",
-        isAdmin: user.isAdmin || "",
+        isAdmin: user.isAdmin || 0,
         PcN: user.PcN || "",
         password: "",
         password_confirmation: "",
@@ -27,16 +27,16 @@ export default function Edit({ auth, user }) {
 
     const handelClick = (e) => {
         e.preventDefault();
-        console.log(data);
         Inertia.post(`/employee/${user.id}`, data);
     };
 
-    const handlechecked = () => {
-        if (data.isAdmin === "1") {
+    const handlechecked = (e) => {
+        if (data.isAdmin == "1") {
             setData({ ...data, isAdmin: "0" });
         } else {
             setData({ ...data, isAdmin: "1" });
         }
+
     };
     return (
         <Authenticated auth={auth}>
@@ -61,6 +61,7 @@ export default function Edit({ auth, user }) {
                                 value={data.name}
                             />
                         </div>
+                        <small className="text-red-500 text-base">{errors.name}</small>
 
                         <div className="">
                             <Label
@@ -76,6 +77,7 @@ export default function Edit({ auth, user }) {
                                 className="p-2 w-full text-center"
                             />
                         </div>
+                        <small className="text-red-500 text-base">{errors.email}</small>
 
                         <div className="">
                             <Label
@@ -107,6 +109,7 @@ export default function Edit({ auth, user }) {
                                 placeholder="اترك الحقل فارغ لعدم التغيير"
                             />
                         </div>
+                        <small className="text-red-500 text-base">{errors.password}</small>
                         <div className="flex">
                             <Label
                                 className="text-xl pb-2"
@@ -122,6 +125,7 @@ export default function Edit({ auth, user }) {
                                 placeholder="اترك الحقل فارغ لعدم التغيير"
                             />
                         </div>
+                        <small className="text-red-500 text-base">{errors.PcN}</small>
                         <div className="flex items-center h-10 w-1/2 text-gray-900">
                             <Input
                                 type="checkBox"

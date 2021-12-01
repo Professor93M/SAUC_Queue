@@ -110,10 +110,11 @@ class Controller extends BaseController
             }
             if($request->PcN !== $user->PcN){
                 $request->validate([
-                    'PcN' => 'required|numeric'
+                    'PcN' => 'required|numeric|unique:users,PcN'
                     ],[
                     'PcN.required'        => 'يجب تحديد رقم الحاسبة',
                     'PcN.numeric'        => 'رقم الحاسبة غير صالح',
+                    'PcN.unique'        => 'رقم الحاسبة موجود فعلاً',
                 ]);
             }
             $user->update([

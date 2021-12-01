@@ -76,7 +76,7 @@ export default function Employee({
                         </thead>
                         <tbody className="text-center text-2xl font-medium text-gray-600">
                             <tr>
-                                <td className="py-4">{last_user.users_id}</td>
+                                <td className="py-4">{last_user.users.PcN}</td>
                                 <td className="py-4">{last_user.users.name}</td>
                                 <td className="py-4">{last_user.queue}</td>
                                 <td className="py-4">
