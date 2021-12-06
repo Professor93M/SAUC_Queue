@@ -117,7 +117,7 @@ export default function Dashboard({ users, auth, count }) {
                                             عدد المراجعات : &nbsp;
                                         </p>
                                         <span className="text-white font-black  bg-green-500 rounded-lg px-2 select-none cursor-default">
-                                            {data.to}
+                                            {count}
                                         </span>
                                     </div>
                                 </div>
