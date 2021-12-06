@@ -36,13 +36,13 @@ class Controller extends BaseController
     }
 
     public function dashboard(){
-        $query = Queue::query();
+        // $query = Queue::query();
         if(request('date')){
-            $users = $query->whereNotNull('updated_at')->whereDate('updated_at', '=', request('date'))->with('users')->orderBy('updated_at', 'desc')->simplePaginate(20);
-            $count = $query->whereNotNull('updated_at')->whereDate('updated_at', '=', request('date'))->with('users')->count();
+            $users = Queue::whereNotNull('updated_at')->whereDate('updated_at', '=', request('date'))->with('users')->orderBy('updated_at', 'desc')->simplePaginate(20);
+            $count = Queue::whereNotNull('updated_at')->whereDate('updated_at', '=', request('date'))->with('users')->count();
         }else{
-            $users = $query->whereNotNull('updated_at')->with('users')->orderBy('updated_at', 'desc')->simplePaginate(20);
-            $count = $query->whereNotNull('updated_at')->with('users')->count();
+            $users = Queue::whereNotNull('updated_at')->with('users')->orderBy('updated_at', 'desc')->simplePaginate(20);
+            $count = Queue::whereNotNull('updated_at')->with('users')->count();
         }
         return Inertia::render('Dashboard', [
             'users' => $users,

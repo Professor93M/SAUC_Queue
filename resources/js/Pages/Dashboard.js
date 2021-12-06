@@ -95,7 +95,7 @@ export default function Dashboard({ users, auth, count }) {
                                             : "flex  items-center justify-evenly w-full"
                                     }`}
                                 >
-                                    {auth.user.isAdmin === 1 ? (
+                                    {/* {auth.user.isAdmin === 1 ? (
                                         <Button
                                             className="bg-gray-400 hover:bg-red-500 text-base py-2 px-2"
                                             handelClick={handleClick}
@@ -105,7 +105,7 @@ export default function Dashboard({ users, auth, count }) {
                                         </Button>
                                     ) : (
                                         ""
-                                    )}
+                                    )} */}
                                     <div
                                         className={`${
                                             auth.user.isAdmin === 1
@@ -117,7 +117,7 @@ export default function Dashboard({ users, auth, count }) {
                                             عدد المراجعات : &nbsp;
                                         </p>
                                         <span className="text-white font-black  bg-green-500 rounded-lg px-2 select-none cursor-default">
-                                            {count}
+                                            {data.to}
                                         </span>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@ export default function Dashboard({ users, auth, count }) {
                                                     {auth.user.isAdmin === 1 ? (
                                                         <Link
                                                             className="hover:text-red-500 transition duration-500 ease-in-out"
-                                                            href={`/dashboard/${user.users.PcN}`}
+                                                            href={`/dashboard/${user.users.id}`}
                                                         >
                                                             {user.users.name}
                                                         </Link>

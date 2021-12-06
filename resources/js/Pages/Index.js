@@ -12,11 +12,11 @@ export default function Welcome({ nextqueue }) {
 
     //     15000
     // );
-    useEffect(() => {
-        setInterval(() => {
-            Inertia.reload();
-        }, 20000);
-    }, []);
+    // useEffect(() => {
+    //     setInterval(() => {
+    //         Inertia.reload();
+    //     }, 20000);
+    // }, []);
 
     useEffect(() => {
         setTimeout(() => {
