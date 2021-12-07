@@ -32,7 +32,7 @@ Route::get('/', function () {
     return Inertia::render('Index', [
         'nextqueue' => $next_id,
     ]);
-});
+})->middleware(['auth', 'guard'])->name('Home');
 
 // Professor
 Route::post('/', [QueueController::class, 'requestQ'])->name('requestQ');

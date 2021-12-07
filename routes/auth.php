@@ -23,12 +23,12 @@ Route::get('/dashboard', [Controller::class, 'dashboard'])
                 ->middleware('admin')
                 ->name('dashboard');
 
-Route::get('/reset', [Controller::class, 'reset'])
-                ->middleware('admin')
-                ->name('reset');
+// Route::get('/reset', [Controller::class, 'reset'])
+//                 ->middleware('admin')
+//                 ->name('reset');
 
 Route::get('/dashboard/{id}', [Controller::class, 'dashboardID'])
-                ->middleware('auth')
+                ->middleware(['auth', 'guard'])
                 ->name('dashbaordID');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
@@ -43,7 +43,7 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 
 Route::get('/employee', [Controller::class, 'employee'])
-                ->middleware('auth')
+                ->middleware(['auth', 'guard'])
                 ->name('employee');
 
 Route::post('/employee', [QueueController::class, 'submit'])
@@ -61,3 +61,7 @@ Route::get('/employee/{id}/edit', [Controller::class, 'edit'])
 Route::put('/employee/{id}', [Controller::class, 'update'])
                 ->middleware('admin')
                 ->name('update');
+
+Route::get('/employee/{id}', function(){
+                return redirect()->route('employee');
+            })->middleware('admin')->name('protected');
