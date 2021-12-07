@@ -22,7 +22,7 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     // $id=DB::select("SHOW TABLE STATUS LIKE 'queues'");
-    // $next_id=$id[0]->Auto_increment;
+    // $next_id=$id[0]->Auto_increment;;
     $queue = Queue::orderBy('created_at', 'desc')->first();
     if(($queue) && (Carbon::now()->format('d')) == Carbon::parse($queue->created_at)->format('d')){
         $next_id = $queue->queue + 1;

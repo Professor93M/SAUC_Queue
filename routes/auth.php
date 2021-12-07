@@ -25,7 +25,7 @@ Route::get('/dashboard', [Controller::class, 'dashboard'])
 
 // Route::get('/reset', [Controller::class, 'reset'])
 //                 ->middleware('admin')
-//                 ->name('reset');
+//                 ->name('reset');;
 
 Route::get('/dashboard/{id}', [Controller::class, 'dashboardID'])
                 ->middleware(['auth', 'guard'])
