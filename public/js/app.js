@@ -5581,15 +5581,15 @@ function Screen(_ref) {
         style: {
           width: "60rem"
         },
-        className: " grid mt-10 text-5xl place-content-start grid-cols-2 rounded-sm gap-4 text-center ",
+        className: " grid mt-10 text-5xl place-content-start overflow-hidden grid-cols-2 rounded-sm gap-4 text-center ",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           style: {
             zIndex: "-1",
             opacity: "0.08"
           },
-          className: "w-full h-full  flex overflow-hidden absolute  top-0 bottom-0 left-0 right-0 items-center justify-center",
+          className: "w-screen flex absolute  top-0 bottom-0 overflow-hidden left-0 right-0 items-center justify-center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("video", {
-            className: "filter w-screen  object-cover pointer-events-none",
+            className: "w-screen  pointer-events-none",
             src: "/screen.mp4",
             autoPlay: true,
             loop: true,
