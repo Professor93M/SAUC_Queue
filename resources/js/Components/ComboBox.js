@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 export default function ComboBox({ value, name, handleChange, className }) {
     let numbers = [];
     const renderNumbers = () => {
-        for (let i = 1; i <= 7; i++) {
+        for (let i = 1; i <= 10; i++) {
             numbers.push(i);
         }
         return numbers;

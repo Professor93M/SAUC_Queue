@@ -3400,7 +3400,7 @@ function ComboBox(_ref) {
   var numbers = [];
 
   var renderNumbers = function renderNumbers() {
-    for (var i = 1; i <= 7; i++) {
+    for (var i = 1; i <= 10; i++) {
       numbers.push(i);
     }
 
@@ -5581,7 +5581,7 @@ function Screen(_ref) {
         style: {
           width: "60rem"
         },
-        className: " grid mt-28 text-5xl place-content-start grid-cols-2 rounded-sm gap-4 text-center ",
+        className: " grid mt-10 text-5xl place-content-start grid-cols-2 rounded-sm gap-4 text-center ",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           style: {
             zIndex: "-1",
@@ -5594,9 +5594,9 @@ function Screen(_ref) {
             alt: "logo"
           })
         }), emp ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "flex justify-around w-full gap-4 text-6xl items-center col-span-2 ",
+          className: "flex justify-around w-full gap-4 text-6xl  items-center col-span-2 ",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "flex flex-col w-1/2 text-6xl py-3 items-center rounded-lg h-64 bg-nav bg-opacity-20 justify-around shadow-lg",
+            className: "flex flex-col w-1/2 text-6xl py-3 items-center border-2 border-nav rounded-lg h-64 bg-nav bg-opacity-20 justify-around shadow-lg",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
               className: "",
               children: "\u062A\u0633\u0644\u0633\u0644 \u0627\u0644\u0645\u0631\u0627\u062C\u0639"
@@ -5605,7 +5605,7 @@ function Screen(_ref) {
               children: queue !== null ? queue.queue : 0
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "flex flex-col py-3 w-1/2  rounded-lg h-64 bg-nav bg-opacity-20 items-center justify-around shadow-lg",
+            className: "flex flex-col py-3 w-1/2 border-2 border-nav   rounded-lg h-64 bg-nav bg-opacity-20 items-center justify-around shadow-lg",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
               children: emp.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
