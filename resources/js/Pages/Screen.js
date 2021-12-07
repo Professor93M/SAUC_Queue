@@ -78,7 +78,7 @@ export default function Screen({ queue, emp, queueCount }) {
                         className="w-screen flex absolute  top-0 bottom-0 overflow-hidden left-0 right-0 items-center justify-center"
                     >
                         <video
-                            className="w-screen  pointer-events-none"
+                            className="object-cover  pointer-events-none"
                             src="/screen.mp4"
                             autoPlay
                             loop
