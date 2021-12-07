@@ -72,10 +72,10 @@ export default function Screen({ queue, emp, queueCount }) {
                 >
                     <div
                         style={{ zIndex: "-1", opacity: "0.08" }}
-                        className="w-full h-full  flex absolute  top-0 bottom-0 left-0 right-0 items-center justify-center"
+                        className="w-full h-full  flex overflow-hidden absolute  top-0 bottom-0 left-0 right-0 items-center justify-center"
                     >
                         <video
-                            className="filter h-full w-screen pointer-events-none"
+                            className="filter w-screen  object-cover pointer-events-none"
                             src="/screen.mp4"
                             autoPlay
                             loop
