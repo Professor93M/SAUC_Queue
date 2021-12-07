@@ -68,7 +68,7 @@ export default function Screen({ queue, emp, queueCount }) {
             >
                 <div
                     style={{ width: "60rem" }}
-                    className=" grid mt-28 text-5xl place-content-start grid-cols-2 rounded-sm gap-4 text-center "
+                    className=" grid mt-10 text-5xl place-content-start grid-cols-2 rounded-sm gap-4 text-center "
                 >
                     <div
                         style={{ zIndex: "-1", opacity: "0.08" }}
@@ -81,14 +81,14 @@ export default function Screen({ queue, emp, queueCount }) {
                         />
                     </div>
                     {emp ? (
-                        <div className="flex justify-around w-full gap-4 text-6xl items-center col-span-2 ">
-                            <div className="flex flex-col w-1/2 text-6xl py-3 items-center rounded-lg h-64 bg-nav bg-opacity-20 justify-around shadow-lg">
+                        <div className="flex justify-around w-full gap-4 text-6xl  items-center col-span-2 ">
+                            <div className="flex flex-col w-1/2 text-6xl py-3 items-center border-2 border-nav rounded-lg h-64 bg-nav bg-opacity-20 justify-around shadow-lg">
                                 <span className="">تسلسل المراجع</span>
                                 <span className="bg-btn rounded-lg text-yellow-300 font-extrabold shadow-lg px-6  py-1">
                                     {queue !== null ? queue.queue : 0}
                                 </span>
                             </div>
-                            <div className="flex flex-col py-3 w-1/2  rounded-lg h-64 bg-nav bg-opacity-20 items-center justify-around shadow-lg">
+                            <div className="flex flex-col py-3 w-1/2 border-2 border-nav   rounded-lg h-64 bg-nav bg-opacity-20 items-center justify-around shadow-lg">
                                 <h2>{emp.name}</h2>
                                 <span className=" bg-btn rounded-lg text-yellow-300 font-extrabold  shadow-lg px-6  py-1">
                                     حاسبة {emp.PcN}
