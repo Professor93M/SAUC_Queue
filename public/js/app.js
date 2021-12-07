@@ -5588,10 +5588,12 @@ function Screen(_ref) {
             opacity: "0.08"
           },
           className: "w-full h-full  flex absolute  top-0 bottom-0 left-0 right-0 items-center justify-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-            className: "filter h-full ",
-            src: "/logo.png",
-            alt: "logo"
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("video", {
+            className: "filter h-full w-screen pointer-events-none",
+            src: "/screen.mp4",
+            autoPlay: true,
+            loop: true,
+            muted: true
           })
         }), emp ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "flex justify-around w-full gap-4 text-6xl  items-center col-span-2 ",
